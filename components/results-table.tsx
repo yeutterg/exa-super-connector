@@ -55,9 +55,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
   const {
     rawView,
     setRawView,
-    runBrief,
-    openBriefPersonId,
-    briefLoadingId,
+    openContentsPersonId,
     runVerify,
     verifyLoadingId,
     rerunAsDeep,
@@ -183,9 +181,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
                     key={p.id}
                     person={p}
                     recordId={record.id}
-                    loading={briefLoadingId === p.id}
-                    active={openBriefPersonId === p.id}
-                    onBrief={() => runBrief(p, record.id)}
+                    active={openContentsPersonId === p.id}
                   />
                 ))}
               </TableBody>
@@ -218,15 +214,11 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
 function PersonRow({
   person,
   recordId,
-  loading,
   active,
-  onBrief,
 }: {
   person: Person;
   recordId: string;
-  loading: boolean;
   active: boolean;
-  onBrief: () => void;
 }) {
   const { runContents } = useApp();
   return (
@@ -287,8 +279,12 @@ function PersonRow({
         <HighlightsCell person={person} />
       </TableCell>
       <TableCell className="text-right">
-        <Button size="sm" variant="outline" disabled={loading} onClick={onBrief}>
-          {loading ? "Building…" : "Build Brief"}
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() => runContents(person, recordId)}
+        >
+          View Profile
         </Button>
       </TableCell>
     </TableRow>

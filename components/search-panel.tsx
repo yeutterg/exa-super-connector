@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ResultsSkeleton, ResultsTable } from "@/components/results-table";
 import { ApiCallInline } from "@/components/api-call-inline";
-import { BriefThread } from "@/components/brief-thread";
 import { VerifyThread } from "@/components/verify-thread";
 import { AsciiWordmark } from "@/components/ascii-logo";
 import { CostMeter } from "@/components/cost-meter";
@@ -245,7 +244,6 @@ function Turn({ record, pinned }: { record: SearchRecord; pinned: boolean }) {
         <ApiCallInline record={record} />
         <ResultsTable record={record} />
         <VerifyThread record={record} />
-        <BriefThread record={record} />
       </div>
     </>
   );

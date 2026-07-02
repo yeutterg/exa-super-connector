@@ -39,47 +39,56 @@ fixture — no visible failure on stage.
 
 ## Demo flow (~30 min)
 
-**The customer.** A B2B sales team selling into Series B SaaS. Their problem:
-the signals that make an account worth calling *right now* — funding, job
-postings, migrations, exec talks — live scattered across the open web, not in
-their CRM or contact database. Reps spend hours a day re-assembling that
-context by hand.
+**The customer.** A developer team building people search into their product —
+sales intelligence, recruiting, GTM tooling. Their end users ask questions in
+plain language ("sales leaders at Series B companies hiring their first RevOps
+role"); the devs have to turn that into correct, current, affordable results.
+Building this on raw web data means learning four hard lessons the slow way:
+corpora have edges, embeddings can't negate, cross-corpus questions need
+joins, and enrichment needs verification. This applet is a **teaching demo**:
+every screen shows the exact API call and the exact response, and the demo
+walks each failure mode next to the primitive that fixes it.
 
-**Slides (2–3, ~5 min).** Why signal-based prospecting beats list-based:
-timing is the multiplier on outreach; databases go stale the day they're
-exported; the open web is where the truth lives. One slide on the workflow
-today (rep + 12 browser tabs) vs. the workflow with Exa (one query, verified
-answer, receipts attached).
+**Slides (2–3, ~5 min).** One: what devs actually hit building people search
+(the four lessons above — each one a support ticket you won't file). Two: the
+Exa primitive map — `/search`, `/contents`, deep + `outputSchema`,
+`/agent/runs` + Connect — and which lesson each solves. Optional three: the
+cost/latency envelope (fast search $0.005/1.5s → deep pipeline ~$0.05/15s →
+agent run ~$0.20/60s), because devs will ask.
 
-**Live demo (~15 min).** One continuous thread, each beat one click:
+**Live demo (~15 min).** One continuous thread; every beat is one click, and
+the request JSON is always on screen (hover any key for its docs):
 
-1. *Ask in plain English* — hero query, people search. Point at the request
-   JSON: no filters, no booleans, `category: "people"`. Results carry
-   structured work history natively (click a person → profile drawer).
-2. *Catch it being wrong* — the results look right but aren't (existing
-   RevOps leaders, not companies who haven't hired one). This is the honest
-   beat: embedding search can only match what lives in the corpus. Run
-   **Verify with Agent** — it researches each candidate and excludes the
-   misses, with reasons.
-3. *Fix it with a different tool, not a different phrasing* — **Re-run as
-   deep**. Watch the pipeline narrate itself: gpt-5-nano rewrites the query →
-   deep search decomposes it across the whole web with an `outputSchema` →
-   findings come back as companies with citations → a parallel join runs one
-   people search per company. Right people, one leader each, every call
-   visible as code.
-4. *From person to meeting* — **Build Brief**: one Agent run, Connect
-   providers attached, router picks what it needs (Fiber for the profile,
-   web inference when Fiber lacks the email), grounded "why now" signals, a
-   ready-to-send opener.
-5. *The receipt* — open the cost meter. Every call, real dollars. The whole
-   thread cost less than a minute of an SDR's time.
+1. *One parameter gets you people* — `category: "people"` on `/search` returns
+   structured entities: name, location, full dated work history. No parsing,
+   no scraping. Click a person: the drawer's Brief + Profile show
+   `/agent/runs` and `/contents` composing off the same result id.
+2. *The corpus lesson, live* — the results look right but aren't (existing
+   RevOps leaders, not companies who haven't hired one). Embedding search can
+   only match what lives in the corpus, and can't encode "not". **Verify with
+   Agent** hands the same rows to `/agent/runs` via `input.data` and gets
+   verdicts with reasons.
+3. *Escalate the primitive, not the phrasing* — **Re-run as deep**. The
+   pipeline narrates itself: gpt-5-nano rewrites the query (that call is
+   shown too) → deep search + `outputSchema` finds the companies with
+   citations → a parallel join runs one people search per company. Includes
+   the blended-query pitfall: one query across five companies embeds as an
+   average and drifts; five focused queries don't.
+4. *Enrichment with receipts* — **Build Brief** in the drawer: Connect
+   providers attached explicitly, routed automatically, billed only when
+   called. Includes the schema pitfall we hit ourselves: describing the email
+   field as "from Fiber.ai" made the agent return null instead of falling
+   back to web inference.
+5. *Patterns they'll copy* — "10 more profiles" shows the exclusion pattern
+   (`/search` has no exclusion param: over-fetch + filter by id, list shown
+   in the UI); the cost meter shows every call in real dollars.
 
-**Narrative close (~5 min).** Exa isn't a database to query — it's search
-primitives you compose: `/search` for intent, `/contents` for extraction,
-deep + `outputSchema` for research, `/agent/runs` for verification and
-enrichment. The demo's debugging arc *is* the pitch: when retrieval fails,
-you reach for a bigger primitive, not a cleverer keyword. Websets is this
-exact loop, productized.
+**Narrative close (~5 min).** The app *is* the integration guide — fixtures
+for demo determinism, client-side caching so nothing bills twice, honest
+fallbacks, every request byte-visible. Success with Exa is knowing which
+primitive answers which question; when retrieval fails, reach for a bigger
+primitive, not a cleverer keyword. And when a customer wants this whole
+search → verify → enrich loop off the shelf: that's Websets.
 
 ## What maps to what
 

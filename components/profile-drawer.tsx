@@ -1,12 +1,15 @@
 "use client";
 
-// Half-width RIGHT drawer: clicking a person in any results table extracts
-// their full profile via Exa /contents. The call that fired shows as code at
-// the top with the familiar pill row (results/cost/time plus cached-vs-
-// crawled provenance); the steered summary, structured work history (from
-// the search result's entities[] — no extra call), and extracted page text
-// render below. Cached per person — a second click reopens instantly with
-// no new bill. Structured | Raw mirrors the results table and brief card.
+// Half-width RIGHT drawer — the person hub, opened by "View Profile" (or
+// clicking anywhere on a person cell). Two sections:
+//   BRIEF   — /agent/runs with Connect attached: verified/inferred email +
+//             grounded "why now" signals + a ready opener. Run on demand
+//             (it's the expensive call); pre-warmed/cached briefs show
+//             instantly.
+//   PROFILE — Exa /contents extraction: steered summary, structured work
+//             history (from the search result's entities[], no extra call),
+//             and the raw page text. Fetched automatically (cheap) and
+//             cached per person.
 
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
@@ -21,8 +24,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ApiCallBlock } from "@/components/api-call-block";
+import { BriefCard } from "@/components/brief-card";
 import { CodeBlock } from "@/components/code-block";
 import { Pill } from "@/components/pill";
+import { buildBriefBody } from "@/lib/exa";
 import { apiJsonSnippet } from "@/lib/snippets";
 import { fmtUSD } from "@/lib/format";
 
@@ -37,6 +42,10 @@ export function ProfileDrawer() {
     contentsError,
     closeContents,
     searches,
+    briefs,
+    briefLoadingId,
+    briefError,
+    runBrief,
   } = useApp();
   const [showRaw, setShowRaw] = useState(false);
 
@@ -55,6 +64,14 @@ export function ProfileDrawer() {
 
   const doc = record?.response.results?.[0];
   const status = record?.response.statuses?.[0];
+
+  // Brief state for this person — cost attribution needs the search turn the
+  // person came from (searches is newest-first, so [find] is the latest).
+  const brief = briefs[openContentsPersonId];
+  const briefLoading = briefLoadingId === openContentsPersonId;
+  const briefSearchId = searches.find((s) =>
+    s.people.some((p) => p.id === openContentsPersonId),
+  )?.id;
 
   return (
     <Sheet
@@ -89,6 +106,63 @@ export function ProfileDrawer() {
         </SheetHeader>
 
         <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 pb-4">
+          {/* ---------------- BRIEF (agent run, on demand) ---------------- */}
+          {person && (
+            <>
+              <div className="flex items-center justify-between border-b pb-1.5">
+                <span className="text-xs font-semibold uppercase tracking-wider">
+                  Brief
+                </span>
+                {!brief && !briefLoading && briefSearchId && (
+                  <Button
+                    size="xs"
+                    onClick={() => runBrief(person, briefSearchId)}
+                    title="Agent run with Connect providers attached — email + grounded why-now signals (~30-90s)"
+                  >
+                    Build Brief
+                  </Button>
+                )}
+              </div>
+
+              <ApiCallBlock
+                json={apiJsonSnippet(brief ? brief.request : buildBriefBody(person))}
+                path="/agent/runs"
+                tag="Connect attached"
+              />
+
+              {briefLoading ? (
+                <div className="space-y-2 rounded-md border p-4">
+                  <div className="text-xs text-muted-foreground">
+                    Agent run in flight — routing across Fiber.ai, Financial
+                    Datasets, and Exa web research…
+                  </div>
+                  <Skeleton className="h-3 w-1/2" />
+                  <Skeleton className="h-3 w-2/3" />
+                  <Skeleton className="h-3 w-1/3" />
+                </div>
+              ) : brief ? (
+                <BriefCard person={person} brief={brief} />
+              ) : briefError ? (
+                <div className="rounded-md border border-destructive/40 p-3 text-xs text-muted-foreground">
+                  Brief unavailable: {briefError}
+                </div>
+              ) : (
+                <p className="text-[11px] text-muted-foreground">
+                  Not run yet — this is the request that will fire. The Agent
+                  routes across the attached Connect providers plus web
+                  research and returns the email and grounded &ldquo;why
+                  now&rdquo; signals.
+                </p>
+              )}
+            </>
+          )}
+
+          {/* ---------------- PROFILE (/contents extraction) ---------------- */}
+          <div className="mt-2 border-b pb-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider">
+              Profile
+            </span>
+          </div>
           {record && (
             <>
               <ApiCallBlock

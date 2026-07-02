@@ -879,10 +879,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setActiveSessionId(session.id);
         syncUrl(session.id);
       }
-      setOpenBriefPersonId(entry.type === "brief" ? (entry.personId ?? null) : null);
-      // Contents entries reopen the profile drawer straight from cache.
+      // Brief AND contents entries both live in the person drawer now.
       setOpenContentsPersonId(
-        entry.type === "contents" ? (entry.personId ?? null) : null,
+        entry.type === "brief" || entry.type === "contents"
+          ? (entry.personId ?? null)
+          : null,
       );
       setBriefError(null);
       setRawView(false);
