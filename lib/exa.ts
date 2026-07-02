@@ -96,9 +96,9 @@ export function buildSearchBody(
   return body;
 }
 
-/** The join step: given an extracted company, find the person to contact. */
-export function buildPeopleAtCompanyQuery(company: string): string {
-  return `Head of Sales, CRO, or revenue leader at ${company}`;
+/** The join step: given extracted companies, find the people to contact. */
+export function buildPeopleAtCompaniesQuery(companies: string[]): string {
+  return `Head of Sales, CRO, or revenue leader at ${companies.join(", ")}`;
 }
 
 export function buildBriefBody(person: {
@@ -109,7 +109,8 @@ export function buildBriefBody(person: {
   return {
     query:
       `Profile ${person.name}, ${person.title} at ${person.company}. ` +
-      `Return their verified work email, and 2-3 recent, specific "why now" signals a salesperson ` +
+      `Return their work email (verified if available, otherwise the best-supported inference ` +
+      `from reputable public sources), and 2-3 recent, specific "why now" signals a salesperson ` +
       `could open a cold email with — funding, launches, hiring, exec talks, migrations, or press ` +
       `from the last 6 months. Each signal must cite a source URL and date.`,
     // Attach providers; the Agent auto-selects among these + web research per query.
@@ -117,9 +118,14 @@ export function buildBriefBody(person: {
     outputSchema: {
       type: "object",
       properties: {
+        // Deliberately NOT pinned to a provider: "from Fiber.ai" here made
+        // the agent return null whenever Fiber had no record, instead of
+        // falling back to web inference (verified live — the unpinned run
+        // found the address Fiber missed).
         email: {
           type: "string",
-          description: "verified work email, from Fiber.ai",
+          description:
+            "work email — verified when a data source has it, otherwise inferred from reputable public listings",
         },
         // email is intentionally NOT in `required` — the agent should return
         // nothing rather than invent an address when Fiber has no record.

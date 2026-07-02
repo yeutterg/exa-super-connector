@@ -26,6 +26,7 @@ import type {
 import {
   PROVIDER_LABELS,
   buildBriefBody,
+  buildPeopleAtCompaniesQuery,
   buildSearchBody,
   normalizePeople,
 } from "@/lib/exa";
@@ -467,6 +468,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     async (record: SearchRecord) => {
       if (searchLoading || rerunningDeepId) return;
       setRerunningDeepId(record.id);
+      setSearchError(null);
+
       // Step 1: GPT-5 nano rewrites the query into deep-search format —
       // comma-separated explicit constraints decompose better agentically.
       // Fails open to the original query.
@@ -485,24 +488,122 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         // fall through with the original query
       }
       setRerunningDeepId(null);
-      // Step 2: run it deep on the people corpus + entity extraction — one
-      // call returns BOTH people results (entities[] intact, so the familiar
-      // people table renders) AND the synthesized findings (verified live).
-      // The rewritten query is visible in the new turn's request code; the
-      // original is kept as rawInput so the turn shows what it was rewritten
-      // from.
-      await runQuery(
-        rewritten,
-        {
-          type: "deep",
-          category: "people",
-          numResults: record.request.numResults ?? 5,
-          extractEntities: true,
-        },
-        rewritten !== record.query ? record.query : undefined,
-      );
+      setSearchLoading(true);
+
+      try {
+        // Step 2: deep search WEB-WIDE with entity extraction. Deliberately
+        // not category-scoped: the discriminating constraint (a job posting,
+        // funding news) lives outside profiles — deep + category:people just
+        // returns semantically-nearby RevOps titleholders again (verified
+        // live, twice). The web-wide run finds the right companies with
+        // citations.
+        const deepRes = await fetch("/api/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: rewritten,
+            options: {
+              type: "deep",
+              category: null,
+              numResults: record.request.numResults ?? 5,
+              extractEntities: true,
+            },
+          }),
+        });
+        if (!deepRes.ok) {
+          const err = await deepRes.json().catch(() => ({}));
+          throw new Error(err.error ?? `deep search failed (${deepRes.status})`);
+        }
+        const deepData = await deepRes.json();
+        const findings: { entity: string }[] =
+          deepData.response?.output?.content?.findings ?? [];
+
+        // Step 3: the join — fast people search at the extracted companies
+        // fills the familiar people table with the RIGHT people (sales
+        // leaders at companies that match), instead of profile lookalikes.
+        let people: Person[] = [];
+        let joinRequest: SearchRecord["joinRequest"];
+        let joinCost = 0;
+        let joinMs = 0;
+        if (findings.length > 0) {
+          const joinQuery = buildPeopleAtCompaniesQuery(
+            findings.slice(0, 5).map((f) => f.entity),
+          );
+          try {
+            const joinRes = await fetch("/api/search", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ query: joinQuery }),
+            });
+            if (joinRes.ok) {
+              const joinData = await joinRes.json();
+              people = normalizePeople(joinData.response);
+              joinRequest = joinData.request;
+              joinCost = joinData.response?.costDollars?.total ?? 0;
+              joinMs = joinData.durationMs ?? 0;
+            }
+          } catch {
+            // join is best-effort — findings + sources still render
+          }
+        }
+
+        const newRecord: SearchRecord = {
+          id: `live-${Date.now()}-${idCounter.current++}`,
+          query: rewritten,
+          rawInput: rewritten !== record.query ? record.query : undefined,
+          createdAt: Date.now(),
+          source: "live",
+          request: deepData.request,
+          response: deepData.response,
+          people,
+          durationMs: (deepData.durationMs ?? 0) + joinMs,
+          joinRequest,
+        };
+        setSearches((prev) => [newRecord, ...prev]);
+        const now = Date.now();
+        const newSessionId = `session-${now}-${idCounter.current++}`;
+        setSessions((prev) => {
+          if (activeSessionId && prev.some((s) => s.id === activeSessionId)) {
+            return prev.map((s) =>
+              s.id === activeSessionId
+                ? { ...s, recordIds: [...s.recordIds, newRecord.id], lastActiveAt: now }
+                : s,
+            );
+          }
+          return [
+            { id: newSessionId, recordIds: [newRecord.id], createdAt: now, lastActiveAt: now },
+            ...prev,
+          ];
+        });
+        if (!activeSessionId) {
+          setActiveSessionId(newSessionId);
+          syncUrl(newSessionId);
+        }
+        addCost({
+          id: nextId(),
+          type: "search",
+          label: `deep · ${rewritten}`,
+          amount: deepData.response?.costDollars?.total ?? 0,
+          timestamp: Date.now(),
+          searchId: newRecord.id,
+        });
+        if (joinRequest) {
+          addCost({
+            id: nextId(),
+            type: "search",
+            label: `join · ${joinRequest.query}`,
+            amount: joinCost,
+            timestamp: Date.now(),
+            searchId: newRecord.id,
+          });
+        }
+      } catch (err) {
+        setSearchError(err instanceof Error ? err.message : "deep re-run failed");
+      } finally {
+        setSearchLoading(false);
+      }
     },
-    [searchLoading, rerunningDeepId, runQuery],
+    [searchLoading, rerunningDeepId, activeSessionId, addCost, syncUrl],
   );
 
   const runVerify = useCallback(

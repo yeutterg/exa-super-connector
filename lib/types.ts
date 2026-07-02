@@ -120,6 +120,11 @@ export interface SearchRecord {
   /** What the user actually typed, if a follow-up like "3 more people" was
    *  expanded (via GPT-5 nano) into a standalone query before it hit Exa. */
   rawInput?: string;
+  /** Deep re-runs are a two-step pipeline: deep web-wide extraction finds the
+   *  companies (this record's request/response), then a fast people search at
+   *  those companies fills `people`. This is that second call's body — shown
+   *  as its own code block so the join stays visible. */
+  joinRequest?: SearchRequestBody;
 }
 
 /** A sidebar entry — a chat-style session that can hold multiple appended

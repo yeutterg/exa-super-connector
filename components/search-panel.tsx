@@ -22,6 +22,13 @@ import { VerifyThread } from "@/components/verify-thread";
 import { AsciiWordmark } from "@/components/ascii-logo";
 import { CostMeter } from "@/components/cost-meter";
 
+// Hero queries replay cached fixtures (demo-safe); the extras run live.
+const SUGGESTED_QUERIES = [
+  ...HERO_QUERIES,
+  "VPs and above at Meta",
+  "Sound Engineers at Apple",
+];
+
 export function SearchPanel() {
   const {
     activeTurns,
@@ -117,20 +124,24 @@ export function SearchPanel() {
       </div>
 
       <div className="border-t px-6 py-4">
-        <div className="mb-2.5 flex flex-wrap gap-1.5">
-          {HERO_QUERIES.map((q) => (
-            <Button
-              key={q}
-              variant="secondary"
-              size="xs"
-              className="rounded-full font-normal"
-              disabled={searchLoading}
-              onClick={() => submit(q)}
-            >
-              {q}
-            </Button>
-          ))}
-        </div>
+        {/* Suggested queries only make sense before a session exists — once
+            a chat is open, the input is for follow-ups. */}
+        {!hasTurns && (
+          <div className="mb-2.5 flex flex-wrap gap-1.5">
+            {SUGGESTED_QUERIES.map((q) => (
+              <Button
+                key={q}
+                variant="secondary"
+                size="xs"
+                className="rounded-full font-normal"
+                disabled={searchLoading}
+                onClick={() => submit(q)}
+              >
+                {q}
+              </Button>
+            ))}
+          </div>
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault();

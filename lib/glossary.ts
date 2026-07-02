@@ -45,7 +45,7 @@ const FLAT: Record<string, string> = {
 
   // ---- Our outputSchema field names ----
   email:
-    "Field the Agent fills: verified work email, sourced from Fiber.ai. Not in `required`, so the Agent returns nothing rather than inventing an address.",
+    "Field the Agent fills: work email — from Fiber.ai when it has a verified record, otherwise inferred from reputable public listings. Not in `required`, so the Agent returns nothing rather than inventing an address. Deliberately not pinned to one provider: that made the Agent give up when Fiber lacked a record.",
   whyNow:
     'Field the Agent fills: 2–3 recent, cited "reasons to reach out now" — funding, launches, hiring, talks, press.',
   signal: "One why-now finding, written as a cold-email-ready fact.",

@@ -65,7 +65,9 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
   } = useApp();
   const verifying = verifyLoadingId === record.id;
   const rewriting = rerunningDeepId === record.id;
-  const isPeople = record.request.category === "people";
+  // Deep pipeline turns are web-scoped but carry join-derived people — gate
+  // the people table on actual people, not on the request category.
+  const hasPeople = record.people.length > 0;
   const isDeepAlready = record.request.type.startsWith("deep");
   const hasFindings = Boolean(record.response.output?.content?.findings?.length);
 
@@ -82,7 +84,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
           <Pill tone="neutral">{(record.durationMs / 1000).toFixed(1)}s</Pill>
         </div>
         <div className="flex items-center gap-2">
-          {isPeople && (
+          {hasPeople && (
             <Button
               variant="outline"
               size="xs"
@@ -131,7 +133,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
         />
       ) : (
         <>
-          {isPeople && (
+          {hasPeople && (
             <Table className="table-fixed [&_td]:whitespace-normal">
               <TableHeader>
                 <TableRow>
@@ -165,7 +167,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
               <FindingsTable record={record} />
             </>
           )}
-          {(!isPeople || isDeepAlready) && (
+          {(!hasPeople || isDeepAlready) && (
             <>
               <div className="pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
                 Sources

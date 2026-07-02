@@ -7,7 +7,9 @@ import { EXA_BASE } from "@/lib/exa";
 import type { BriefCostBreakdown } from "@/lib/types";
 
 const POLL_INTERVAL_MS = 1500;
-const POLL_TIMEOUT_MS = 45_000;
+// Runs that chase a provider AND fall back to web inference regularly take
+// 60-90s (observed live) — 45s was cutting them off mid-run.
+const POLL_TIMEOUT_MS = 110_000;
 
 export type Json = Record<string, unknown>;
 

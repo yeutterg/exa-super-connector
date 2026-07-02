@@ -13,8 +13,7 @@ import { buildBriefBody } from "@/lib/exa";
 import { apiJsonSnippet } from "@/lib/snippets";
 
 export function BriefThread({ record }: { record: SearchRecord }) {
-  const { openBriefPersonId, briefs, briefLoadingId, briefError, closeBrief } =
-    useApp();
+  const { openBriefPersonId, briefs, briefLoadingId, briefError } = useApp();
 
   if (!openBriefPersonId) return null;
   const person = record.people.find((p) => p.id === openBriefPersonId);
@@ -46,7 +45,7 @@ export function BriefThread({ record }: { record: SearchRecord }) {
           <Skeleton className="h-3 w-1/3" />
         </div>
       ) : brief ? (
-        <BriefCard person={person} brief={brief} onClose={closeBrief} />
+        <BriefCard person={person} brief={brief} />
       ) : briefError ? (
         <div className="rounded-md border border-destructive/40 p-3 text-xs text-muted-foreground">
           Brief unavailable: {briefError}

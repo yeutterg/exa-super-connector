@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { buildBriefBody } from "@/lib/exa";
+
+// Agent runs poll up to ~110s — keep the serverless function alive that long.
+export const maxDuration = 120;
 import {
   createAndPollAgentRun,
   extractRoutedTo,

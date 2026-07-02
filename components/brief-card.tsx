@@ -40,6 +40,24 @@ function CopyInline({ value }: { value: string }) {
   );
 }
 
+/** The agent's own grounding citation for the email field — the only honest
+ *  provenance. routedTo can't tell us: Fiber may be called for the profile
+ *  while the email itself gets inferred from web listings (observed live). */
+function emailSourceHost(brief: BriefRecord): string | null {
+  try {
+    const grounding = (
+      brief.raw as {
+        output?: { grounding?: { field?: string; citations?: { url?: string }[] }[] };
+      }
+    )?.output?.grounding;
+    const entry = grounding?.find((g) => /email/i.test(g.field ?? ""));
+    const url = entry?.citations?.[0]?.url;
+    return url ? new URL(url).hostname.replace(/^www\./, "") : null;
+  } catch {
+    return null;
+  }
+}
+
 function buildOpener(person: Person, brief: BriefRecord): string {
   const first = person.name.split(" ")[0];
   const top = brief.output.whyNow[0];
@@ -55,21 +73,12 @@ function buildOpener(person: Person, brief: BriefRecord): string {
 export function BriefCard({
   person,
   brief,
-  onClose,
 }: {
   person: Person;
   brief: BriefRecord;
-  onClose: () => void;
 }) {
-  const [copied, setCopied] = useState(false);
   const [showRaw, setShowRaw] = useState(false);
   const opener = buildOpener(person, brief);
-
-  const copy = async () => {
-    await navigator.clipboard.writeText(opener);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
 
   return (
     <Card className="border-primary/30">
@@ -82,30 +91,32 @@ export function BriefCard({
               &nbsp;— {person.title}, {person.company}
             </span>
           </CardTitle>
-          <div className="flex items-center gap-1">
+          <div className="flex rounded-md border p-0.5">
+            <Button
+              variant={showRaw ? "ghost" : "secondary"}
+              size="xs"
+              onClick={() => setShowRaw(false)}
+            >
+              Structured
+            </Button>
             <Button
               variant={showRaw ? "secondary" : "ghost"}
               size="xs"
-              onClick={() => setShowRaw((v) => !v)}
+              onClick={() => setShowRaw(true)}
               title="The complete agent run object — output.text, per-field grounding citations, usage, cost"
             >
               Raw
             </Button>
-            <Button variant="ghost" size="xs" onClick={onClose}>
-              Close
-            </Button>
           </div>
         </div>
         <div className="group flex items-center gap-2 text-xs">
-          <span className="text-muted-foreground">
-            {brief.output.email ? "Verified email" : "Email"}
-          </span>
+          <span className="text-muted-foreground">Email</span>
           <code className="rounded bg-muted px-1.5 py-0.5">
             {brief.output.email ?? "not found"}
           </code>
           {brief.output.email && <CopyInline value={brief.output.email} />}
-          {brief.routedTo.includes("fiber_ai") && (
-            <Pill tone="neutral">via Fiber.ai</Pill>
+          {brief.output.email && emailSourceHost(brief) && (
+            <Pill tone="neutral">via {emailSourceHost(brief)}</Pill>
           )}
           <Pill tone="neutral">{(brief.durationMs / 1000).toFixed(1)}s</Pill>
           <Pill tone="green">{fmtUSD(brief.cost.total)}</Pill>
@@ -144,25 +155,21 @@ export function BriefCard({
             ))}
           </ul>
         </div>
-        <div className="rounded-md border bg-muted/40 p-3 text-xs leading-relaxed">
-          {opener}
+        <div className="group flex items-start gap-1 rounded-md border bg-muted/40 p-3 text-xs leading-relaxed">
+          <span className="flex-1">{opener}</span>
+          <CopyInline value={opener} />
         </div>
-        <div className="flex items-center justify-between">
-          <Button size="sm" onClick={copy}>
-            {copied ? "Copied" : "Copy Opener"}
-          </Button>
-          <span className="text-[10px] text-muted-foreground">
-            {brief.routedTo.length > 0 ? (
-              <>
-                Routed to: Exa web research +{" "}
-                {brief.routedTo.map((r) => PROVIDER_LABELS[r] ?? r).join(" + ")}
-                {!brief.routedTo.includes("financial_datasets") &&
-                  " — Financial Datasets not called (private company or no ticker news)"}
-              </>
-            ) : (
-              "Routed to: Exa web research only — no Connect partner data source was needed"
-            )}
-          </span>
+        <div className="text-right text-[10px] text-muted-foreground">
+          {brief.routedTo.length > 0 ? (
+            <>
+              Routed to: Exa web research +{" "}
+              {brief.routedTo.map((r) => PROVIDER_LABELS[r] ?? r).join(" + ")}
+              {!brief.routedTo.includes("financial_datasets") &&
+                " — Financial Datasets not called (private company or no ticker news)"}
+            </>
+          ) : (
+            "Routed to: Exa web research only — no Connect partner data source was needed"
+          )}
         </div>
           </>
         )}

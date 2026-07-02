@@ -1,10 +1,10 @@
 "use client";
 
-// The search call, shown inline above its results — one per turn, not a
-// persistent side panel. The Build Brief and Re-run-with-Agent calls get
-// their own turns further down the thread rather than swapping this out.
-// Result stats (count/category/cost/time) are pills at the top of the
-// results table, not repeated here.
+// The actual call(s) behind a turn, shown inline above the results. Deep
+// pipeline turns made two: the deep web-wide extraction, then the people
+// join at the extracted companies — both rendered so the composition stays
+// visible. Result stats (count/category/cost/time) are pills at the top of
+// the results table, not repeated here.
 
 import type { SearchRecord } from "@/lib/types";
 import { ApiCallBlock } from "@/components/api-call-block";
@@ -12,12 +12,23 @@ import { apiJsonSnippet } from "@/lib/snippets";
 
 export function ApiCallInline({ record }: { record: SearchRecord }) {
   return (
-    <div className="mb-4">
+    <div className="mb-4 space-y-3">
       <ApiCallBlock
         json={apiJsonSnippet(record.request)}
         path="/search"
-        tag={`category: ${record.request.category}`}
+        tag={
+          record.request.category
+            ? `category: ${record.request.category}`
+            : `${record.request.type} · web-wide`
+        }
       />
+      {record.joinRequest && (
+        <ApiCallBlock
+          json={apiJsonSnippet(record.joinRequest)}
+          path="/search"
+          tag="join · people at extracted companies"
+        />
+      )}
     </div>
   );
 }
