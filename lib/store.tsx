@@ -32,7 +32,15 @@ import {
   buildSearchBody,
   normalizePeople,
 } from "@/lib/exa";
-import { HERO_QUERIES, SEED_BRIEFS, fallbackFor, seedSearches } from "@/lib/fixtures";
+import {
+  DEEP_PIPELINE_FALLBACK,
+  HERO_QUERIES,
+  SEED_BRIEFS,
+  SEED_CONTENTS,
+  SEED_VERIFY,
+  fallbackFor,
+  seedSearches,
+} from "@/lib/fixtures";
 
 const LS_RECORDS_KEY = "superconnector.liveSearches.v1";
 const LS_SESSIONS_KEY = "superconnector.liveSessions.v1";
@@ -184,7 +192,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setSearches([...restoredRecords, ...seeded]);
     setSessions([...restoredSessions, ...seededSessions]);
     setVerifyResults(restoredVerify);
-    setContentsRecords(restoredContents);
+    // Pre-warmed profile extraction (guardrail: the person the demo clicks
+    // opens instantly, even offline). Restored live records win on key clash.
+    setContentsRecords({ ...SEED_CONTENTS, ...restoredContents });
     // The example searches already "cost" something — count them in the
     // session meter from the start, not just live/wildcard queries. Restored
     // (real, previously billed) entries are layered on top so a reload never
@@ -649,23 +659,96 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           }
         }
 
-        const newRecord: SearchRecord = {
-          id: `live-${Date.now()}-${idCounter.current++}`,
+        commitDeepTurn({
           query: rewritten,
           rawInput: rewritten !== record.query ? record.query : undefined,
-          createdAt: Date.now(),
-          source: "live",
           request: deepData.request,
           response: deepData.response,
           people,
           durationMs: (deepData.durationMs ?? 0) + joinMs,
-          joinRequests: joinRequests.length ? joinRequests : undefined,
+          joinRequests,
           rewriteRequest,
+          deepCost: deepData.response?.costDollars?.total ?? 0,
+          joinCosts,
+          source: "live",
+        });
+      } catch (err) {
+        // Stage guardrail: if the live pipeline dies AND this is the hero
+        // query, silently replay the recorded pipeline (real captured Exa
+        // data) instead of showing an error — the light always lights up.
+        const fb = DEEP_PIPELINE_FALLBACK;
+        if (record.query === fb.query) {
+          await sleep(2500);
+          const people: Person[] = [];
+          const joinCosts: { company: string; amount: number }[] = [];
+          for (const j of fb.joins) {
+            const candidates = normalizePeople(j.response);
+            const leader =
+              candidates.find((p) => LEADER_TITLE_RE.test(p.title)) ??
+              candidates[0];
+            if (leader && !people.some((p) => p.id === leader.id)) {
+              people.push(leader);
+            }
+            joinCosts.push({
+              company: j.company,
+              amount: j.response.costDollars?.total ?? 0,
+            });
+          }
+          commitDeepTurn({
+            query: fb.rewritten,
+            rawInput: fb.rewritten !== fb.query ? fb.query : undefined,
+            request: fb.deep.request,
+            response: fb.deep.response,
+            people,
+            durationMs:
+              fb.deep.durationMs +
+              Math.max(...fb.joins.map((j) => j.durationMs), 0),
+            joinRequests: fb.joins.map((j) => j.request),
+            rewriteRequest: fb.rewriteRequest,
+            deepCost: fb.deep.response.costDollars?.total ?? 0,
+            joinCosts,
+            source: "fixture",
+          });
+        } else {
+          setSearchError(err instanceof Error ? err.message : "deep re-run failed");
+        }
+      } finally {
+        setSearchLoading(false);
+        setPipelineStage(null);
+      }
+
+      // Shared commit for live and fixture-replay pipelines: one record, one
+      // session append, honest cost entries.
+      function commitDeepTurn(turn: {
+        query: string;
+        rawInput?: string;
+        request: SearchRecord["request"];
+        response: SearchRecord["response"];
+        people: Person[];
+        durationMs: number;
+        joinRequests: NonNullable<SearchRecord["joinRequests"]>;
+        rewriteRequest?: object;
+        deepCost: number;
+        joinCosts: { company: string; amount: number }[];
+        source: "live" | "fixture";
+      }) {
+        const newRecord: SearchRecord = {
+          id: `live-${Date.now()}-${idCounter.current++}`,
+          query: turn.query,
+          rawInput: turn.rawInput,
+          createdAt: Date.now(),
+          source: turn.source,
+          request: turn.request,
+          response: turn.response,
+          people: turn.people,
+          durationMs: turn.durationMs,
+          joinRequests: turn.joinRequests.length ? turn.joinRequests : undefined,
+          rewriteRequest: turn.rewriteRequest,
           // Whole-turn cost: the deep call plus every join call — the pill
           // shouldn't under-report a multi-call turn.
           turnCostDollars:
-            (deepData.response?.costDollars?.total ?? 0) +
-            joinCosts.reduce((acc, jc) => acc + jc.amount, 0),
+            turn.deepCost +
+            turn.joinCosts.reduce((acc, jc) => acc + jc.amount, 0),
         };
         setSearches((prev) => [newRecord, ...prev]);
         const now = Date.now();
@@ -690,12 +773,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         addCost({
           id: nextId(),
           type: "search",
-          label: `deep · ${rewritten}`,
-          amount: deepData.response?.costDollars?.total ?? 0,
+          label: `deep · ${turn.query}`,
+          amount: turn.deepCost,
           timestamp: Date.now(),
           searchId: newRecord.id,
         });
-        for (const jc of joinCosts) {
+        for (const jc of turn.joinCosts) {
           addCost({
             id: nextId(),
             type: "search",
@@ -705,11 +788,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
             searchId: newRecord.id,
           });
         }
-      } catch (err) {
-        setSearchError(err instanceof Error ? err.message : "deep re-run failed");
-      } finally {
-        setSearchLoading(false);
-        setPipelineStage(null);
       }
     },
     [searchLoading, rerunningDeepId, activeSessionId, addCost, syncUrl],
@@ -762,11 +840,29 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setContentsError(null);
   }, []);
 
+  // Track whether a seeded verify replay already ticked the meter.
+  const verifyTicked = useRef(new Set<string>());
+
   const runVerify = useCallback(
     async (record: SearchRecord) => {
       if (verifyLoadingId) return;
       setVerifyError(null);
       setVerifyLoadingId(record.id);
+      // Recorded replay for the fixture turn — deterministic on stage and
+      // works offline; live turns (e.g. the deep join people) still go live.
+      const seed = SEED_VERIFY[record.id];
+      if (seed && !verifyResults[record.id]) {
+        await sleep(2200);
+        const seeded: VerifyRecord = { ...seed, searchId: record.id };
+        setVerifyResults((prev) => ({ ...prev, [record.id]: seeded }));
+        if (!verifyTicked.current.has(record.id)) {
+          verifyTicked.current.add(record.id);
+          addCost(verifyCostEntry(nextId(), record, seeded));
+        }
+        bumpSessionActivity(record.id);
+        setVerifyLoadingId(null);
+        return;
+      }
       try {
         const res = await fetch("/api/verify", {
           method: "POST",
@@ -792,7 +888,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setVerifyLoadingId(null);
       }
     },
-    [verifyLoadingId, addCost, bumpSessionActivity],
+    [verifyLoadingId, verifyResults, addCost, bumpSessionActivity],
   );
 
   // Track whether the pre-warmed brief already ticked the meter this session.

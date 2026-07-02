@@ -1,0 +1,301 @@
+{
+  "searchId": "fixture-1",
+  "request": {
+    "query": "The input rows are candidates a semantic search returned for the query: \"Revenue or sales leaders at companies that raised a Series B in the last 6 months and are rapidly scaling their go-to-market team\". For each input row, research and verify whether the person actually satisfies the full query — pay special attention to any negative or absence condition (e.g. \"does NOT have X\", \"hasn't done Y\"), since semantic search cannot reliably exclude on those. Return one verdict per input row, preserving its personId, with matches true/false and a one-sentence reason citing what you found.",
+    "input": {
+      "data": [
+        {
+          "personId": "https://exa.ai/library/person/m99dmf017bz",
+          "name": "Tyler John",
+          "title": "Chief Revenue Officer (CRO)",
+          "company": "Actively AI"
+        },
+        {
+          "personId": "https://exa.ai/library/person/k1g9f13qvyb",
+          "name": "Steve Bailey",
+          "title": "Chief Revenue Officer (CRO)",
+          "company": "CodeSignal"
+        },
+        {
+          "personId": "https://exa.ai/library/person/r690jjyq14r",
+          "name": "Zack Sikora",
+          "title": "Chief Revenue Officer",
+          "company": "Endor Labs"
+        },
+        {
+          "personId": "https://exa.ai/library/person/1rcshh05csl",
+          "name": "Kendra Searle",
+          "title": "VP of Revenue",
+          "company": "Paid"
+        },
+        {
+          "personId": "https://exa.ai/library/person/bswkyr23nb5",
+          "name": "Emil Dyrvig",
+          "title": "Chief Revenue Officer",
+          "company": "Laurel"
+        }
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "personId",
+              "matches",
+              "reason"
+            ],
+            "properties": {
+              "personId": {
+                "type": "string",
+                "description": "personId from the input row"
+              },
+              "matches": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "output": {
+    "verified": [
+      {
+        "personId": "https://exa.ai/library/person/m99dmf017bz",
+        "matches": true,
+        "reason": "Tyler John matches: LinkedIn identifies him as Actively AI's CRO, and Actively announced a $45M Series B on Apr. 28, 2026 with funding earmarked for hiring talent and enterprise/GTM expansion."
+      },
+      {
+        "personId": "https://exa.ai/library/person/k1g9f13qvyb",
+        "matches": false,
+        "reason": "Steve Bailey is CodeSignal's CRO and leads its GTM organization, but CodeSignal's Series B closed on Dec. 8, 2020, not within the last six months."
+      },
+      {
+        "personId": "https://exa.ai/library/person/r690jjyq14r",
+        "matches": false,
+        "reason": "Zack Sikora is Endor Labs' CRO and the company is expanding global go-to-market, but Endor Labs' $93M Series B was announced Apr. 23, 2025, outside the six-month window."
+      },
+      {
+        "personId": "https://exa.ai/library/person/1rcshh05csl",
+        "matches": false,
+        "reason": "Kendra Searle is VP of Revenue at Paid and is hiring across GTM roles, but Paid's recent Apr. 28, 2026 financing was a $21M Seed round, not a Series B."
+      },
+      {
+        "personId": "https://exa.ai/library/person/bswkyr23nb5",
+        "matches": false,
+        "reason": "Emil Dyrvig leads sales/business development at Laurel and is scaling sales/GTM, but Laurel had already raised a Series C by 2025 and there is no evidence of a Series B in the last six months."
+      }
+    ]
+  },
+  "cost": {
+    "total": 0.2344,
+    "agentCompute": 0.2164,
+    "search": 0.018,
+    "dataSources": {}
+  },
+  "durationMs": 43336,
+  "raw": {
+    "id": "agent_run_cf526024bf60410985c06ebd747a6a59",
+    "object": "agent_run",
+    "status": "completed",
+    "stopReason": "schema_satisfied",
+    "createdAt": "2026-07-02T20:29:22.494Z",
+    "completedAt": "2026-07-02T20:30:05.025Z",
+    "request": {
+      "query": "The input rows are candidates a semantic search returned for the query: \"Revenue or sales leaders at companies that raised a Series B in the last 6 months and are rapidly scaling their go-to-market team\". For each input row, research and verify whether the person actually satisfies the full query — pay special attention to any negative or absence condition (e.g. \"does NOT have X\", \"hasn't done Y\"), since semantic search cannot reliably exclude on those. Return one verdict per input row, preserving its personId, with matches true/false and a one-sentence reason citing what you found.",
+      "input": {
+        "data": [
+          {
+            "name": "Tyler John",
+            "title": "Chief Revenue Officer (CRO)",
+            "company": "Actively AI",
+            "personId": "https://exa.ai/library/person/m99dmf017bz"
+          },
+          {
+            "name": "Steve Bailey",
+            "title": "Chief Revenue Officer (CRO)",
+            "company": "CodeSignal",
+            "personId": "https://exa.ai/library/person/k1g9f13qvyb"
+          },
+          {
+            "name": "Zack Sikora",
+            "title": "Chief Revenue Officer",
+            "company": "Endor Labs",
+            "personId": "https://exa.ai/library/person/r690jjyq14r"
+          },
+          {
+            "name": "Kendra Searle",
+            "title": "VP of Revenue",
+            "company": "Paid",
+            "personId": "https://exa.ai/library/person/1rcshh05csl"
+          },
+          {
+            "name": "Emil Dyrvig",
+            "title": "Chief Revenue Officer",
+            "company": "Laurel",
+            "personId": "https://exa.ai/library/person/bswkyr23nb5"
+          }
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "verified": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "personId",
+                "matches",
+                "reason"
+              ],
+              "properties": {
+                "reason": {
+                  "type": "string"
+                },
+                "matches": {
+                  "type": "boolean"
+                },
+                "personId": {
+                  "type": "string",
+                  "description": "personId from the input row"
+                }
+              }
+            },
+            "maxItems": 5
+          }
+        }
+      },
+      "effort": "auto"
+    },
+    "output": {
+      "text": "Verified each candidate against the required conjunction: revenue/sales leadership, company raised Series B since 2026-01-02, and evidence of rapid GTM scaling/hiring.",
+      "structured": {
+        "verified": [
+          {
+            "reason": "Tyler John matches: LinkedIn identifies him as Actively AI's CRO, and Actively announced a $45M Series B on Apr. 28, 2026 with funding earmarked for hiring talent and enterprise/GTM expansion.",
+            "matches": true,
+            "personId": "https://exa.ai/library/person/m99dmf017bz"
+          },
+          {
+            "reason": "Steve Bailey is CodeSignal's CRO and leads its GTM organization, but CodeSignal's Series B closed on Dec. 8, 2020, not within the last six months.",
+            "matches": false,
+            "personId": "https://exa.ai/library/person/k1g9f13qvyb"
+          },
+          {
+            "reason": "Zack Sikora is Endor Labs' CRO and the company is expanding global go-to-market, but Endor Labs' $93M Series B was announced Apr. 23, 2025, outside the six-month window.",
+            "matches": false,
+            "personId": "https://exa.ai/library/person/r690jjyq14r"
+          },
+          {
+            "reason": "Kendra Searle is VP of Revenue at Paid and is hiring across GTM roles, but Paid's recent Apr. 28, 2026 financing was a $21M Seed round, not a Series B.",
+            "matches": false,
+            "personId": "https://exa.ai/library/person/1rcshh05csl"
+          },
+          {
+            "reason": "Emil Dyrvig leads sales/business development at Laurel and is scaling sales/GTM, but Laurel had already raised a Series C by 2025 and there is no evidence of a Series B in the last six months.",
+            "matches": false,
+            "personId": "https://exa.ai/library/person/bswkyr23nb5"
+          }
+        ]
+      },
+      "grounding": [
+        {
+          "field": "structured.verified[0]",
+          "citations": [
+            {
+              "url": "https://www.linkedin.com/in/tylerjohn",
+              "title": "Tyler John - CRO @ ActivelyAI | Transforming GTM with AI - LinkedIn"
+            },
+            {
+              "url": "https://www.businesswire.com/news/home/20260428810008/en/Actively-Raises-%2445M-Series-B-to-Scale-Intelligence-Led-Revenue-Platform",
+              "title": "Actively Raises $45M Series B to Scale Intelligence-Led Revenue Platform"
+            }
+          ],
+          "confidence": "medium"
+        },
+        {
+          "field": "structured.verified[1]",
+          "citations": [
+            {
+              "url": "https://codesignal.com/leadership/",
+              "title": "Leadership | CodeSignal"
+            },
+            {
+              "url": "https://www.prnewswire.com/news-releases/codesignal-closes-25m-series-b-to-make-hiring-less-biased-and-help-the-world-go-beyond-resumes-301188511.html",
+              "title": "CodeSignal Closes $25M Series B to Make Hiring Less Biased and Help the World Go Beyond Resumes"
+            }
+          ],
+          "confidence": "medium"
+        },
+        {
+          "field": "structured.verified[2]",
+          "citations": [
+            {
+              "url": "https://www.endorlabs.com/learn/why-we-raised-a-93m-series-b-in-this-market",
+              "title": "Why We Raised A 93m Series B In This Market | Application… | Blog | Endor Labs"
+            },
+            {
+              "url": "https://www.endorlabs.com/about?c5d32f43_page=3",
+              "title": "About Endor Labs | Application Security Company"
+            },
+            {
+              "url": "https://www.linkedin.com/posts/zack-sikora_this-week-has-been-nothing-short-of-exhilarating-activity-7433182865863004160-PDDf",
+              "title": "I'm thrilled to announce that I've joined Endor Labs as their new ..."
+            }
+          ],
+          "confidence": "medium"
+        },
+        {
+          "field": "structured.verified[3]",
+          "citations": [
+            {
+              "url": "https://linkedin.com/in/kendrasearle",
+              "title": "Kendra Searle"
+            },
+            {
+              "url": "https://mindbento.com/eqt-ventures/paid-raises-21m-seed-round-to-build-the-business-engine-for-the-agent-ec",
+              "title": "Paid Raises $21M Seed Round to Build the Business Engine for the Agent Economy — EQT Ventures | MindBento"
+            }
+          ],
+          "confidence": "medium"
+        },
+        {
+          "field": "structured.verified[4]",
+          "citations": [
+            {
+              "url": "https://www.laurel.ai/resources-post/why-i-joined-laurel-scaling-an-industry-leader-to-new-heights",
+              "title": "Why I Joined Laurel: Scaling a Global AI Timekeeping Leader"
+            },
+            {
+              "url": "https://www.laurel.ai/resources-post/laurel-adds-world-class-talent-from-airbnb-templafy-and-deepstructure-io-to-accelerate-global-expansion",
+              "title": "Laurel Adds World-Class Leadership in Product, Sales, and AI to ..."
+            }
+          ],
+          "confidence": "medium"
+        }
+      ]
+    },
+    "usage": {
+      "agentComputeUnits": 2.164,
+      "searches": 4,
+      "emails": 0,
+      "phoneNumbers": 0
+    },
+    "costDollars": {
+      "total": 0.2344,
+      "agentCompute": 0.2164,
+      "search": 0.018,
+      "emails": 0,
+      "phoneNumbers": 0
+    }
+  }
+}

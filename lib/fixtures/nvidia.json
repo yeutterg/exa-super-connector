@@ -1,0 +1,529 @@
+{
+  "query": "Nvidia: Jensen Huang's direct reports",
+  "durationMs": 1009,
+  "response": {
+    "requestId": "443360b5ef2e4380122d2372e6b95e37",
+    "resolvedSearchType": "",
+    "results": [
+      {
+        "id": "https://exa.ai/library/person/35xzwlm6jq8",
+        "title": "Jensen Huang",
+        "url": "https://linkedin.com/in/jenhsunhuang",
+        "publishedDate": "2026-06-13T13:21:42.000Z",
+        "highlights": [
+          "Founder and CEO, NVIDIA\n...\n### Founder and CEO - [NVIDIA](https://www.linkedin.com/company/nvidia) (Current)\n...\nJan 1993 - Present (33 years and 5 months)\n...\nDepartment: General Management • Level: Founder\n...\nNvidia (NVDA) is a Computer Hardware Manufacturing company. We create the world’s fastest supercomputer and largest gaming platform. Nvidia employs 34,965 people (+15.8% YoY, +6527 people) and has an annual revenue of $215.9B, founded in 1993. Headquartered in Santa Clara, California, United States, operates in 97 countries (including India, Israel, China, Taiwan, and Germany). Has a $155.4B market cap. IPO 1999."
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQEM7Pb1ndhi0Q/profile-displayphoto-scale_200_200/B56ZsU9UHlI8Ac-/0/1765583176636?e=2147483647&v=beta&t=4etQizyszYe03PWnPrppLnZZY0gjR2xd1TnlimQpLxE",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/35xzwlm6jq8",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Jensen Huang",
+              "firstName": "Jensen",
+              "lastName": "Huang",
+              "location": "Los Altos, California, United States",
+              "workHistory": [
+                {
+                  "title": "Founder and CEO",
+                  "location": null,
+                  "dates": {
+                    "from": "1993-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "MSEE",
+                  "dates": {
+                    "from": "1990",
+                    "to": "1992"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/12jzvmdv31x",
+                    "name": "Stanford University"
+                  }
+                },
+                {
+                  "degree": "BSEE",
+                  "dates": {
+                    "from": "1980",
+                    "to": "1984"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/2qnrsgrfjpg",
+                    "name": "Oregon State University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/f6nvzg3nz01",
+        "title": "Jonah Alben",
+        "url": "https://linkedin.com/in/jonah-alben-90060",
+        "publishedDate": "2026-06-04T16:56:23.000Z",
+        "author": "Exa",
+        "highlights": [
+          "# Jonah Alben\n\nSVP, GPU Engineering at NVIDIA\n\nSan Jose, California, United States (US)\n\n500 connections • 1,921 followers\n\n## About\n\nTotal Experience: 31 years\n\n## Experience\n\n### SVP, GPU Engineering at NVIDIA (Current)\n\nOct 1997 - Present (28 years and 8 months)\n\n### ASIC Design Engineer at NVIDIA\n\nJan 1997 - Present (29 years and 5 months)\n\nDepartment: Engineering and Technical • Level: Specialist\n\n### ASIC Engineer at Silicon Graphics\n\nJun 1995 - Oct 1997 (2 years and 4 months)\n\nDepartment: Engineering and Technical • Level: Specialist\n\n### Vice President of GPU Engineering at NVIDIA\n\n## Education\n\n### B.S. at Stanford University\n\n### M.S. at Stanford University"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/f6nvzg3nz01",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Jonah Alben",
+              "firstName": "Jonah",
+              "lastName": "Alben",
+              "location": "San Jose, California, United States",
+              "workHistory": [
+                {
+                  "title": "SVP, GPU Engineering",
+                  "location": null,
+                  "dates": {
+                    "from": "1997-10-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "ASIC Design Engineer",
+                  "location": null,
+                  "dates": {
+                    "from": "1997-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "Vice President of GPU Engineering",
+                  "location": null,
+                  "dates": {
+                    "from": "1997-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "ASIC Engineer",
+                  "location": null,
+                  "dates": {
+                    "from": "1995-06-01",
+                    "to": "1997-10-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Silicon Graphics"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "B.S.",
+                  "dates": null,
+                  "institution": {
+                    "id": null,
+                    "name": "Stanford University"
+                  }
+                },
+                {
+                  "degree": "M.S.",
+                  "dates": null,
+                  "institution": {
+                    "id": null,
+                    "name": "Stanford University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/64jn3bpjss4",
+        "title": "Nefi Alarcon",
+        "url": "https://linkedin.com/in/nefialarcon",
+        "publishedDate": "2026-05-05T09:22:59.000Z",
+        "highlights": [
+          "Executive Communications at NVIDIA\n...\nSenior Manager, Executive Communications at [NVIDIA](https://www.linkedin.com/company/nvidia)\n...\n### Senior Manager, Executive Communications at [NVIDIA](https://www.linkedin.com/company/nvidia) (Current)\n...\nFeb 2022 - Present (4 years and 3 months)\n...\nExecutive communications for CEO and company leadership team\n...\nDepartment: General Management • Level: Senior"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/64jn3bpjss4",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Nefi Alarcon",
+              "firstName": "Nefi",
+              "lastName": "Alarcon",
+              "location": "United States",
+              "workHistory": [
+                {
+                  "title": "Internal And Executive Communications, Pixel",
+                  "location": "Mountain View, California, United States",
+                  "dates": {
+                    "from": "2021-02-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k7t465sztky",
+                    "name": "Google"
+                  }
+                },
+                {
+                  "title": "Senior Manager, Executive Communications",
+                  "location": null,
+                  "dates": {
+                    "from": "2022-02-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "Communications Manager",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2018-03-01",
+                    "to": "2021-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "Media Relations Manager (Policy Communications)",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2017-01-01",
+                    "to": "2018-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/019p0x9hrks",
+                    "name": "Mozilla"
+                  }
+                },
+                {
+                  "title": "Producer (FNS With Chris Wallace)",
+                  "location": "Washington D.C. Metro Area",
+                  "dates": {
+                    "from": "2015-07-01",
+                    "to": "2017-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/1yy2xvqf6v5",
+                    "name": "Fox Entertainment"
+                  }
+                },
+                {
+                  "title": "Producer",
+                  "location": "Washington D.C. Metro Area",
+                  "dates": {
+                    "from": "2010-04-01",
+                    "to": "2015-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/52vy09lhl72",
+                    "name": "CNN"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor of Arts (B.A.), Journalism",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/t5y71f2sm7y",
+                    "name": "The George Washington University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/wvftz6xjmyr",
+        "title": "rashu haque",
+        "url": "https://linkedin.com/in/rashu-haque-413785252",
+        "publishedDate": "2026-06-07T06:23:38.000Z",
+        "author": "Exa",
+        "highlights": [
+          "Vice President of Robotics and Edge AI at NVIDIA\n...\n### [NVIDIA\n...\n#### Vice President of Robotics and Edge AI\n...\n18 - Jan\n...\n21 (3 years)\n...\nHe is in charge of the R&amp;D and commercial development of NVIDIA's robotics platform and edge AI solutions, focusing on the system architecture, AI model deployment optimization, and ecosystem construction of the Jetson platform. He leads multiple multinational teams to build end-to-end AI capabilities for autonomous driving, industrial robots, and intelligent edge devices, and promotes the Jetson ecosystem to become an industry standard. He leads strategic cooperation with many of the world's top manufacturing companies and AI startups to accelerate the implementation of AI computing in practical application scenarios. Show less\n...\nDepartment: Engineering and Technical • Level: President/Vice President\n...\nhigh-performance\n...\ncooperation models, he successfully\n...\nTegra platform\n...\nTegra SoC"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/wvftz6xjmyr",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "rashu haque",
+              "firstName": "rashu",
+              "lastName": "haque",
+              "location": "United States",
+              "workHistory": [
+                {
+                  "title": "Vice President of Robotics and Edge AI",
+                  "location": null,
+                  "dates": {
+                    "from": "2018-01-01",
+                    "to": "2021-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "Vice President of Business Development, Tegra",
+                  "location": null,
+                  "dates": {
+                    "from": "2015-01-01",
+                    "to": "2018-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "General Manager, OMAP Google HUB",
+                  "location": null,
+                  "dates": {
+                    "from": "2010-01-01",
+                    "to": "2015-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "Digital Imaging Business Development Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2005-01-01",
+                    "to": "2010-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "System Architect",
+                  "location": null,
+                  "dates": {
+                    "from": "2003-01-01",
+                    "to": "2005-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "M.S, Computer Engineering",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/8hk5jznpz00",
+                    "name": "The University of Texas at Austin"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/xs6d275csl5",
+        "title": "Deepu Talla",
+        "url": "https://linkedin.com/in/deepu-talla-b1631bb",
+        "publishedDate": "2026-06-13T14:59:24.000Z",
+        "highlights": [
+          "VP and GM - Robotics & Edge AI, NVIDIA\n...\nVice President and General Manager - Embedded & Edge Computing at [NVIDIA](https://www.linkedin.com/company/nvidia)\n...\nI have been doing my life's best work to date at NVIDIA since 2013 in areas of AI, high performance edge computing, and graphics. Been incredibly fortunate to be a member of NVIDIA executive staff (report to Jensen Huang, NVIDIA Founder & CEO). Easiest way to learn more about what we are doing is to join NVIDIA - we are always looking for exceptional talent.\n...\n#### Vice President and General Manager - Embedded & Edge Computing (Current)\n...\nApr 2013 - Present (13 years and 2 months) in San Francisco Bay Area\n...\nNvidia Jetson (AI @ Edge) platform. https://developer.nvidia.com/embedded-computing Nvidia Metropolis IOT platform from edge to cloud. https://www.nvidia.com/en-us/autonomous-machines/intelligent-video-analytics-platform/ Led the design-in of Tegra into Nintendo Switch game console. https://blogs.nvidia.com/blog/2016/10/20/nintendo-switch/ Led the Tegra mobile business from 2013-2015, pivoted the business to mobile gaming and AI edge computing. Tegra revenue grew > 10x ($1B+) from 2013. Show less\n...\nDepartment: General Management • Level: President/Vice President"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQFFzAByn9Ksqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722563791412?e=2147483647&v=beta&t=J0nyexr8dZoq4rUV4hYxN1AhK0wS-OyhF0cXD9AyWXA",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/xs6d275csl5",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Deepu Talla",
+              "firstName": "Deepu",
+              "lastName": "Talla",
+              "location": "Santa Clara, California, United States",
+              "workHistory": [
+                {
+                  "title": "Vice President and General Manager - Embedded & Edge Computing",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-04-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "Vice President - Tegra Business Development",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-02-01",
+                    "to": "2013-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k21t0xmvy7z",
+                    "name": "NVIDIA"
+                  }
+                },
+                {
+                  "title": "General Manager - OMAP Google HUB",
+                  "location": "Santa Clara, CA",
+                  "dates": {
+                    "from": "2012-01-01",
+                    "to": "2013-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "General Manager - OMAP Mobile computing business unit",
+                  "location": null,
+                  "dates": {
+                    "from": "2010-11-01",
+                    "to": "2012-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "Head of Business development, OMAP smartphones",
+                  "location": null,
+                  "dates": {
+                    "from": "2008-12-01",
+                    "to": "2010-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "Product Line manager, Video conferencing & phone BU",
+                  "location": null,
+                  "dates": {
+                    "from": "2008-03-01",
+                    "to": "2008-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "Business development manager, Digital Imaging",
+                  "location": null,
+                  "dates": {
+                    "from": "2007-02-01",
+                    "to": "2008-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                },
+                {
+                  "title": "System Architect",
+                  "location": null,
+                  "dates": {
+                    "from": "2001-09-01",
+                    "to": "2007-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/7p8nbcph724",
+                    "name": "Texas Instruments"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Ph.D., Computer Engineering",
+                  "dates": {
+                    "from": "1998",
+                    "to": "2001"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/8hk5jznpz00",
+                    "name": "The University of Texas at Austin"
+                  }
+                },
+                {
+                  "degree": "MS, Electrical Engineering",
+                  "dates": {
+                    "from": "1996",
+                    "to": "1998"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/25620txgx9f",
+                    "name": "Villanova University"
+                  }
+                },
+                {
+                  "degree": "BE, Electronics and Communication Engineering",
+                  "dates": {
+                    "from": "1992",
+                    "to": "1996"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/gb9nqnw20r6",
+                    "name": "Andhra University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "searchTime": 960.7,
+    "costDollars": {
+      "total": 0.007,
+      "search": {
+        "neural": 0.007
+      }
+    }
+  }
+}

@@ -1,0 +1,3178 @@
+{
+  "query": "Revenue or sales leaders at companies that raised a Series B in the last 6 months and are rapidly scaling their go-to-market team",
+  "rewritten": "companies that raised a Series B in the last 6 months, rapidly scaling their go-to-market team, return the revenue or sales leader at each company",
+  "rewriteRequest": {
+    "model": "gpt-5-nano",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You rewrite search queries for an agentic deep-research engine. Rewrite the user's query as a precise, comma-separated list of explicit constraints, ending with what to return. Keep EVERY constraint from the original — do not add or drop criteria. Example: \"Sales leaders at Series B SaaS companies hiring their first RevOps role\" → \"SaaS companies, raised a Series B, currently hiring their first Revenue Operations role, return the sales or revenue leader at each company\". Reply with ONLY the rewritten query — no quotes, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Revenue or sales leaders at companies that raised a Series B in the last 6 months and are rapidly scaling their go-to-market team"
+      }
+    ]
+  },
+  "deep": {
+    "request": {
+      "query": "companies that raised a Series B in the last 6 months, rapidly scaling their go-to-market team, return the revenue or sales leader at each company",
+      "type": "deep",
+      "numResults": 5,
+      "contents": {
+        "highlights": {
+          "query": "current role and responsibilities"
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "findings": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "required": [
+                "entity",
+                "evidence"
+              ],
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "description": "company or organization name this finding is about"
+                },
+                "evidence": {
+                  "type": "string",
+                  "description": "citation URL backing this finding"
+                },
+                "note": {
+                  "type": "string",
+                  "description": "one line on why this satisfies the query"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "response": {
+      "requestId": "cc5acbf81cde3a52c75c162f6d57656d",
+      "resolvedSearchType": "",
+      "results": [
+        {
+          "id": "https://www.globenewswire.com/news-release/2026/06/23/3315763/0/en/Attention-Raises-30M-Series-B-to-Build-the-AI-System-That-Runs-Revenue-Teams-Not-Just-Records-Them.html",
+          "title": "Attention Raises $30M Series B to Build the AI System That",
+          "url": "https://www.globenewswire.com/news-release/2026/06/23/3315763/0/en/Attention-Raises-30M-Series-B-to-Build-the-AI-System-That-Runs-Revenue-Teams-Not-Just-Records-Them.html",
+          "publishedDate": "2026-06-23T05:00:00.000Z",
+          "author": "Attention",
+          "highlights": [
+            "Attention, the AI platform for revenue teams, today announced a $30 million Series B led by RTP Global, with participation from returning investors Aglaé Ventures, Eniac, and Alven, new investor Linea Ventures, and a group of angel investors drawn from Attention's own customer base. The company will use the funding to expand its agentic offering and move further upmarket into enterprise revenue organizations.\n...\nMost AI tools for sales watch the call and write up what happened. Attention takes the action - it drafts and sends the follow-up, updates the CRM, and runs the next play - and because it takes the action, it can tie the outcome back to its own work. That closed loop is the thing observation-only tools can't do: if software only records and summarizes, it can never prove what it changed. Attention is built the other way around.\n...\nThe approach shows up in usage. Attention is now running more than 20 million agent actions per month for customers since launching the capability, and annual recurring revenue is up 4x year over year. As the platform has moved upmarket, average contract value has grown 10x over two years. The company now serves more than 500 customers, including Abridge, Scale, Lovable, Preply, and BambooHR.\n...\n\"Attention serves as a fundamental operating layer across our go-to-market. It's one of those win-win-win solutions — a win for the rep, a win for the company, and a win for managers. The ability to customize prompts and workflows has been a game changer for our forecasting accuracy and pipeline hygiene.\" — Jeremy von Halle, VP of Revenue Operations, Abridge.\"The simplest way I describe Attention is that we automate smarter work for sales teams over time. Most software in this space watches the call and writes up what happened. We take the next best action, and because we take it, we can see what actually worked and didn’t, and get smarter every time we do.\" — Anis Bennaceur, co-founder and CEO, Attention.\n...\nThe funding goes toward Attention's next step: an autonomous action engine that surfaces each rep's highest-impact next moves, ranked by likely revenue, and executes the ones they approve, then learns from the outcome of every action it takes.\n...\nAttention is the AI platform for revenue teams. Its agents act inside the revenue workflow, drafting and sending follow-ups, updating the system of record, and running the next play, so teams can see, and prove, the outcomes the software drives. Founded in 2021 and headquartered in New York, Attention serves more than 500 customers, including Abridge, Scale, Lovable, Preply, Engine, and BambooHR. Users can learn more at attention.com."
+          ],
+          "image": "https://ml.globenewswire.com/Resource/Download/41fd17e3-a4a1-4b16-be0f-d1f128394593",
+          "favicon": "https://www.globenewswire.com/Content/logo/favicon.ico"
+        },
+        {
+          "id": "https://www.morningstar.com/news/pr-newswire/20260624sf91004/attention-raises-30m-series-b-to-build-the-ai-system-that-runs-revenue-teams-not-just-records-them",
+          "title": "Attention Raises $30M Series B to Build the AI System That Runs Revenue Teams — Not Just Records Them | Morningstar",
+          "url": "https://www.morningstar.com/news/pr-newswire/20260624sf91004/attention-raises-30m-series-b-to-build-the-ai-system-that-runs-revenue-teams-not-just-records-them",
+          "publishedDate": "2026-06-24T13:55:00.000Z",
+          "highlights": [
+            "NEW YORK, June 24, 2026 /PRNewswire/ -- Attention, the AI platform for revenue teams, announced a $30 million Series B led by RTP Global, with participation from returning investors Aglaé Ventures, https://edge.prnewswire.com/c/link/?t=0&l=en&o=4718475-1&h=2832009371&u=https%3A%2F%2Fwww.eniac.vc%2Fwritings%2Fwhy-we-invested-in-attention&a=%C2%A0 Eniac, and https://edge.prnewswire.com/c/link/?t=0&l=en&o=4718475-1&h=739818064&u=https%3A%2F%2Falven.co%2F&a=%C2%A0 Alven, new investor https://edge.prnewswire.com/c/link/?t=0&l=en&o=4718475-1&h=1991147302&u=https%3A%2F%2Flineavc.com%2F&a=%C2%A0 Linea, and a group of angel investors drawn from Attention's own customer base. The company will use the funding to expand its agentic offering and move further upmarket into enterprise revenue organizations.\n...\nMost AI tools for sales watch the call and write up what happened. Attention takes the action. It drafts and sends the follow-up, updates the CRM, and runs the next play. Because it takes the action, it can tie the outcome back to its own work. That closed loop is the thing observation-only tools can't do: if software only records and summarizes, it can never prove what it changed.\n...\nAttention is now running more than 20 million agent actions per month for customers since launching the capability, and annual recurring revenue is up 4x year over year. As the platform has moved upmarket, ACV has grown 10x over two years. The company now serves more than 500 customers, including Abridge, Scale, Lovable, Preply, and BambooHR.\n...\n\"The simplest way I describe Attention is that we automate smarter work for sales teams over time. Most software in this space watches the call and writes up what happened. We take the next best action, and because we take it, we can\n...\ndidn't, and get smarter\n...\nwe do.\" —\n...\n, co-founder and CEO, Attention\n...\nThe funding goes toward Attention's next step: an autonomous action engine that surfaces each rep's highest-impact next moves, ranked by likely revenue, and executes the ones they approve, then learns from the outcome of every action it takes.\n...\nAttention is the AI platform for revenue teams. Its agents act inside the revenue workflow, drafting and sending follow-ups, updating the system of record, and running the next play, so teams can see and prove outcomes. Founded in 2021 and headquartered in New York, Attention serves more than 500 customers, including Abridge, Scale, Lovable, Preply, Engine, and BambooHR. Learn more at attention.com."
+          ],
+          "image": "https://images.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blta7dd42ebdd7b93b8/61899b34a3c7df383578294c/morningstar-og.png",
+          "favicon": "https://www.morningstar.com/favicon.ico"
+        },
+        {
+          "id": "https://siliconangle.com/2026/07/01/aligned-bags-60m-funding-build-ai-native-sales-execution-layer-enterprise-deals/",
+          "title": "Aligned bags $60M in funding to build the AI-native sales execution layer for enterprise deals - SiliconANGLE",
+          "url": "https://siliconangle.com/2026/07/01/aligned-bags-60m-funding-build-ai-native-sales-execution-layer-enterprise-deals/",
+          "publishedDate": "2026-07-01T11:00:58.000Z",
+          "author": "Mike Wheatley",
+          "highlights": [
+            "Team Aligned Inc., a startup that uses artificial intelligence to streamline deal execution for corporate buyers and sellers, said today it has clinched $60 million in a new round of funding.\n...\nAligned is the developer of an AI-native collaborative dealmaking platform that aims to help overcome the chaotic nature of business-to-business sales execution. Though enterprises spend millions of dollars on expensive customer relationship management and revenue intelligence platforms, these tools do not solve the problem of how messy business deals are closed.\n...\nenterprise deals.\n...\nAligned aims to solve these problems and streamline enterprise dealmaking with a new layer in the technology stack that it calls the “system of action.” Rather than communication taking place in fragmented channels, it provides a unified AI Deal Workspace that sellers can share with prospective buyers following an initial meeting. The AI Deal Workspace is a kind of digital canvas, where buyers and AI agents can collaborate in real time, ensuring that all of the proposals, business use cases and feedback remains centralized.\n...\nCo-founder and Chief Executive Gal Aga told SiliconANGLE that existing sales platforms such as Salesforce only do part of the job, recording and analyzing deals, but fail to help buyers decide and sales representatives to execute. “We built the opposite – a single workspace that enables the buyer and equips sales reps with the tools to make buying easy,” he explained.\n...\nA key element of the AI Deal Workspace is the AI Deal Brain, which is a proprietary engine that ingests deal context from CRMs, emails and calls. According to Aga, it enables the Workspace to capture 95% of the buyer’s journey activity, so that autonomous agents can get to work with full context around the deal. Aligned’s prebuilt agents include a Seller Agent that proactively surfaces risks and drafts timely followups, and a Buyer Agent that provides stakeholders with instant answers to their questions to prevent deal-making momentum from stalling.\n...\nGoing forward, Aga said the company has three major priorities that will be pursued following today’s funding round. Its first goal is to transition into a “fully agentic deal-execution layer” where autonomous seller and buyer agents can handle the bulk of deal progression. Second, it’s planning an upmarket expansion that will see it deepen its integrations with leading sales platforms and beef up its compliance certifications so regulated enterprises can standardize on its deal-making platform. Finally, Aligned intends to scale up its go-to-market teams, hiring more marketers, salespeople and customer success staff, to fuel its bold expansion plans."
+          ],
+          "image": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/06/Screenshot-from-2026-06-29-08-09-31.png",
+          "favicon": "https://d15shllkswkct0.cloudfront.net/wp-content/themes/siliconangle/img/favicon-SA.png"
+        },
+        {
+          "id": "https://pulse2.com/aligned-raises-60-million-to-advance-ai-deal-workspace-platform/amp/",
+          "title": "Aligned Raises $60 Million To Advance AI Deal Workspace Platform",
+          "url": "https://pulse2.com/aligned-raises-60-million-to-advance-ai-deal-workspace-platform/amp/",
+          "publishedDate": "2026-07-01T14:23:45.000Z",
+          "highlights": [
+            "Aligned announced it has raised $60 million in Series B financing, bringing its total funding to $73.8 million. Aligned is the AI Deal Workspace where sellers, buyers, and AI agents run deals together.\n...\nAligned said the new capital will accelerate its mission to improve deal execution in B2B sales. The company’s platform is used by 70,000 sellers and 1 million buyers to run deals every month.\n...\nAligned pioneered the Digital Sales Room category in 2021. And the company said it has evolved the category into what it calls the AI Deal Workspace by adding agentic AI and real-time collaboration between sellers, buyers, and AI agents.\n...\nWith Aligned, after a first meeting, a sales representative can share a single link with a buyer without requiring a login. The buyer, the buying group, and the seller can then work together in one workspace where content, context, comments, and next steps are managed instead of being scattered across email threads, links, and attachments.\n...\nBecause buyers and sellers work inside\n...\nigned, the platform can capture deal activity between meetings, including stakeholder engagement,\n...\nsaid this gives its\n...\nmore context than tools that only\n...\nCRM entries or meeting recordings.\n...\nThe company is now expanding from buyer-seller workflow software into a fully agentic deal-execution layer. Its Seller Agent is designed to surface risks, draft follow-ups, and keep deals moving between meetings. Its Buyer Agent is designed to give stakeholders instant answers inside the workspace and reduce buyer-side friction.\n...\nAligned plans to use the $60 million to support three strategic priorities: advancing agent-native execution, expanding upmarket with deeper compliance certifications and integrations, and scaling its go-to-market teams across marketing, sales, customer success, and revenue operations.\n...\n“I’ve partnered with companies in the GTM technology space for the past 15 years and spent the last three years looking for the company that would own the execution layer of sales, speaking to companies, customers, partners, analysts, and buyers. The research all pointed at one company uniquely positioned to capitalize on this immense opportunity: Aligned. As selling becomes AI-driven, the advantage stops being who watches the deal from the outside and starts being who owns the deal itself, the surface where buyers and sellers transact. That surface generates proprietary data that doesn’t exist anywhere else, and it’s where AI belongs, alongside the people already working there. Whoever owns it owns the next decade of GTM software. That’s a generational, category-defining position, and it’s why we led the largest round this category has seen.”"
+          ],
+          "image": "https://pulse2.com/wp-content/themes/pulse2/images/logo.png",
+          "favicon": "https://pulse2.com/wp-content/themes/pulse2/images/icons/favicon-32x32.png"
+        },
+        {
+          "id": "https://alignedup.com/blog/why-we-raised-60m-to-build-the-system-of-action-for-b2b-sales/",
+          "title": "Why We Raised $60M to Build the System of Action for B2B Sales",
+          "url": "https://alignedup.com/blog/why-we-raised-60m-to-build-the-system-of-action-for-b2b-sales/",
+          "publishedDate": "2026-07-01T05:00:00.000Z",
+          "author": "Gal Aga",
+          "highlights": [
+            "Earlier this year, we closed a $60 million Series B led by PeakSpan Capital, with participation from NFX, Hetz Ventures, and JAL Ventures, bringing our total funding to $73.8 million.​\n...\nBut the number isn’t the story. The story is what we’re building, why it’s taken this long for anyone to build it, and what it means for the way revenue teams will work from here.\n...\nitself (proposals, business cases, stakeholder\n...\n, and follow-ups) lives scattered across in\n...\n, shared drives, and forwarded attachments. Buyer champions struggle to make sense of it all. Stakeholders get overwhelmed and miss critical information. What buyers do between meetings is a big blind spot. The playbook sits outside of this workflow, leaving reps “winging it.” . And\n...\ntool in a $47 billion sales stack was built to fix\n...\nAfter the first meeting, a rep sends one link. No login is required. The buyer, their entire buying group, and the seller all work inside that single shared space. The content, context, comments, and next steps all live in one place.\n...\nBecause both buyers and sellers work inside Aligned, we see what actually moves a deal. We see what the buying group does between meetings, which stakeholders are engaged, where they got stuck, and what they’re worried about. That’s the signal most tools never see.\n...\nWhen you know a stakeholder spent fifteen minutes on your competitive comparison two weeks after the last call, you don’t guess at your next move. Aligned surfaces the risk, shows you what to do about it, and drafts the follow-up. You approve, and it sends.​\n...\nThe $60 million goes toward three things, each moving us closer to the same goal: making Aligned the layer every revenue team runs on.\n...\n- Agent-native deal execution: A Seller Agent that surfaces risks, drafts follow-ups, and keeps deals moving between meetings. A Buyer Agent that gives stakeholders instant answers inside the workspace without waiting for a rep. Underneath both, the AI Deal Brain learns from every deal that runs through Aligned.\n- Upmarket expansion: Deeper compliance certifications, advanced permissions, and integration depth so the largest revenue organizations can run on Aligned.\n- GTM scale: We defined the Digital Sales Room category in 2021 and evolved it into the AI Deal Workspace in 2026. This capital scales the sales, marketing, customer success, and revenue operations teams that will take that position to category ownership.\n...\nWe started Aligned with one conviction: that the deal needed a place to actually run it.\n...\nWe believe this is the biggest new space in B2B sales since Salesforce. And we intend to own it. The future of sales doesn’t just use AI. It runs on Aligned."
+          ],
+          "image": "https://alignedup.com/wp-content/uploads/2026/06/final_series_B_banner-1024x1024.png"
+        }
+      ],
+      "searchTime": 12505.8,
+      "costDollars": {
+        "total": 0.012
+      },
+      "output": {
+        "content": {
+          "findings": [
+            {
+              "entity": "Attention",
+              "evidence": "Attention announced it raised a $30M Series B (June 23, 2026) and said it will use the funding to expand its agentic offering and move further upmarket into enterprise revenue organizations.",
+              "note": "Series B within the last 6 months; articles describe scaling/expanding revenue (GTM) motion but do not explicitly confirm rapid headcount scaling."
+            },
+            {
+              "entity": "Aligned (AI deal workspace for B2B sales)",
+              "evidence": "Aligned’s Series B: PeakSpan Capital led a $60M Series B (July 1, 2026). The company said it intends to scale its go-to-market teams (hiring more marketers, salespeople and customer success staff) following the funding.",
+              "note": "Meets both criteria: Series B in the last 6 months and explicit intent to scale GTM teams; however, the revenue/sales leader name is not stated in the provided sources."
+            },
+            {
+              "entity": "Respond.io",
+              "evidence": "Respond.io raised a $62.5M Series B led by Camber Partners (June 15/16, 2026). The article states the capital will accelerate expansion in North America and Europe and plans include hiring/organic growth/M&A.",
+              "note": "Series B in the last 6 months and hiring/org growth are mentioned, but the provided sources do not identify the revenue or sales leader."
+            },
+            {
+              "entity": "TwelveLabs",
+              "evidence": "TwelveLabs announced it raised $100M in Series B funding (July 1, 2026). The release discusses growth and new offices, but does not connect to rapid GTM team scaling or identify a revenue/sales leader.",
+              "note": "Series B in the last 6 months, but GTM scaling and the sales/revenue leader are not supported by the provided sources."
+            },
+            {
+              "entity": "Patronus AI",
+              "evidence": "Patronus AI raised $50M in Series B led by Greenfield Partners (June 26, 2026). It says revenue grew and that it plans to spend new money on sales (expanding research, pushing harder on sales).",
+              "note": "Series B in the last 6 months with intent to push sales, but the provided sources do not specify the company’s revenue or sales leader."
+            }
+          ]
+        },
+        "grounding": [
+          {
+            "field": "findings[0].entity",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/06/23/3315763/0/en/Attention-Raises-30M-Series-B-to-Build-the-AI-System-That-Runs-Revenue-Teams-Not-Just-Records-Them.html",
+                "title": "Attention Raises $30M Series B to Build the AI System That"
+              },
+              {
+                "url": "https://www.morningstar.com/news/pr-newswire/20260624sf91004/attention-raises-30m-series-b-to-build-the-ai-system-that-runs-revenue-teams-not-just-records-them",
+                "title": "Attention Raises $30M Series B to Build the AI System That Runs Revenue Teams — Not Just Records Them | Morningstar"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[0].evidence",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/06/23/3315763/0/en/Attention-Raises-30M-Series-B-to-Build-the-AI-System-That-Runs-Revenue-Teams-Not-Just-Records-Them.html",
+                "title": "Attention Raises $30M Series B to Build the AI System That"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[0].note",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/06/23/3315763/0/en/Attention-Raises-30M-Series-B-to-Build-the-AI-System-That-Runs-Revenue-Teams-Not-Just-Records-Them.html",
+                "title": "Attention Raises $30M Series B to Build the AI System That"
+              },
+              {
+                "url": "https://www.morningstar.com/news/pr-newswire/20260624sf91004/attention-raises-30m-series-b-to-build-the-ai-system-that-runs-revenue-teams-not-just-records-them",
+                "title": "Attention Raises $30M Series B to Build the AI System That Runs Revenue Teams — Not Just Records Them | Morningstar"
+              }
+            ],
+            "confidence": "medium"
+          },
+          {
+            "field": "findings[1].entity",
+            "citations": [
+              {
+                "url": "https://siliconangle.com/2026/07/01/aligned-bags-60m-funding-build-ai-native-sales-execution-layer-enterprise-deals/",
+                "title": "Aligned bags $60M in funding to build the AI-native sales execution layer for enterprise deals - SiliconANGLE"
+              },
+              {
+                "url": "https://pulse2.com/aligned-raises-60-million-to-advance-ai-deal-workspace-platform/amp/",
+                "title": "Aligned Raises $60 Million To Advance AI Deal Workspace Platform"
+              },
+              {
+                "url": "https://alignedup.com/blog/why-we-raised-60m-to-build-the-system-of-action-for-b2b-sales/",
+                "title": "Why We Raised $60M to Build the System of Action for B2B Sales"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[1].evidence",
+            "citations": [
+              {
+                "url": "https://siliconangle.com/2026/07/01/aligned-bags-60m-funding-build-ai-native-sales-execution-layer-enterprise-deals/",
+                "title": "Aligned bags $60M in funding to build the AI-native sales execution layer for enterprise deals - SiliconANGLE"
+              },
+              {
+                "url": "https://pulse2.com/aligned-raises-60-million-to-advance-ai-deal-workspace-platform/amp/",
+                "title": "Aligned Raises $60 Million To Advance AI Deal Workspace Platform"
+              },
+              {
+                "url": "https://alignedup.com/blog/why-we-raised-60m-to-build-the-system-of-action-for-b2b-sales/",
+                "title": "Why We Raised $60M to Build the System of Action for B2B Sales"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[1].note",
+            "citations": [
+              {
+                "url": "https://siliconangle.com/2026/07/01/aligned-bags-60m-funding-build-ai-native-sales-execution-layer-enterprise-deals/",
+                "title": "Aligned bags $60M in funding to build the AI-native sales execution layer for enterprise deals - SiliconANGLE"
+              },
+              {
+                "url": "https://alignedup.com/blog/why-we-raised-60m-to-build-the-system-of-action-for-b2b-sales/",
+                "title": "Why We Raised $60M to Build the System of Action for B2B Sales"
+              }
+            ],
+            "confidence": "medium"
+          },
+          {
+            "field": "findings[2].entity",
+            "citations": [
+              {
+                "url": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/",
+                "title": "Malaysia's AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions | TechCrunch"
+              },
+              {
+                "url": "https://www.morningstar.com/news/business-wire/20260616926452/respondio-raises-625m-series-b-to-scale-ai-powered-customer-conversations-into-north-america-and-europe",
+                "title": "Respond.io Raises $62.5M Series B to Scale AI-Powered Customer Conversations Into North America and Europe | Morningstar"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[2].evidence",
+            "citations": [
+              {
+                "url": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/",
+                "title": "Malaysia's AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions | TechCrunch"
+              },
+              {
+                "url": "https://www.morningstar.com/news/business-wire/20260616926452/respondio-raises-625m-series-b-to-scale-ai-powered-customer-conversations-into-north-america-and-europe",
+                "title": "Respond.io Raises $62.5M Series B to Scale AI-Powered Customer Conversations Into North America and Europe | Morningstar"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[2].note",
+            "citations": [
+              {
+                "url": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/",
+                "title": "Malaysia's AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions | TechCrunch"
+              },
+              {
+                "url": "https://www.morningstar.com/news/business-wire/20260616926452/respondio-raises-625m-series-b-to-scale-ai-powered-customer-conversations-into-north-america-and-europe",
+                "title": "Respond.io Raises $62.5M Series B to Scale AI-Powered Customer Conversations Into North America and Europe | Morningstar"
+              }
+            ],
+            "confidence": "medium"
+          },
+          {
+            "field": "findings[3].entity",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/TwelveLabs-Raises-100-Million-in-Series-B-Funding-to-Build-Video-Superintelligence.html",
+                "title": "TwelveLabs Raises $100 Million in Series B Funding to Build"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[3].evidence",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/TwelveLabs-Raises-100-Million-in-Series-B-Funding-to-Build-Video-Superintelligence.html",
+                "title": "TwelveLabs Raises $100 Million in Series B Funding to Build"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[3].note",
+            "citations": [
+              {
+                "url": "https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/TwelveLabs-Raises-100-Million-in-Series-B-Funding-to-Build-Video-Superintelligence.html",
+                "title": "TwelveLabs Raises $100 Million in Series B Funding to Build"
+              }
+            ],
+            "confidence": "low"
+          },
+          {
+            "field": "findings[4].entity",
+            "citations": [
+              {
+                "url": "https://thenextweb.com/news/patronus-ai-50m-series-b-agent-simulation",
+                "title": "Patronus AI raises $50M to stress-test AI agents"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[4].evidence",
+            "citations": [
+              {
+                "url": "https://thenextweb.com/news/patronus-ai-50m-series-b-agent-simulation",
+                "title": "Patronus AI raises $50M to stress-test AI agents"
+              }
+            ],
+            "confidence": "high"
+          },
+          {
+            "field": "findings[4].note",
+            "citations": [
+              {
+                "url": "https://thenextweb.com/news/patronus-ai-50m-series-b-agent-simulation",
+                "title": "Patronus AI raises $50M to stress-test AI agents"
+              }
+            ],
+            "confidence": "medium"
+          }
+        ]
+      }
+    },
+    "durationMs": 12555
+  },
+  "joins": [
+    {
+      "company": "Attention",
+      "request": {
+        "query": "Head of Sales, CRO, or most senior revenue leader currently at Attention",
+        "type": "auto",
+        "numResults": 3,
+        "contents": {
+          "highlights": {
+            "query": "current role and responsibilities"
+          }
+        },
+        "category": "people",
+        "systemPrompt": "Prefer official LinkedIn profiles and company websites. Return only individuals currently employed at the target company. Collapse duplicate profiles for the same person."
+      },
+      "response": {
+        "requestId": "188805bc9e0655eda99a865e2476a627",
+        "resolvedSearchType": "",
+        "results": [
+          {
+            "id": "https://exa.ai/library/person/c45hgrpf6sd",
+            "title": "Jacob Fleisher",
+            "url": "https://linkedin.com/in/jacob-fleisher-168a97ba",
+            "publishedDate": "2026-06-10T04:14:19.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Head of Sales at Attention\n...\nHead of Sales at [Attention](https://www.linkedin.com/company/attentiontech)\n...\n### [Attention](https://www.linkedin.com/company/attentiontech)\n...\n#### Head of Sales (Current)\n...\nJun 2024 - Present (2 years) in New York City Metropolitan Area\n...\nDepartment: Real Estate • Level: Owner\n...\n#### Founding Sales Director (Current)\n...\nJun 2023 - Present (1 year and 9 months)\n...\nDepartment: Sales • Level: Director\n...\nAttention is a Software Development company. Attention is an AI company that helps sales teams automate their sales workflows through follow-ups, next steps, CRM filling, coaching scorecards, and more. Attention employs 65 people (+37.9% YoY, +25 people) and has an annual revenue of $2.2M, founded in 2021. Headquartered in New York, New York, United States, operates in 9 countries (including Colombia, France, Portugal, Venezuela, and Australia). Has $17.1M in total funding, with 2 prior funding rounds.\n...\nJacob Fleisher"
+            ],
+            "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/c45hgrpf6sd",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Jacob Fleisher",
+                  "firstName": "Jacob",
+                  "lastName": "Fleisher",
+                  "location": "New York City Metropolitan Area",
+                  "workHistory": [
+                    {
+                      "title": "Head of Sales",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2024-06-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/d6qtx777pyx",
+                        "name": "Attention"
+                      }
+                    },
+                    {
+                      "title": "Founding Sales Director",
+                      "location": null,
+                      "dates": {
+                        "from": "2023-06-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/d6qtx777pyx",
+                        "name": "Attention"
+                      }
+                    },
+                    {
+                      "title": "GTMfund Member Investor",
+                      "location": null,
+                      "dates": {
+                        "from": "2023-10-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/jy893dgxn8q",
+                        "name": "GTMfund"
+                      }
+                    },
+                    {
+                      "title": "Founding Sales Director",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-02-01",
+                        "to": "2023-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/5t72htqwv7q",
+                        "name": "Elementus"
+                      }
+                    },
+                    {
+                      "title": "Account Executive",
+                      "location": "New York, United States",
+                      "dates": {
+                        "from": "2020-07-01",
+                        "to": "2022-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/041pw9ljnz5",
+                        "name": "Dataminr"
+                      }
+                    },
+                    {
+                      "title": "Strategic BDR",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-06-01",
+                        "to": "2020-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/041pw9ljnz5",
+                        "name": "Dataminr"
+                      }
+                    },
+                    {
+                      "title": "Senior SDR",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-01-01",
+                        "to": "2019-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/041pw9ljnz5",
+                        "name": "Dataminr"
+                      }
+                    },
+                    {
+                      "title": "SDR",
+                      "location": null,
+                      "dates": {
+                        "from": "2018-07-01",
+                        "to": "2019-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/041pw9ljnz5",
+                        "name": "Dataminr"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": null,
+                      "dates": {
+                        "from": "2010",
+                        "to": "2014"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/lfdyj41r6y0",
+                        "name": "Lower Merion High School"
+                      }
+                    },
+                    {
+                      "degree": "Finance General",
+                      "dates": {
+                        "from": "2014",
+                        "to": "2018"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/lfdyj41r6y0",
+                        "name": "Elon University"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/hf44cbc8146",
+            "title": "Stewart White",
+            "url": "https://linkedin.com/in/stewartcwhite",
+            "publishedDate": "2026-06-13T12:44:22.000Z",
+            "author": "Exa",
+            "highlights": [
+              "⚡️ VP Growth @ Attention | ex-Ramp\n...\nVP of Growth at [Attention](https://www.linkedin.com/company/attentiontech)\n...\n### VP of Growth at [Attention](https://www.linkedin.com/company/attentiontech) (Current)\n...\nMay 2024 - Present (2 years and 1 month) in New York City Metropolitan Area\n...\nDepartment: General Management • Level: President/Vice President\n...\nAttention is a Software Development company. Attention is an AI company that helps sales teams automate their sales workflows through follow-ups, next steps, CRM filling, coaching scorecards, and more. Attention employs 65 people (+37.9% YoY, +25 people) and has an annual revenue of $2.2M, founded in 2021. Headquartered in New York, New York, United States, operates in 9 countries (including Colombia, France, Portugal, Venezuela, and Australia). Has $17.1M in total funding, with 2 prior funding rounds.\n...\n64 people"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D4E03AQFhfZK2cZAjBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722701463330?e=2147483647&v=beta&t=2JOxyv4o3Yja-qGplEYT4qWEozxUvyU3cJedHimSibk",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/hf44cbc8146",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Stewart White",
+                  "firstName": "Stewart",
+                  "lastName": "White",
+                  "location": "New York, New York, United States",
+                  "workHistory": [
+                    {
+                      "title": "VP of Growth",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2024-05-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/d6qtx777pyx",
+                        "name": "Attention"
+                      }
+                    },
+                    {
+                      "title": "Growth Product",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2022-01-01",
+                        "to": "2024-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qkkjyj7l31j",
+                        "name": "Ramp"
+                      }
+                    },
+                    {
+                      "title": "Business Operations",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2021-08-01",
+                        "to": "2021-12-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Ramp"
+                      }
+                    },
+                    {
+                      "title": "Private Equity Associate",
+                      "location": "Palo Alto, California, United States",
+                      "dates": {
+                        "from": "2020-08-01",
+                        "to": "2021-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/9w4kldcdy0q",
+                        "name": "HGGC"
+                      }
+                    },
+                    {
+                      "title": "Investment Banking Analyst",
+                      "location": "Houston, Texas, United States",
+                      "dates": {
+                        "from": "2018-06-01",
+                        "to": "2020-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/b105gqgww20",
+                        "name": "Evercore"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": null,
+                      "dates": {
+                        "from": "2017",
+                        "to": "2017"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/7clfw7v091m",
+                        "name": "King's College London"
+                      }
+                    },
+                    {
+                      "degree": "Bachelor of Arts, Magna Cum Laude",
+                      "dates": {
+                        "from": "2014",
+                        "to": "2018"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/l86bmmvht43",
+                        "name": "Rice University"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/w0jxlz3fbl9",
+            "title": "Brian Malkerson",
+            "url": "https://linkedin.com/in/bmalkerson",
+            "publishedDate": "2026-05-21T12:14:00.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Chief Revenue Officer (CRO) at Attentive\n...\n### Chief Revenue Officer (CRO) at Attentive (Current)\n...\nMay 2021 - Present (5 years)\n...\nDepartment: Sales • Level: C-Level\n...\nDepartment: Sales • Level: President/Vice President\n...\nExcited to share that I’ve been promoted to Senior Enterprise Customer Success Manager at Attentive 💛 \n\nI am beyond grateful for the past 4.5 years on the Mid-Market team, where I’ve had the chance to work with the most amazing managers, teammates, and clients who shaped my growth. Looking forward to this next chapter, partnering more closely with our Enterprise brands and team!"
+            ],
+            "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/w0jxlz3fbl9",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Brian Malkerson",
+                  "firstName": "Brian",
+                  "lastName": "Malkerson",
+                  "location": "Miami, Florida, United States",
+                  "workHistory": [
+                    {
+                      "title": "Chief Revenue Officer (CRO)",
+                      "location": null,
+                      "dates": {
+                        "from": "2021-05-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Attentive"
+                      }
+                    },
+                    {
+                      "title": "SVP Sales",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-05-01",
+                        "to": "2021-05-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Attentive"
+                      }
+                    },
+                    {
+                      "title": "VP Of Sales",
+                      "location": null,
+                      "dates": {
+                        "from": "2017-01-01",
+                        "to": "2020-05-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Attentive"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "MBA",
+                      "dates": {
+                        "from": "2010",
+                        "to": "2012"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "NYU Stern School of Business"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "searchTime": 8.4,
+        "costDollars": {
+          "total": 0.007,
+          "search": {
+            "neural": 0.007
+          }
+        }
+      },
+      "durationMs": 53
+    },
+    {
+      "company": "Aligned (AI deal workspace for B2B sales)",
+      "request": {
+        "query": "Head of Sales, CRO, or most senior revenue leader currently at Aligned (AI deal workspace for B2B sales)",
+        "type": "auto",
+        "numResults": 3,
+        "contents": {
+          "highlights": {
+            "query": "current role and responsibilities"
+          }
+        },
+        "category": "people",
+        "systemPrompt": "Prefer official LinkedIn profiles and company websites. Return only individuals currently employed at the target company. Collapse duplicate profiles for the same person."
+      },
+      "response": {
+        "requestId": "1355c8bd062d322dae3d0576e406ae98",
+        "resolvedSearchType": "",
+        "results": [
+          {
+            "id": "https://exa.ai/library/person/4lfzmzjyhy3",
+            "title": "Meredith Chandler",
+            "url": "https://linkedin.com/in/meredithchandler",
+            "publishedDate": "2026-06-12T22:28:42.000Z",
+            "author": "Exa",
+            "highlights": [
+              "VP of Sales @ Aligned | 100 Powerful Women in Sales ’24, ’25 | GTM Consultant & Coach\n...\nVice President of Sales at [Aligned](https://www.linkedin.com/company/alignedup)\n...\n### Vice President of Sales at [Aligned](https://www.linkedin.com/company/alignedup) (Current)\n...\nApr 2026 - Present (2 months)\n...\nDesign a buying experience that your customers actually enjoy. -4x growth in Mid-Market ACV YoY\n...\n- Increased SMB ACV by 30% YoY\n- Achieved top SMB close rate (38%)\n- Generated $485K TCV in closed-won revenue in H2 through social selling; sourced company’s largest initial land via daily thought leadership content\n- Led transformation of BDR org from signup-based to outbound, signal-driven motion. Resulted in highest outbound pipeline quarter in company history\n...\nDepartment: Sales\n...\nAligned is a Software Development company. Aligned is a buyer-seller collaboration tool that helps manage deal complexity and standardize playbooks. Aligned employs 43 people (+62.2% YoY, +28 people) and has an annual revenue of $1.0M, founded in 2021. Headquartered in United States, operates in 8 countries (including Israel, Spain, Italy, Netherlands, and Singapore). Has $13.8M in total funding, with 2 prior funding rounds.\n...\n### Sales Coach and Strategist at [Meredith Chandler Consulting](https://www.linkedin.com/company/meredith-chandler-consulting) (Current)\n...\n1. Consulting early-stage founders on GTM strategy, hiring, and B2B sales 2. Coaching reps and leaders 1:1 on selling more and earning more MeredithTheSalesCoach.com\n...\nDepartment: Sales • Level: Specialist\n...\nMeredith Chandler Consulting is a Professional Training and Coaching company. Meredith Chandler is a sales consultant that helps individuals achieve sales success and unlock their next level of success. They offer services for account executives, managers, and companies, helping them grow their skills, team, and commission checks. They also provide strategies to effectively manage up and down for a more rewarding and lucrative career. Meredith Chandler Consulting employs 1 person. Headquartered in San Francisco, California, United States.\n...\n#### Head of Sales & Interim Head of CS\n...\nJan 2026 - Apr 2026 (3 months)\n...\nDepartment: Sales • Level: Head\n...\nDepartment: Sales • Level: Specialist\n...\nduring tenure and helped\n...\n- Introduced\n...\nDepartment: Sales • Level: Specialist\n...\nDepartment: Sales • Level: Specialist\n...\nDepartment: Sales • Level: Specialist\n...\nDepartment: Sales • Level: Specialist"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D5603AQEVALCz040__Q/profile-displayphoto-scale_200_200/B56ZrmfAo6LEAY-/0/1764803480486?e=2147483647&v=beta&t=NDqrrzQZ1C1okCv6nlJUdORX4PHn1UQ0Ypa8DedCfj4",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/4lfzmzjyhy3",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Meredith Chandler",
+                  "firstName": "Meredith",
+                  "lastName": "Chandler",
+                  "location": "United States",
+                  "workHistory": [
+                    {
+                      "title": "Vice President of Sales",
+                      "location": null,
+                      "dates": {
+                        "from": "2026-04-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Head of Sales & Interim Head of CS",
+                      "location": null,
+                      "dates": {
+                        "from": "2026-01-01",
+                        "to": "2026-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Head of Sales",
+                      "location": "Remote",
+                      "dates": {
+                        "from": "2024-12-01",
+                        "to": "2026-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Sales Coach and Strategist",
+                      "location": "Remote",
+                      "dates": {
+                        "from": "2022-02-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/htrfjst5rc8",
+                        "name": "Meredith Chandler Consulting"
+                      }
+                    },
+                    {
+                      "title": "Sales Coach",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-06-01",
+                        "to": "2026-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/wbtt6zn4yk7",
+                        "name": "TA Sales"
+                      }
+                    },
+                    {
+                      "title": "Head of Sales",
+                      "location": "San Francisco, California, United States",
+                      "dates": {
+                        "from": "2023-10-01",
+                        "to": "2024-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/nqw88k8hgmx",
+                        "name": "pclub.io"
+                      }
+                    },
+                    {
+                      "title": "Sales Director",
+                      "location": "San Francisco, California, United States",
+                      "dates": {
+                        "from": "2022-01-01",
+                        "to": "2023-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/0c2kwrfxr11",
+                        "name": "CaptivateIQ"
+                      }
+                    },
+                    {
+                      "title": "Head of Enterprise Sales- East (acquired by SFDC)",
+                      "location": "Hybrid",
+                      "dates": {
+                        "from": "2021-08-01",
+                        "to": "2022-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/kjmhv7ww9qy",
+                        "name": "Spiff Inc"
+                      }
+                    },
+                    {
+                      "title": "Enterprise Account Executive",
+                      "location": "Salt Lake City, Utah, United States",
+                      "dates": {
+                        "from": "2020-02-01",
+                        "to": "2021-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/kjmhv7ww9qy",
+                        "name": "Spiff Inc"
+                      }
+                    },
+                    {
+                      "title": "Inside Sales Manager",
+                      "location": "San Francisco, CA",
+                      "dates": {
+                        "from": "2018-11-01",
+                        "to": "2020-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ty5xhwtms7p",
+                        "name": "Samsara"
+                      }
+                    },
+                    {
+                      "title": "Account Executive Team Lead",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2018-07-01",
+                        "to": "2018-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ty5xhwtms7p",
+                        "name": "Samsara"
+                      }
+                    },
+                    {
+                      "title": "Account Executive",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2017-01-01",
+                        "to": "2018-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ty5xhwtms7p",
+                        "name": "Samsara"
+                      }
+                    },
+                    {
+                      "title": "Senior Account Executive",
+                      "location": "San Mateo, California",
+                      "dates": {
+                        "from": "2015-04-01",
+                        "to": "2017-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/t1plfqt5302",
+                        "name": "Indeed.com"
+                      }
+                    },
+                    {
+                      "title": "Account Executive",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2014-02-01",
+                        "to": "2015-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                        "name": "Yelp"
+                      }
+                    },
+                    {
+                      "title": "English Language Teacher",
+                      "location": "Madrid, Spain",
+                      "dates": {
+                        "from": "2011-09-01",
+                        "to": "2014-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/d9cr6pwsl2g",
+                        "name": "Spanish Ministry of Education, Culture and Sport"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Spanish for International Business, minor in Latin America and Latino Studies",
+                      "dates": {
+                        "from": "2007",
+                        "to": "2011"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/3wkzpplmtn3",
+                        "name": "The Catholic University of America"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/ry739xg0lqy",
+            "title": "Chris Stols",
+            "url": "https://linkedin.com/in/chrisstols",
+            "publishedDate": "2026-06-10T10:42:14.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Companies have relied on me to build, transform, and scale Global Sales, Business Development, and Sales Operations organizations. I’ve led high-performing teams—including SDRs, BDRs, ADRs, and ISRs—who consistently exceed pipeline and revenue targets. My leadership spans from top-of-funnel demand creation through pipeline management and deal progression, with a proven track record of developing BDR functions that deliver qualified pipeline and close revenue. My success stems from combining data-driven outbound segmentation and GTM strategy with process design, analytics, and inbound optimization. I’m passionate about creating functional feedback loops between sales and marketing that improve MQL-to-SQL conversion, accelerate deal velocity, and strengthen forecast accuracy. In addition, I bring deep expertise in GTM operations and sales technology—serving as the primary owner and power user of platforms such as Salesforce, Clari, Outreach, ZoomInfo, Gong, Apollo, and Clay. As an AI Coach and Advocate, I help professionals and organizations safely and effectively integrate AI into their workflows to boost productivity, precision, and competitive advantage. Key Skills: #SalesDevelopment, #Sales\n...\n, #Leadership, #BusinessDevelopment, #SaaSSales, #TechLeadership, #CRMStrategy, #RevOps, #Coaching #ColdCalling #Script #Outbound #Inbound #SDRManager #SDR\n...\n### Director of Business Development at [Aligned](https://www.linkedin.com/company/alignedup) (Current)\n...\nGrowing a best-in-class BDR team and transforming GTM operations into a durable growth machine.\n...\nDepartment: General Management • Level: Director\n...\n### Sales Development Director at [justt\n...\n- Drove the global SDR team to 135% pipeline attainment in H1 2025, delivering 3X YoY pipeline growth.\n- Own and scaled a hybrid SDR/BDR model with BDRs running demos and closing deals, ensuring full-cycle revenue contribution.\n- Responsible for all top of funnel ownership across SDR, BDR and AE.\n- Built and executed outbound segmentation and strategy (80% outbound / 20% inbound), optimizing pipeline management and conversion rates.\n- Managed top-of-funnel budgets (PPC, agencies, events) aligned to qualified pipeline creation and revenue outcomes.\n...\n- Selected and integrated Apollo, Nooks, and more GTM platforms, embedding tools into daily workflows through training and enablement.\n...\n- Partnered with Rev Ops and CTO to deploy GTM AI Agents automating TAM analysis, scoring, prospecting, enrichment, and lead routing.\n...\nIn addition to my primary role as Head of Sales and Business Development, I led our Sales Operations initiatives. GTM technology, AI, Segmentation, Inbound & Outbound strategy, Clari, Outreach, Zoominfo, reporting and forecasting."
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D4E03AQFxKi1s2jdlsw/profile-displayphoto-scale_200_200/B4EZlzWx49GUAY-/0/1758576975943?e=2147483647&v=beta&t=ZLsqx4NKqrGdRTxl1ETwaMhrOyQTO8d48psb8iEAmG0",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/ry739xg0lqy",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Chris Stols",
+                  "firstName": "Chris",
+                  "lastName": "Stols",
+                  "location": "New York City Metropolitan Area",
+                  "workHistory": [
+                    {
+                      "title": "Director of Business Development",
+                      "location": null,
+                      "dates": {
+                        "from": "2025-10-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Founder",
+                      "location": "United States",
+                      "dates": {
+                        "from": "2025-08-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Silvry"
+                      }
+                    },
+                    {
+                      "title": "Sales Development Director",
+                      "location": "United States",
+                      "dates": {
+                        "from": "2024-12-01",
+                        "to": "2025-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j1h1w1pzdfv",
+                        "name": "justt"
+                      }
+                    },
+                    {
+                      "title": "Head of Sales Development",
+                      "location": "United States",
+                      "dates": {
+                        "from": "2022-07-01",
+                        "to": "2024-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j3njd30fcmh",
+                        "name": "Lumar (formerly Deepcrawl)"
+                      }
+                    },
+                    {
+                      "title": "Head of Sales Operations",
+                      "location": "United States",
+                      "dates": {
+                        "from": "2022-07-01",
+                        "to": "2024-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j3njd30fcmh",
+                        "name": "Lumar (formerly Deepcrawl)"
+                      }
+                    },
+                    {
+                      "title": "Director Global Business Development",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-03-01",
+                        "to": "2022-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/mvc54v4c2jd",
+                        "name": "Liferay"
+                      }
+                    },
+                    {
+                      "title": "Director Of Business Development and Marketing Operations",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2020-03-01",
+                        "to": "2020-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/mvc54v4c2jd",
+                        "name": "Liferay"
+                      }
+                    },
+                    {
+                      "title": "Director Sales Development and Sales Operations",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-04-01",
+                        "to": "2020-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/fs8591xvfjv",
+                        "name": "HR Acuity"
+                      }
+                    },
+                    {
+                      "title": "Director, Sales Operations",
+                      "location": "Florham Park, New Jersey",
+                      "dates": {
+                        "from": "2019-04-01",
+                        "to": "2019-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/fs8591xvfjv",
+                        "name": "HR Acuity"
+                      }
+                    },
+                    {
+                      "title": "Sales Development Director",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2018-01-01",
+                        "to": "2019-01-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Vidyo (Aquired by Enghouse)"
+                      }
+                    },
+                    {
+                      "title": "Senior Sales Development Manager",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2017-08-01",
+                        "to": "2018-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/21nk4p0p11k",
+                        "name": "OwnBackup"
+                      }
+                    },
+                    {
+                      "title": "Sales Development Manager",
+                      "location": "Parsippany, New Jersey",
+                      "dates": {
+                        "from": "2015-09-01",
+                        "to": "2017-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/zxchkpt86sd",
+                        "name": "Micro Strategies Inc."
+                      }
+                    },
+                    {
+                      "title": "Inside Sales Manager",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2013-01-01",
+                        "to": "2015-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cf4yyt3w9n6",
+                        "name": "Radware"
+                      }
+                    },
+                    {
+                      "title": "Inside Sales Manager",
+                      "location": "New Jersey",
+                      "dates": {
+                        "from": "2010-07-01",
+                        "to": "2012-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0k2pqgfrjd",
+                        "name": "Panasonic USA"
+                      }
+                    },
+                    {
+                      "title": "Inside Sales Team Lead",
+                      "location": null,
+                      "dates": {
+                        "from": "2010-07-01",
+                        "to": "2010-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0k2pqgfrjd",
+                        "name": "Panasonic USA"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Bachelor of Arts (B.A.) Major: Political Science and Government",
+                      "dates": null,
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/d3gvwxqj6tj",
+                        "name": "William Paterson University of New Jersey"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/srvpgghcwz0",
+            "title": "Gal Deitsch",
+            "url": "https://linkedin.com/in/gal-deitsch",
+            "publishedDate": "2026-05-24T15:09:27.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Founder, CPO @ Aligned\n...\nFounder & CPO at [Aligned](https://www.linkedin.com/company/alignedup)\n...\n### Founder & CPO at [Aligned](https://www.linkedin.com/company/alignedup) (Current)\n...\nJun 2022 - Present (3 years and 10 months)\n...\nDepartment: Product • Level: Founder\n...\nAligned is a Software Development company. Aligned is a buyer-seller collaboration tool that helps manage deal complexity and standardize playbooks. Aligned employs 43 people (+62.2% YoY, +28 people) and has an annual revenue of $1.0M, founded in 2021. Headquartered in United States, operates in 8 countries (including Israel, Spain, Italy, Netherlands, and Singapore). Has $13.8M in total funding, with 2 prior funding rounds.\n...\n### Founder & CEO at [Aligned](https://www.linkedin.com/company/alignedup)\n...\nMay 2021 - Jun 2022 (1 year and 1 month)\n...\nAligned is a customer collaboration platform that helps revenue teams manage deal and post-sales complexity. A Digital Sales Room & Client Room that helps win and onboard clients 45% faster. Instead of juggling email threads, links, attachments & tools, buyers have all decision-supporting materials in a single workspace. Reps better enable champions to sell internally, access 68% more stakeholders, maintain control with Mutual Action Plans, and track \"behind-the-scenes\" buying signals.\n...\nDepartment: General Management • Level: C-Level"
+            ],
+            "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/srvpgghcwz0",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Gal Deitsch",
+                  "firstName": "Gal",
+                  "lastName": "Deitsch",
+                  "location": "Israel",
+                  "workHistory": [
+                    {
+                      "title": "Founder & CPO",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-06-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Founder & CEO",
+                      "location": null,
+                      "dates": {
+                        "from": "2021-05-01",
+                        "to": "2022-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/qzjzwr12cj8",
+                        "name": "Aligned"
+                      }
+                    },
+                    {
+                      "title": "Mentor",
+                      "location": null,
+                      "dates": {
+                        "from": "2026-01-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/x9l1xng6l1f",
+                        "name": "Genesis Accelerator"
+                      }
+                    },
+                    {
+                      "title": "Executive",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-11-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/h0j8swgd4x5",
+                        "name": "Revenue Collective"
+                      }
+                    },
+                    {
+                      "title": "Advisory Board",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-05-01",
+                        "to": "2023-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/p2hthm3tqx7",
+                        "name": "Botika"
+                      }
+                    },
+                    {
+                      "title": "Advisor, Sales Strategy",
+                      "location": null,
+                      "dates": {
+                        "from": "2021-01-01",
+                        "to": "2023-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/vptmkj7jr9q",
+                        "name": "Hexa"
+                      }
+                    },
+                    {
+                      "title": "Director Of Sales",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-09-01",
+                        "to": "2021-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j603drx19tb",
+                        "name": "Syte"
+                      }
+                    },
+                    {
+                      "title": "Senior Enterprise Account Executive",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-05-01",
+                        "to": "2019-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j603drx19tb",
+                        "name": "Syte"
+                      }
+                    },
+                    {
+                      "title": "Enterprise Account Executive",
+                      "location": null,
+                      "dates": {
+                        "from": "2018-06-01",
+                        "to": "2019-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j603drx19tb",
+                        "name": "Syte"
+                      }
+                    },
+                    {
+                      "title": "Partnerships Team Lead - US Channel",
+                      "location": null,
+                      "dates": {
+                        "from": "2016-11-01",
+                        "to": "2018-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/8dvcnv31jwv",
+                        "name": "Yotpo"
+                      }
+                    },
+                    {
+                      "title": "Chief Operating Officer",
+                      "location": "Tel Aviv Area, Israel",
+                      "dates": {
+                        "from": "2015-06-01",
+                        "to": "2016-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sxw0g0j79c1",
+                        "name": "GMS Digital"
+                      }
+                    },
+                    {
+                      "title": "Mobile & Video Sales Manager",
+                      "location": "Israel",
+                      "dates": {
+                        "from": "2014-01-01",
+                        "to": "2015-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ky5g92px8kd",
+                        "name": "Matomy Media Group"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Bachelor of Arts (B.A.) Business Psychology",
+                      "dates": {
+                        "from": "2009",
+                        "to": "2012"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Interdisciplinary Center (IDC) (Cum Laude)"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "searchTime": 1204.9,
+        "costDollars": {
+          "total": 0.007,
+          "search": {
+            "neural": 0.007
+          }
+        }
+      },
+      "durationMs": 1251
+    },
+    {
+      "company": "Respond.io",
+      "request": {
+        "query": "Head of Sales, CRO, or most senior revenue leader currently at Respond.io",
+        "type": "auto",
+        "numResults": 3,
+        "contents": {
+          "highlights": {
+            "query": "current role and responsibilities"
+          }
+        },
+        "category": "people",
+        "systemPrompt": "Prefer official LinkedIn profiles and company websites. Return only individuals currently employed at the target company. Collapse duplicate profiles for the same person."
+      },
+      "response": {
+        "requestId": "0333b2f478382cde7974b2045ca260bb",
+        "resolvedSearchType": "",
+        "results": [
+          {
+            "id": "https://exa.ai/library/person/dxzrrml1dpw",
+            "title": "Rebecca Ooi",
+            "url": "https://linkedin.com/in/rebeccaooi001",
+            "publishedDate": "2026-05-22T11:28:57.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Partnership Team Lead @ Respond.io\n...\nPartnerships Team Lead at [respond.io](https://www.linkedin.com/company/rocketbots)\n...\n### [respond.io](https://www.linkedin.com/company/rocketbots)\n...\n#### Partnerships Team Lead (Current)\n...\nJul 2025 - Present (8 months)\n...\nDepartment: Sales • Level: Head\n...\n#### Partnerships Manager\n...\nNov 2024 - Jun 2025 (7 months)\n...\nDepartment: Sales • Level: Manager\n...\nrespond.io is a IT Services and IT Consulting company. Respond.io is an AI-powered customer conversation management software that captures leads, automates chats, and converses to convert across WhatsApp, email, and social media. Respond.io employs 143 people (+14.7% YoY, +25 people) and has an annual revenue of $27.3M, founded in 2017. Headquartered in Kuala Lumpur, Malaysia, operates in 24 countries (including Egypt, Mexico, Pakistan, United States, and Dominican Republic). Has $8.8M in total funding, with 1 prior funding round.\n...\nDepartment: Sales • Level: Head"
+            ],
+            "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/dxzrrml1dpw",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Rebecca Ooi",
+                  "firstName": "Rebecca",
+                  "lastName": "Ooi",
+                  "location": "Petaling Jaya, Selangor, Malaysia",
+                  "workHistory": [
+                    {
+                      "title": "Partnerships Team Lead",
+                      "location": null,
+                      "dates": {
+                        "from": "2025-07-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Partnerships Manager",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-11-01",
+                        "to": "2025-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Revenue Operations AVP",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-10-01",
+                        "to": "2024-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/g2swsvxfmgt",
+                        "name": "Billplz"
+                      }
+                    },
+                    {
+                      "title": "Head Of Partnerships",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-08-01",
+                        "to": "2022-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/g2swsvxfmgt",
+                        "name": "Billplz"
+                      }
+                    },
+                    {
+                      "title": "Partnerships",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-04-01",
+                        "to": "2020-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/g2swsvxfmgt",
+                        "name": "Billplz Sdn Bhd"
+                      }
+                    },
+                    {
+                      "title": "Sales And Marketing Executive",
+                      "location": "Kuala Lumpur, Malaysia",
+                      "dates": {
+                        "from": "2018-04-01",
+                        "to": "2018-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cb710m00x4j",
+                        "name": "Evyap"
+                      }
+                    },
+                    {
+                      "title": "Sales Marketing Executive",
+                      "location": "Selangor, Malaysia",
+                      "dates": {
+                        "from": "2016-10-01",
+                        "to": "2018-03-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "F3 Capital Sdn Bhd"
+                      }
+                    },
+                    {
+                      "title": "Sales And Accounting Intern",
+                      "location": null,
+                      "dates": {
+                        "from": "2015-01-01",
+                        "to": "2015-03-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Nichiyu Asia (M) Sdn. Bhd."
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Taylor's Business Foundation, Economics",
+                      "dates": {
+                        "from": "2012",
+                        "to": "2013"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Taylor's University"
+                      }
+                    },
+                    {
+                      "degree": "BA (Hons) Economics, Economics",
+                      "dates": {
+                        "from": "2015",
+                        "to": "2016"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "University of the West of England"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/wl5rvkj6xng",
+            "title": "Iaroslav Kudritskiy",
+            "url": "https://linkedin.com/in/iaroslav-kudritskiy-18102724",
+            "publishedDate": "2026-05-22T23:16:02.000Z",
+            "author": "Exa",
+            "highlights": [
+              "COO @ respond.io | Great Responses Fast = Revenue 📈 | I help business grow on WhatsApp\n...\nCOO at [respond.io](https://www.linkedin.com/company/rocketbots)\n...\n### [respond.io](https://www.linkedin.com/company/rocketbots)\n...\n#### COO (Current)\n...\nOct 2017 - Present (8 years and 6 months) in Hong Kong\n...\nDepartment: General Management • Level: C-Level\n...\n#### Head Of Business Development\n...\nJun 2017 - Sep 2017 (3 months) in Hong Kong\n...\nDepartment: Sales • Level: Specialist\n...\nrespond.io is a IT Services and IT Consulting company. Respond.io is an AI-powered customer conversation management software that captures leads, automates chats, and converses to convert across WhatsApp, email, and social media. Respond.io employs 143 people (+14.7% YoY, +25 people) and has an annual revenue of $27.3M, founded in 2017. Headquartered in Kuala Lumpur, Malaysia, operates in 24 countries (including Egypt, Mexico, Pakistan, United States, and Dominican Republic). Has $8.8M in total funding, with 1 prior funding round."
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/C4D03AQFIM1w3RP0ksw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517058625229?e=2147483647&v=beta&t=GtEGCVXzAe5NP-nGC_5RcGN3gxoSIOUa1WUIgw0T8W4",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/wl5rvkj6xng",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Iaroslav Kudritskiy",
+                  "firstName": "Iaroslav",
+                  "lastName": "Kudritskiy",
+                  "location": "WP. Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+                  "workHistory": [
+                    {
+                      "title": "COO",
+                      "location": "Hong Kong",
+                      "dates": {
+                        "from": "2017-10-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Head Of Business Development",
+                      "location": "Hong Kong",
+                      "dates": {
+                        "from": "2017-06-01",
+                        "to": "2017-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Internal Communications",
+                      "location": "Remote",
+                      "dates": {
+                        "from": "2016-07-01",
+                        "to": "2017-04-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Light Reaction"
+                      }
+                    },
+                    {
+                      "title": "Intern - Global Business Operations",
+                      "location": "Düsseldorf Area, Germany",
+                      "dates": {
+                        "from": "2016-01-01",
+                        "to": "2016-07-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Light Reaction"
+                      }
+                    },
+                    {
+                      "title": "Product & Training EMEA Intern",
+                      "location": "Düsseldorf Area, Germany",
+                      "dates": {
+                        "from": "2015-08-01",
+                        "to": "2015-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/kkfw8b1vm8y",
+                        "name": "Xaxis"
+                      }
+                    },
+                    {
+                      "title": "Thought Leadership Marketing Intern",
+                      "location": "Stuttgart, Germany",
+                      "dates": {
+                        "from": "2015-02-01",
+                        "to": "2015-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j290kg9ky8l",
+                        "name": "Kodak Alaris"
+                      }
+                    },
+                    {
+                      "title": "Work Student",
+                      "location": "Remote",
+                      "dates": {
+                        "from": "2014-09-01",
+                        "to": "2015-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j290kg9ky8l",
+                        "name": "Kodak Alaris"
+                      }
+                    },
+                    {
+                      "title": "Global Market Research Intern, Document Imaging",
+                      "location": "Stuttgart ,Germany",
+                      "dates": {
+                        "from": "2014-02-01",
+                        "to": "2014-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/j290kg9ky8l",
+                        "name": "Kodak Alaris"
+                      }
+                    },
+                    {
+                      "title": "Inside Sales",
+                      "location": "Toronto, Canada",
+                      "dates": {
+                        "from": "2011-01-01",
+                        "to": "2012-08-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Toronto Home Movies Ltd"
+                      }
+                    },
+                    {
+                      "title": "Ski Instructor",
+                      "location": "Centennial Ski Center, Toronto, Canada.",
+                      "dates": {
+                        "from": "2008-10-01",
+                        "to": "2011-03-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Centennial Park Ski and Snowboard Centre"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Master of Business Administration - MBA, Entrepreneurship/Entrepreneurial Studies",
+                      "dates": {
+                        "from": "2016",
+                        "to": "2017"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/ds6x7dgt22v",
+                        "name": "The Chinese University of Hong Kong (CUHK) Business School"
+                      }
+                    },
+                    {
+                      "degree": "Bachelor of Applied Science - BASc, International Business",
+                      "dates": {
+                        "from": "2012",
+                        "to": "2016"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/mwm5rz9rssh",
+                        "name": "Hochschule Reutlingen"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/3ltbvf7z0zj",
+            "title": "Alan Tang",
+            "url": "https://linkedin.com/in/akltang",
+            "publishedDate": "2026-05-04T20:56:48.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Chief of Staff, respond.io | Helping businesses grow on messaging\n...\nChief Of Staff\n...\n[respond.io\n...\n### Chief Of Staff at [respond.io](https://www.linkedin.com/company/rocketbots) (Current)\n...\nMar 2024 - Present (2 years and 2 months) in Kuala Lumpur, MY\n...\nOversee Strategy, Finance, and HR to drive alignment, operational excellence, and sustainable growth across the organization.\n...\nDepartment: General Management • Level: Manager\n...\nrespond.io is a IT Services and IT Consulting company. Respond.io is an AI-powered customer conversation management software that captures leads, automates chats, and converses to convert across WhatsApp, email, and social media. Respond.io employs 143 people (+14.7% YoY, +25 people) and has an annual revenue of $27.3M, founded in 2017. Headquartered in Kuala Lumpur, Malaysia, operates in 24 countries (including Egypt, Mexico, Pakistan, United States, and Dominican Republic). Has $8.8M in total funding, with 1 prior funding round.\n...\n### [respond.io](https://www.linkedin.com/company/rocketbots)\n...\n#### Head Of Strategy\n...\nAug 2023 - Feb 2024 (6 months) in Kuala Lumpur, MY\n...\nDepartment: General Management • Level: Head\n...\n#### Head Of Operations\n...\nMay 2023 - Aug 2023 (3 months) in Kuala Lumpur, MY\n...\nDepartment: Operations • Level: Head\n...\n: General Management • Level: Manager"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D5603AQHAQWR3jIXtNQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1672800666401?e=2147483647&v=beta&t=w2_diu8UaSWPYcNFyRsB6BJ9jDIRriAbs9hb_fbBpbs",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/3ltbvf7z0zj",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Alan Tang",
+                  "firstName": "Alan",
+                  "lastName": "Tang",
+                  "location": "Petaling Jaya, Selangor, Malaysia",
+                  "workHistory": [
+                    {
+                      "title": "Chief Of Staff",
+                      "location": "Kuala Lumpur, MY",
+                      "dates": {
+                        "from": "2024-03-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Head Of Strategy",
+                      "location": "Kuala Lumpur, MY",
+                      "dates": {
+                        "from": "2023-08-01",
+                        "to": "2024-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Head Of Operations",
+                      "location": "Kuala Lumpur, MY",
+                      "dates": {
+                        "from": "2023-05-01",
+                        "to": "2023-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sd8k2fdczs4",
+                        "name": "respond.io"
+                      }
+                    },
+                    {
+                      "title": "Fractional Executive & Founder",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-11-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/db60jlv190l",
+                        "name": "Next Counsel Co."
+                      }
+                    },
+                    {
+                      "title": "Advisor To CEO, Fractional COO",
+                      "location": "Petaling Jaya, Selangor, MY",
+                      "dates": {
+                        "from": "2022-11-01",
+                        "to": "2023-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/0mkxm95jqz6",
+                        "name": "AdEasy - Advertise anywhere"
+                      }
+                    },
+                    {
+                      "title": "Head Of Strategy & Operations",
+                      "location": "Singapore, Singapore, SG",
+                      "dates": {
+                        "from": "2020-12-01",
+                        "to": "2022-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/g0r66h1gxlt",
+                        "name": "Homage"
+                      }
+                    },
+                    {
+                      "title": "Head Of Strategic Projects & Growth",
+                      "location": "Singapore, Singapore, SG",
+                      "dates": {
+                        "from": "2019-08-01",
+                        "to": "2020-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/60xmdb6xyl3",
+                        "name": "Grab"
+                      }
+                    },
+                    {
+                      "title": "Head Of Strategy, GrabFood Malaysia",
+                      "location": "Singapore, Singapore, SG",
+                      "dates": {
+                        "from": "2018-09-01",
+                        "to": "2019-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/60xmdb6xyl3",
+                        "name": "Grab"
+                      }
+                    },
+                    {
+                      "title": "Head Of Merchants & Operations, GrabFood Singapore",
+                      "location": "Singapore, Singapore, SG",
+                      "dates": {
+                        "from": "2018-03-01",
+                        "to": "2018-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/60xmdb6xyl3",
+                        "name": "Grab"
+                      }
+                    },
+                    {
+                      "title": "Senior Manager, Regional Business Operations",
+                      "location": "Singapore, Singapore, SG",
+                      "dates": {
+                        "from": "2017-04-01",
+                        "to": "2018-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/60xmdb6xyl3",
+                        "name": "Grab"
+                      }
+                    },
+                    {
+                      "title": "Co-founder Of Twig, An Axiata Digital Venture",
+                      "location": "Kuala Lumpur, Wilayah Persekutuan, MY",
+                      "dates": {
+                        "from": "2015-10-01",
+                        "to": "2017-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ptlk5pdlcxf",
+                        "name": "Axiata Digital"
+                      }
+                    },
+                    {
+                      "title": "Assistant Vice President, Group Marketing",
+                      "location": "KL Sentral, Kuala Lumpur, MY",
+                      "dates": {
+                        "from": "2012-10-01",
+                        "to": "2015-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/p46scp3v2f0",
+                        "name": "Axiata Bhd"
+                      }
+                    },
+                    {
+                      "title": "Assistant Manager, Group Strategy",
+                      "location": "KL Sentral, Kuala Lumpur, MY",
+                      "dates": {
+                        "from": "2012-03-01",
+                        "to": "2012-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/p46scp3v2f0",
+                        "name": "Axiata Bhd"
+                      }
+                    },
+                    {
+                      "title": "Senior Consultant, Consulting Practice",
+                      "location": "Needham, Massachusetts, US",
+                      "dates": {
+                        "from": "2008-11-01",
+                        "to": "2012-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/02pb3c3dsq6",
+                        "name": "IDC"
+                      }
+                    },
+                    {
+                      "title": "Wireless Network Engineer",
+                      "location": "MY",
+                      "dates": {
+                        "from": "2006-11-01",
+                        "to": "2008-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/c5wgvws3lkr",
+                        "name": "Palette Multimedia Bhd"
+                      }
+                    },
+                    {
+                      "title": "Intern",
+                      "location": "Charlotte, North Carolina, US",
+                      "dates": {
+                        "from": "2005-06-01",
+                        "to": "2005-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/5504x349f1z",
+                        "name": "Honeywell Aerospace Services Sdn Bhd"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "B.Eng (HONS) in Electrical and Electronics Engineering Telecommunications and IC Design",
+                      "dates": {
+                        "from": "2003",
+                        "to": "2006"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/55ccp28t3fb",
+                        "name": "Nottingham Trent University"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "searchTime": 1423.8,
+        "costDollars": {
+          "total": 0.007,
+          "search": {
+            "neural": 0.007
+          }
+        }
+      },
+      "durationMs": 1469
+    },
+    {
+      "company": "TwelveLabs",
+      "request": {
+        "query": "Head of Sales, CRO, or most senior revenue leader currently at TwelveLabs",
+        "type": "auto",
+        "numResults": 3,
+        "contents": {
+          "highlights": {
+            "query": "current role and responsibilities"
+          }
+        },
+        "category": "people",
+        "systemPrompt": "Prefer official LinkedIn profiles and company websites. Return only individuals currently employed at the target company. Collapse duplicate profiles for the same person."
+      },
+      "response": {
+        "requestId": "43c41ab3f899b09b607793b63f80e14e",
+        "resolvedSearchType": "",
+        "results": [
+          {
+            "id": "https://exa.ai/library/person/tr997q08nnz",
+            "title": "Bobby Mohr",
+            "url": "https://linkedin.com/in/robertdmohr",
+            "publishedDate": "2026-06-10T04:07:09.000Z",
+            "author": "Exa",
+            "highlights": [
+              "VP, Revenue @ TwelveLabs (We're Hiring!!)\n...\nVice President of Revenue at [TwelveLabs](https://www.linkedin.com/company/twelvelabs)\n...\n### Vice President of Revenue at [TwelveLabs](https://www.linkedin.com/company/twelvelabs) (Current)\n...\nMay 2025 - Present (1 year and 1 month) in New York, New York, United States\n...\nTwelve Labs is a research and product company that builds foundational models for multimodal video understanding. We serve our models to developers and enterprises via APIs. Our models offer state-of-the art semantic video search, video summarization, and video-to-text interactions. We are backed by NEA, Radical Ventures, Nvidia, Intel, Dr. Fei-Fei Li, and other innovative organizations and individuals. Check out our website: https://www.twelvelabs.io/ Try our models on our Playground: https://playground.twelvelabs.io/ Here's a 1-min demo: https://www.youtube.com/watch?v=484hydNEJC0\n...\nDepartment: Sales • Level: President/Vice President\n...\nTwelveLabs is a Software Development company. TwelveLabs is a powerful video intelligence platform that offers deep insights, analyze, remix, and automate workflows with AI. It is recognized by leading researchers as the most efficient AI for video understanding. TwelveLabs employs 149 people (+102.1% YoY, +96 people) and has an annual revenue of $4.5M, founded in 2021. Headquartered in San Francisco, California, United States, operates in 6 countries (including South Korea, Canada, India, United Kingdom, and Philippines). Has $110.1M in total funding, with 8 prior funding rounds.\n...\n• Level: President/Vice President\n...\nDepartment: Sales • Level: President/Vice President\n...\nDepartment: Sales • Level: President/Vice President\n...\n• Level: President/Vice President"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D5603AQGvWEU9ngHexQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694712284389?e=2147483647&v=beta&t=xrWZmQ_NRSZysxP5GEli9H-7QakkSgKy5GsapMmXlPw",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/tr997q08nnz",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Bobby Mohr",
+                  "firstName": "Bobby",
+                  "lastName": "Mohr",
+                  "location": "New York City Metropolitan Area",
+                  "workHistory": [
+                    {
+                      "title": "Vice President of Revenue",
+                      "location": "New York, New York, United States",
+                      "dates": {
+                        "from": "2025-05-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/1cxbw1kg9zt",
+                        "name": "TwelveLabs"
+                      }
+                    },
+                    {
+                      "title": "Vice President of Global Sales",
+                      "location": "New York, New York, United States",
+                      "dates": {
+                        "from": "2024-09-01",
+                        "to": "2025-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/64hnz3g3vgf",
+                        "name": "Pinecone"
+                      }
+                    },
+                    {
+                      "title": "Vice President, Sales - North America",
+                      "location": "Remote",
+                      "dates": {
+                        "from": "2023-05-01",
+                        "to": "2024-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cnrjjyk73q4",
+                        "name": "Twilio"
+                      }
+                    },
+                    {
+                      "title": "Regional Vice President - Communications Platform Sales, Retail & Commerce",
+                      "location": "New York City Metropolitan Area · Remote",
+                      "dates": {
+                        "from": "2023-02-01",
+                        "to": "2023-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cnrjjyk73q4",
+                        "name": "Twilio"
+                      }
+                    },
+                    {
+                      "title": "Senior Director, Messaging Exchange Sales - Global",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2022-01-01",
+                        "to": "2023-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cnrjjyk73q4",
+                        "name": "Twilio"
+                      }
+                    },
+                    {
+                      "title": "Director, Messaging Exchange Sales - North & Latin America",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2021-01-01",
+                        "to": "2022-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cnrjjyk73q4",
+                        "name": "Twilio"
+                      }
+                    },
+                    {
+                      "title": "Vice President, Client Partnerships - Platform",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-04-01",
+                        "to": "2021-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/6ncvwq5h1h7",
+                        "name": "Xandr"
+                      }
+                    },
+                    {
+                      "title": "Senior Director, Global Accounts - AppNexus, A Xandr Company",
+                      "location": null,
+                      "dates": {
+                        "from": "2018-10-01",
+                        "to": "2019-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/6ncvwq5h1h7",
+                        "name": "Xandr"
+                      }
+                    },
+                    {
+                      "title": "Senior Director, Global Accounts",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2017-04-01",
+                        "to": "2018-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Director of Business Development, Advertiser Technology Group - North America",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2016-03-01",
+                        "to": "2017-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Head of Business Development, Agencies & Advertisers EMEA",
+                      "location": "London Area, United Kingdom",
+                      "dates": {
+                        "from": "2015-03-01",
+                        "to": "2016-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Team Lead, Agencies & Advertisers - EMEA",
+                      "location": "London Area, United Kingdom",
+                      "dates": {
+                        "from": "2014-03-01",
+                        "to": "2015-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Global Account Director",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2013-01-01",
+                        "to": "2014-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Account Executive - Demand Sales",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2012-04-01",
+                        "to": "2012-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Account Manager - Demand",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2011-12-01",
+                        "to": "2012-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Contributor",
+                      "location": null,
+                      "dates": {
+                        "from": "2010-07-01",
+                        "to": "2014-03-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "Pants Dance"
+                      }
+                    },
+                    {
+                      "title": "Account Manager - Audience On Demand",
+                      "location": "New York, NY",
+                      "dates": {
+                        "from": "2010-11-01",
+                        "to": "2011-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/xktnhbqdrjf",
+                        "name": "VivaKi Nerve Center"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Middlebury School in China: C.V. Starr Schools Abroad",
+                      "dates": {
+                        "from": "2006",
+                        "to": "2007"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/qr9bd0x43y4",
+                        "name": "Zhejiang University of Technology"
+                      }
+                    },
+                    {
+                      "degree": null,
+                      "dates": {
+                        "from": "1998",
+                        "to": "2004"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Delbarton School"
+                      }
+                    },
+                    {
+                      "degree": "B.A. International Studies",
+                      "dates": {
+                        "from": "2004",
+                        "to": "2008"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/qr9bd0x43y4",
+                        "name": "Middlebury College"
+                      }
+                    },
+                    {
+                      "degree": "Chinese (Level III) Chinese (Mandarin)",
+                      "dates": {
+                        "from": "2006",
+                        "to": "2006"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Middlebury Language Schools"
+                      }
+                    },
+                    {
+                      "degree": "Certificate Alternative Dispute Resolution",
+                      "dates": {
+                        "from": "2009",
+                        "to": null
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Columbia Law School"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/xvhlntwb73q",
+            "title": "Tom Koch",
+            "url": "https://linkedin.com/in/thomas-koch",
+            "publishedDate": "2026-06-13T13:07:18.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Head of Sales - Ads, Marketing & SaaS Ecosystem at [TwelveLabs](https://www.linkedin.com/company/twelvelabs)\n...\nSeasoned enterprise sales, BD, strategy and solutions leader operating at the intersection of AI, Cloud, Media and Advertising, SaaS, and Privacy. Proven track record of delighting many of the world’s most consequential brands. I’m a player/coach energized by learning, teaching, building and scaling with mission-driven organizations and wearing many hats to make greatness happen.\n...\n### Head of Sales - Ads, Marketing & SaaS Ecosystem at [TwelveLabs](https://www.linkedin.com/company/twelvelabs) (Current)\n...\nJul 2025 - Present (11 months) in New York City Metropolitan Area\n...\nNew York City Metropolitan Area\n...\nDepartment: Sales • Level: Head\n...\nTwelveLabs is a Software Development company. TwelveLabs is a powerful video intelligence platform that offers deep insights, analyze, remix, and automate workflows with AI. It is recognized by leading researchers as the most efficient AI for video understanding. TwelveLabs employs 149 people (+102.1% YoY, +96 people) and has an annual revenue of $4.5M, founded in 2021. Headquartered in San Francisco, California, United States, operates in 6 countries (including South Korea, Canada, India, United Kingdom, and Philippines). Has $110.1M in total funding, with 8 prior funding rounds.\n...\n### Director, Enterprise Sales & Partnerships at [Microsoft AI](https://www.linkedin.com/company/industrial-advertising-agency)\n...\nNew York City Metropolitan Area\n...\nDepartment: Sales • Level: Director\n...\nAI is a Software Development company. Microsoft AI is a company that makes responsible AI to empower people's lives. Microsoft AI employs 1,406 people (+781.6% YoY), founded in 2024. Headquartered in Redmond, Washington, United States, operates in 49 countries (including United Kingdom, India, Canada, Switzerland, and Mexico)."
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D4E03AQFdDQysdEofIg/profile-displayphoto-scale_200_200/B4EZobioUTHcAY-/0/1761398654886?e=2147483647&v=beta&t=IBJef247JXjpHuCfEo6l07vB8IddMBgq0tiqvKALc1Y",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/xvhlntwb73q",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Tom Koch",
+                  "firstName": "Tom",
+                  "lastName": "Koch",
+                  "location": "New York City Metropolitan Area",
+                  "workHistory": [
+                    {
+                      "title": "Head of Sales - Ads, Marketing & SaaS Ecosystem",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2025-07-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/1cxbw1kg9zt",
+                        "name": "TwelveLabs"
+                      }
+                    },
+                    {
+                      "title": "Expert Network",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2025-02-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/p1dkc7r480x",
+                        "name": "U of Digital"
+                      }
+                    },
+                    {
+                      "title": "Director, Enterprise Sales & Partnerships",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2023-02-01",
+                        "to": "2025-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/pz16sdq1h36",
+                        "name": "Microsoft AI"
+                      }
+                    },
+                    {
+                      "title": "Associate Director, Enterprise Sales & Partnerships",
+                      "location": "New York City Metropolitan Area",
+                      "dates": {
+                        "from": "2021-02-01",
+                        "to": "2023-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/gxl16rnpqtq",
+                        "name": "Microsoft"
+                      }
+                    },
+                    {
+                      "title": "Account Executive, Client Partnerships - North America",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2019-07-01",
+                        "to": "2021-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/6ncvwq5h1h7",
+                        "name": "Xandr"
+                      }
+                    },
+                    {
+                      "title": "Sales Engineer, Holding Companies & Marketers",
+                      "location": "New York",
+                      "dates": {
+                        "from": "2018-09-01",
+                        "to": "2019-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Sr. Solutions Consultant, Team Lead",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2017-07-01",
+                        "to": "2018-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/88z8hhc4j3t",
+                        "name": "AppNexus"
+                      }
+                    },
+                    {
+                      "title": "Digital Wealth Management, Senior Analyst",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2015-07-01",
+                        "to": "2017-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/dqb37kq4xzl",
+                        "name": "J.P. Morgan"
+                      }
+                    },
+                    {
+                      "title": "Summer Analyst PI Solution Delivery",
+                      "location": "Smithfield, RI",
+                      "dates": {
+                        "from": "2014-04-01",
+                        "to": "2014-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cymw3715lnn",
+                        "name": "Fidelity Investments"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Bachelor’s Degree Marketing Concentrated Studies in Advanced Writing",
+                      "dates": {
+                        "from": "2011",
+                        "to": "2015"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/7nnp7ngjw85",
+                        "name": "Providence College"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/xdp6y3tcdyn",
+            "title": "Mandeep Singh",
+            "url": "https://linkedin.com/in/mandeep-singh-nyc",
+            "publishedDate": "2026-06-13T12:19:16.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Head of Revenue Strategy & Operations @ TwelveLabs\n...\nHead of Revenue Operations at [TwelveLabs](https://www.linkedin.com/company/twelvelabs)\n...\nI’m a mission-driven operator with 10+ years of experience scaling operations, driving revenue strategy, and building organizations that last. My work lives at the intersection of systems, community, and long-term impact. Currently, I help lead Sales Strategy at Rippling, where I own cross-functional initiatives across go-to-market infrastructure, sales systems, and product-led growth. Previously, I held similar roles at Dropbox and Zenefits, helping scale core functions during pivotal stages of growth. Beyond tech, I’m passionate about social impact. I served as Executive Director of Dasvandh Network, the world’s largest Sikh philanthropic platform, and co-founded FLIP National, a nonprofit supporting first-generation college students that was recognized by President Obama. I also advise the NYC Department of Youth & Community Development, mentor students from my alma maters, and am launching tutoring programs to support immigrant families in New York City.\n...\n### Head of Revenue Operations at [TwelveLabs](https://www.linkedin.com/company/twelvelabs) (Current)\n...\nSep 2025 - Present (9 months) in New York, United States\n...\nDepartment: Operations • Level: Head\n...\nTwelveLabs is a Software Development company. TwelveLabs is a powerful video intelligence platform that offers deep insights, analyze, remix, and automate workflows with AI. It is recognized by leading researchers as the most efficient AI for video understanding. TwelveLabs employs 149 people (+102.1% YoY, +96 people) and has an annual revenue of $4.5M, founded in 2021. Headquartered in San Francisco, California, United States, operates in 6 countries (including South Korea, Canada, India, United Kingdom, and Philippines). Has $110.1M in total funding, with 8 prior funding rounds.\n...\n### Senior Revenue Strategy & Operations Manager at [Rippling](https://www.linkedin.com/company/rippling)\n...\nDepartment: Operations • Level: Senior\n...\nRippling is a Software Development company. Rippling is a workforce management system that combines HR, IT, and Finance apps on a unified data platform. Rippling employs 5,232 people (+40.3% YoY, +2168 people) and has an annual revenue of $550.5M, founded in 2016. Headquartered in San Francisco, California, United States, operates in 40 countries (including India, Ireland, Canada, Australia, and United Kingdom). Has $2.4B in total funding, with 12 prior funding rounds.\n...\nfully confident Mandeep would be\n...\nrequirements and delegates\n...\nIf everyone I worked with had his skill level in these\n...\n, I could only imagine what we could accomplish."
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D4E03AQEvY4c5bJ3AXg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1685556235823?e=2147483647&v=beta&t=Dv-y-oXElQLBHjrt-5SaHfp3sy0pVHOCXGAoDVbtPEc",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/xdp6y3tcdyn",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Mandeep Singh",
+                  "firstName": "Mandeep",
+                  "lastName": "Singh",
+                  "location": "New York, New York, United States",
+                  "workHistory": [
+                    {
+                      "title": "Head of Revenue Operations",
+                      "location": "New York, United States",
+                      "dates": {
+                        "from": "2025-09-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/1cxbw1kg9zt",
+                        "name": "TwelveLabs"
+                      }
+                    },
+                    {
+                      "title": "Trustee",
+                      "location": null,
+                      "dates": {
+                        "from": "2025-09-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/6xtc6tm4t71",
+                        "name": "The Packer Collegiate Institute"
+                      }
+                    },
+                    {
+                      "title": "Senior Revenue Strategy & Operations Manager",
+                      "location": "New York, United States",
+                      "dates": {
+                        "from": "2024-12-01",
+                        "to": "2025-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/57c44wxrxyz",
+                        "name": "Rippling"
+                      }
+                    },
+                    {
+                      "title": "Executive Director",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-05-01",
+                        "to": "2024-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/rg77r0kq464",
+                        "name": "Dasvandh Network"
+                      }
+                    },
+                    {
+                      "title": "Founder",
+                      "location": "Greater New York City Area",
+                      "dates": {
+                        "from": "2014-01-01",
+                        "to": "2020-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ctytms9z2dl",
+                        "name": "FLIP National"
+                      }
+                    },
+                    {
+                      "title": "Senior Revenue Strategy & Operations Manager",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2018-07-01",
+                        "to": "2020-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                        "name": "Zenefits"
+                      }
+                    },
+                    {
+                      "title": "Revenue Strategy & Operations Manager",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2017-08-01",
+                        "to": "2018-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                        "name": "Zenefits"
+                      }
+                    },
+                    {
+                      "title": "Revenue Strategy & Operations Analyst",
+                      "location": null,
+                      "dates": {
+                        "from": "2016-08-01",
+                        "to": "2017-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                        "name": "Dropbox"
+                      }
+                    },
+                    {
+                      "title": "Rotation Program",
+                      "location": null,
+                      "dates": {
+                        "from": "2015-08-01",
+                        "to": "2016-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                        "name": "Dropbox"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "High School Diploma",
+                      "dates": null,
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/6xtc6tm4t71",
+                        "name": "The Packer Collegiate Institute"
+                      }
+                    },
+                    {
+                      "degree": "Bachelor of Arts (B.A.) Urban Studies Political Science Business Management",
+                      "dates": null,
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/lvsvj7hrtdx",
+                        "name": "Columbia University"
+                      }
+                    },
+                    {
+                      "degree": "International Honors Program: Cities in the 21st Century",
+                      "dates": null,
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/b9fshgzltfz",
+                        "name": "School for International Training"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "searchTime": 1462.3,
+        "costDollars": {
+          "total": 0.007,
+          "search": {
+            "neural": 0.007
+          }
+        }
+      },
+      "durationMs": 1510
+    },
+    {
+      "company": "Patronus AI",
+      "request": {
+        "query": "Head of Sales, CRO, or most senior revenue leader currently at Patronus AI",
+        "type": "auto",
+        "numResults": 3,
+        "contents": {
+          "highlights": {
+            "query": "current role and responsibilities"
+          }
+        },
+        "category": "people",
+        "systemPrompt": "Prefer official LinkedIn profiles and company websites. Return only individuals currently employed at the target company. Collapse duplicate profiles for the same person."
+      },
+      "response": {
+        "requestId": "fd71aaba35557ce59e9328adf84df2a7",
+        "resolvedSearchType": "",
+        "results": [
+          {
+            "id": "https://exa.ai/library/person/s3ww36wfcv3",
+            "title": "Shivani Jain",
+            "url": "https://linkedin.com/in/shivani10jain",
+            "publishedDate": "2026-03-28T03:17:17.000Z",
+            "highlights": [
+              "Chief of Staff @ Patronus AI\n...\nChief Of Staff at [Patronus AI](https://www.linkedin.com/company/patronus-ai-inc)\n...\nAs Chief of Staff at Patronus AI, I operate across engineering, GTM, strategy, and…\n...\n#### Chief Of Staff (Current)\n...\nJan 2026 - Present\n...\nDepartment: General Management • Level: Manager\n...\n#### Founding GTM\n...\nAug 2025 - Dec 2025 (4 months) in San Francisco Bay Area\n...\nPatronus AI is the leading AI optimization and evaluation company. Our research-backed product has helped leading technology companies and enterprises like Volkswagen, Etsy, and Bumble optimize and ship top-tier AI products.\n...\nDepartment: General Management • Level: Founder\n...\n#### Founding BDR\n...\nDec 2024 - Jul\n...\n025 (\n...\n- First outbound sales hire, tasked with building pipeline and driving enterprise conversations from the ground up.\n- Designed and executed GTM strategy, establishing scalable outbound processes and playbooks.\n- Partnered closely with founders on messaging, positioning, and early market validation.\n...\nDepartment: Sales • Level: Founder\n...\nI’m excited to share that I’m now the Chief of Staff at Patronus AI. I’m deeply grateful to Anand Kannappan + Rebecca Qian for their trust and leadership and excited to work even more closely with them. A shoutout and thanks to Varun J. and Chinmayee Kulkarni for their encouragement and support throughout this transition. And lastly, a big thank you to Stephen Guerguy and David Sang Han for their mentorship in GTM/sales which has shaped how I think about execution, collaboration & partnerships and will continue to guide me moving forward. I’m energized to keep building at Patronus, work with more people across teams, and help support the company’s next phase of growth. \n\nSpeaking of which, we’re hiring across several roles including Research Scientist, Forward-Deployed Engineer, Engineering + Technical Lead Manager, and Operations Manager. If this resonates, send me a note."
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D5603AQEGrt2eo37xng/profile-displayphoto-shrink_200_200/B56Zx6Qd00HoAY-/0/1771577663324?e=2147483647&v=beta&t=VsYpVg2iNw74WXp7M5oJgxQ2X80ppqYI7hBacR0dCdQ",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/s3ww36wfcv3",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Shivani Jain",
+                  "firstName": "Shivani",
+                  "lastName": "Jain",
+                  "location": "San Francisco Bay Area",
+                  "workHistory": [
+                    {
+                      "title": "Chief Of Staff",
+                      "location": null,
+                      "dates": {
+                        "from": "2026-01-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4cmxk2bwr8p",
+                        "name": "Patronus AI"
+                      }
+                    },
+                    {
+                      "title": "Founding GTM",
+                      "location": "San Francisco Bay Area",
+                      "dates": {
+                        "from": "2025-08-01",
+                        "to": "2025-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4cmxk2bwr8p",
+                        "name": "Patronus AI"
+                      }
+                    },
+                    {
+                      "title": "Founding BDR",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-12-01",
+                        "to": "2025-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4cmxk2bwr8p",
+                        "name": "Patronus AI"
+                      }
+                    },
+                    {
+                      "title": "Teaching Assistant",
+                      "location": "Seattle, Washington, United States",
+                      "dates": {
+                        "from": "2023-07-01",
+                        "to": "2024-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/sm9t329dn9v",
+                        "name": "UW Foster School of Business"
+                      }
+                    },
+                    {
+                      "title": "Business Development",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-06-01",
+                        "to": "2024-12-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/tc01cx8s3zl",
+                        "name": "Hive"
+                      }
+                    },
+                    {
+                      "title": "National Environmental Health Association Intern",
+                      "location": "Los Angeles County, California, United States",
+                      "dates": {
+                        "from": "2023-06-01",
+                        "to": "2023-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/2sxs4fjhwp0",
+                        "name": "California Department of Public Health"
+                      }
+                    },
+                    {
+                      "title": "Medical Device Sales Intern",
+                      "location": "Bellevue, Washington, United States",
+                      "dates": {
+                        "from": "2023-03-01",
+                        "to": "2023-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/9w578nhzcrf",
+                        "name": "Zimmer Biomet"
+                      }
+                    },
+                    {
+                      "title": "Mathematics, Spanish, Biology Tutor",
+                      "location": "Virtual",
+                      "dates": {
+                        "from": "2022-05-01",
+                        "to": "2023-05-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/3k9fv6qwgw2",
+                        "name": "Diamond Tutoring"
+                      }
+                    },
+                    {
+                      "title": "Summer Camp Counselor",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-06-01",
+                        "to": "2022-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/x5y4m98vly5",
+                        "name": "Galileo Learning"
+                      }
+                    },
+                    {
+                      "title": "Student Ambassador",
+                      "location": "Virtual",
+                      "dates": {
+                        "from": "2022-04-01",
+                        "to": "2022-06-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/49zm6mh37p3",
+                        "name": "Ruffalo Noel Levitz"
+                      }
+                    },
+                    {
+                      "title": "Summer Internship",
+                      "location": "Torrance, California, United States",
+                      "dates": {
+                        "from": "2018-06-01",
+                        "to": "2018-08-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/50xdzl5n4m9",
+                        "name": "Moog Inc."
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Bachelor of Science - BS Environmental Public Health",
+                      "dates": {
+                        "from": "2020",
+                        "to": "2024"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/wtpfw08lwdn",
+                        "name": "University of Washington School of Public Health"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/0ybpc75hglr",
+            "title": "Robert Sebald",
+            "url": "https://linkedin.com/in/robert-sebald",
+            "publishedDate": "2026-06-13T10:30:48.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Head of RevOps & Sales | Patronus, mammaly, JOKR, fliit, EYetventure\n...\nHead of RevOps & Sales at [Patronus Group](https://www.linkedin.com/company/patronus-group-hello)\n...\n#### Head of RevOps & Sales (Current)\n...\nJul 2024 - Present (1 year and 11 months) in Berlin, Deutschland\n...\nLeading the Revenue Operations & Sales teams to improve commercial efficiencies and make Patronus scalable.\n...\nDepartment: Sales • Level: Head\n...\n#### Head of Revenue Operations\n...\nMay 2024 - Jul 2024 (2 months)\n...\nLeading a team of Revenue Operations and SalesForce Managers to improve commercial efficiencies and make Patronus scalable\n...\nDepartment: Operations • Level: Head\n...\nPatronus Group\n...\nTechnology, Information and Internet\n...\n. Patronus\n...\na company that aims to build a world where aging is delightful and dignified. They believe in creating a future worth living for everyone with the help of modern technologies. They focus on helping seniors live safely and independently in the future. The company values job opportunities, passion and commitment, challenge and ambition, entrepreneurship, innovation, team spirit and collaboration. Patronus Group employs 50 people (+13.6% YoY, +11 people) and\n...\nan annual revenue of $1.0M,\n...\nin 2021\n...\nBerlin, Berlin\n...\n(including Austria, United States, Democratic\n...\nCongo, and Serbia\n...\n44.8M\n...\nwith 6"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/C4D03AQEZiKpWpoKu4Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642798122968?e=2147483647&v=beta&t=z6_Pvr-ksh6lL9G24EpsvSKTUCBusfAATufZlZSaaGk",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/0ybpc75hglr",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Robert Sebald",
+                  "firstName": "Robert",
+                  "lastName": "Sebald",
+                  "location": "Berlin Metropolitan Area",
+                  "workHistory": [
+                    {
+                      "title": "Head of RevOps & Sales",
+                      "location": "Berlin, Deutschland",
+                      "dates": {
+                        "from": "2024-07-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0ydm38hcf6",
+                        "name": "Patronus Group"
+                      }
+                    },
+                    {
+                      "title": "Head of Revenue Operations",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-05-01",
+                        "to": "2024-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/v0ydm38hcf6",
+                        "name": "Patronus Group"
+                      }
+                    },
+                    {
+                      "title": "Chief Of Staff",
+                      "location": null,
+                      "dates": {
+                        "from": "2023-03-01",
+                        "to": "2024-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/q9f1wqjm1tf",
+                        "name": "mammaly"
+                      }
+                    },
+                    {
+                      "title": "Global Lead Strategic Projects",
+                      "location": null,
+                      "dates": {
+                        "from": "2021-09-01",
+                        "to": "2022-11-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/pf5trzf5jwy",
+                        "name": "JOKR"
+                      }
+                    },
+                    {
+                      "title": "Senior Global Launch Manager",
+                      "location": null,
+                      "dates": {
+                        "from": "2021-05-01",
+                        "to": "2021-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/pf5trzf5jwy",
+                        "name": "JOKR"
+                      }
+                    },
+                    {
+                      "title": "Venture Builder",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-10-01",
+                        "to": "2021-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/dc787s4flxp",
+                        "name": "fliit"
+                      }
+                    },
+                    {
+                      "title": "Project Manager Senior Consultant Corporate Innovation",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-07-01",
+                        "to": "2020-09-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "etventure"
+                      }
+                    },
+                    {
+                      "title": "Junior Project Manager Consultant Corporate Innovation",
+                      "location": null,
+                      "dates": {
+                        "from": "2018-04-01",
+                        "to": "2019-06-01"
+                      },
+                      "company": {
+                        "id": null,
+                        "name": "etventure"
+                      }
+                    },
+                    {
+                      "title": "Co-Founder & Managing Director",
+                      "location": null,
+                      "dates": {
+                        "from": "2016-11-01",
+                        "to": "2018-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/wfqzn0042gt",
+                        "name": "PrismAR"
+                      }
+                    },
+                    {
+                      "title": "Interim Project Manager",
+                      "location": null,
+                      "dates": {
+                        "from": "2018-02-01",
+                        "to": "2018-02-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4983q1gb4nh",
+                        "name": "Tesla"
+                      }
+                    },
+                    {
+                      "title": "Lead Researcher in Business Innovation Management Consulting",
+                      "location": null,
+                      "dates": {
+                        "from": "2017-08-01",
+                        "to": "2018-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/pjdqn25cx6w",
+                        "name": "goetzpartners"
+                      }
+                    },
+                    {
+                      "title": "Working Student Product Management",
+                      "location": null,
+                      "dates": {
+                        "from": "2016-10-01",
+                        "to": "2017-03-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/b7vgn9l2hqn",
+                        "name": "Siemens"
+                      }
+                    },
+                    {
+                      "title": "Working Student Research & Development",
+                      "location": null,
+                      "dates": {
+                        "from": "2015-03-01",
+                        "to": "2016-09-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/2m8f73xxx6k",
+                        "name": "Knorr-Bremse"
+                      }
+                    },
+                    {
+                      "title": "Working Student Research & Development",
+                      "location": null,
+                      "dates": {
+                        "from": "2013-09-01",
+                        "to": "2014-10-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/2m8f73xxx6k",
+                        "name": "Knorr-Bremse"
+                      }
+                    },
+                    {
+                      "title": "External Consultant Innovation",
+                      "location": null,
+                      "dates": {
+                        "from": "2016-04-01",
+                        "to": "2016-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/dc0cl4sr2s1",
+                        "name": "Bosch Power Tools"
+                      }
+                    },
+                    {
+                      "title": "Co-op Electronics Hardware Platform",
+                      "location": null,
+                      "dates": {
+                        "from": "2014-10-01",
+                        "to": "2015-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/987p8gbk7l2",
+                        "name": "Bendix Commercial Vehicle Systems LLC"
+                      }
+                    },
+                    {
+                      "title": "Intern Manufacturing & Processing Technologies",
+                      "location": null,
+                      "dates": {
+                        "from": "2011-06-01",
+                        "to": "2011-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/jx87m0nk93s",
+                        "name": "Roche"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "Semester abroad Entrepreneurship & Innovation",
+                      "dates": {
+                        "from": "2017",
+                        "to": "2018"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/g296p0qkhxt",
+                        "name": "Tongji University"
+                      }
+                    },
+                    {
+                      "degree": "Master of Science (M.Sc.) Mechanical Engineering and Management",
+                      "dates": {
+                        "from": "2015",
+                        "to": "2018"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Technical University of Munich"
+                      }
+                    },
+                    {
+                      "degree": "Bachelor of Science (B.Sc.) Mechanical Engineering & Management",
+                      "dates": {
+                        "from": "2011",
+                        "to": "2015"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Technical University of Munich"
+                      }
+                    },
+                    {
+                      "degree": "Scholar Entrepreneurship",
+                      "dates": {
+                        "from": "2016",
+                        "to": "2017"
+                      },
+                      "institution": {
+                        "id": null,
+                        "name": "Manage and More by UnternehmerTUM"
+                      }
+                    },
+                    {
+                      "degree": "Certificate Venture Finance",
+                      "dates": {
+                        "from": "2022",
+                        "to": "2022"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/g296p0qkhxt",
+                        "name": "Saïd Business School, University of Oxford"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "https://exa.ai/library/person/tt824srbhzc",
+            "title": "Snigdha Banda",
+            "url": "https://linkedin.com/in/snigdhabanda0",
+            "publishedDate": "2026-06-13T15:49:41.000Z",
+            "author": "Exa",
+            "highlights": [
+              "Forward Deployed Engineering @ Patronus AI\n...\nHead of Forward Deployed Engineering at [Patronus AI](https://www.linkedin.com/company/patronus-ai-inc)\n...\n### [Patronus AI](https://www.linkedin.com/company/patronus-ai-inc)\n...\n#### Head of Forward Deployed Engineering (Current)\n...\nJul 2025 - Present (11 months) in New York, United States\n...\nDepartment: Engineering and Technical • Level: Head\n...\n#### Founding Forward Deployed Engineer\n...\nDepartment: Engineering and Technical • Level: Founder\n...\nPatronus AI\n...\nTechnology, Information and Internet\n...\n. Patronus AI\n...\npowerful AI evaluation and optimization solutions\n...\nThey offer industry\n...\nleading AI research and tools\n...\nPatronus AI employs 29 people and\n...\nan annual revenue of\n...\n0M,\n...\n23.\n...\n, with presence in\n...\nand Kosovo. Has\n...\n0M in\n...\nwith 1 prior funding round\n...\nnon-profit • engineering • healthcare industry knowledge • global health • policy • health services • leadership • research • neuroscience • construction • co-founder • international service • founding • geriatrics • spring •\n...\naureus • service research • research assistant • website\n...\n• community health • service • infrastructure • science education • led • organization • diagnostic • software engineering • behavioral health services • forward deployed engineering • engineer • education • board •\n...\n• gap • mobile development • san (storage area network) • mrsa • leading • site leadership • behavioral health • planning • optimization • forward deployed engineer"
+            ],
+            "image": "https://media.licdn.com/dms/image/v2/D4E03AQFQsECb6IZOZg/profile-displayphoto-scale_200_200/B4EZnVnRI1GUAY-/0/1760225465615?e=2147483647&v=beta&t=YKu6rsUmoLwHVkMptN9zPtfS_oCEaYcFCKrqHF6E0bg",
+            "entities": [
+              {
+                "id": "https://exa.ai/library/person/tt824srbhzc",
+                "type": "person",
+                "version": 1,
+                "properties": {
+                  "name": "Snigdha Banda",
+                  "firstName": "Snigdha",
+                  "lastName": "Banda",
+                  "location": "New York, New York, United States",
+                  "workHistory": [
+                    {
+                      "title": "Head of Forward Deployed Engineering",
+                      "location": "New York, United States",
+                      "dates": {
+                        "from": "2025-07-01",
+                        "to": null
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4cmxk2bwr8p",
+                        "name": "Patronus AI"
+                      }
+                    },
+                    {
+                      "title": "Founding Forward Deployed Engineer",
+                      "location": "New York, United States",
+                      "dates": {
+                        "from": "2024-11-01",
+                        "to": "2025-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/4cmxk2bwr8p",
+                        "name": "Patronus AI"
+                      }
+                    },
+                    {
+                      "title": "Member",
+                      "location": null,
+                      "dates": {
+                        "from": "2024-02-01",
+                        "to": "2024-04-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/gtwmtbc7m1k",
+                        "name": "South Park Commons"
+                      }
+                    },
+                    {
+                      "title": "Software Engineer",
+                      "location": null,
+                      "dates": {
+                        "from": "2022-03-01",
+                        "to": "2024-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/pgkydbg42rh",
+                        "name": "Cash App"
+                      }
+                    },
+                    {
+                      "title": "Research, Division of Geriatrics",
+                      "location": null,
+                      "dates": {
+                        "from": "2020-01-01",
+                        "to": "2021-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/nf5dfgcbq11",
+                        "name": "UCSF Health"
+                      }
+                    },
+                    {
+                      "title": "Bureau of Global Health",
+                      "location": null,
+                      "dates": {
+                        "from": "2019-05-01",
+                        "to": "2019-07-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/ttf587jk4q9",
+                        "name": "USAID"
+                      }
+                    },
+                    {
+                      "title": "Research, Neuroscience",
+                      "location": null,
+                      "dates": {
+                        "from": "2017-01-01",
+                        "to": "2019-01-01"
+                      },
+                      "company": {
+                        "id": "https://exa.ai/library/organization/crl73xdp76x",
+                        "name": "Baylor College of Medicine"
+                      }
+                    }
+                  ],
+                  "educationHistory": [
+                    {
+                      "degree": "B.A. Computational Neuroscience",
+                      "dates": {
+                        "from": "2016",
+                        "to": "2020"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/l86bmmvht43",
+                        "name": "Rice University"
+                      }
+                    },
+                    {
+                      "degree": null,
+                      "dates": {
+                        "from": "2012",
+                        "to": "2016"
+                      },
+                      "institution": {
+                        "id": "https://exa.ai/library/organization/wkd71qjccyl",
+                        "name": "Notre Dame High School, San Jose"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "searchTime": 6.7,
+        "costDollars": {
+          "total": 0.007,
+          "search": {
+            "neural": 0.007
+          }
+        }
+      },
+      "durationMs": 48
+    }
+  ]
+}

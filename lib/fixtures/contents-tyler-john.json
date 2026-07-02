@@ -1,0 +1,227 @@
+{
+  "personId": "https://exa.ai/library/person/m99dmf017bz",
+  "personName": "Tyler John",
+  "request": {
+    "ids": [
+      "https://exa.ai/library/person/m99dmf017bz"
+    ],
+    "text": {
+      "maxCharacters": 4000
+    },
+    "summary": {
+      "query": "Summarize this person's profile for a sales rep preparing outreach: current role and tenure, what they own, notable background, and anything recent worth referencing."
+    }
+  },
+  "response": {
+    "requestId": "520695d2f6b284ea21b4a70a4241712a",
+    "results": [
+      {
+        "id": "https://exa.ai/library/person/m99dmf017bz",
+        "title": "Tyler John",
+        "url": "https://linkedin.com/in/tylerjohn",
+        "publishedDate": "2026-06-12T15:33:55.000Z",
+        "author": null,
+        "text": "# Tyler John\n\nCRO @ ActivelyAI | Transforming GTM with AI | Navan + Zenefits + Yelp Alum | Travel Enthusiast | Entrepreneur at Heart\n\nChief Revenue Officer (CRO) at [Actively AI](https://www.linkedin.com/company/actively-ai)\n\nNew York City Metropolitan Area (US)\n\n500 connections • 15,502 followers\n\n## About\n\nFresh out of college, I was living in LA but had my sights on breaking into tech sales and moving to NYC. Without thinking twice, I flew out for an interview in the dead of winter, purchased a wool coat, and passed myself as a New Yorker. After some creative follow-up, Yelp offered me the job, and I made the cross-country move to launch my career. I quickly moved into 1st, 2nd, and 3rd line leadership, moving on to work at companies like Zenefits and Navan, scaling their sales teams through hypergrowth. I designed and implemented innovative training programs and sales processes, set up cross-functional operations to ensure future success, and drove substantial revenue growth. After years of direct selling and sales leadership roles, I wanted to move from building teams at companies I was excited about to building a team with a product I’m a subject matter expert on. That led me to the CRO role at Actively, where I’m using those experiences to help shape the future of outbound and revenue optimization At ActivelyAI, we’re in the business of bringing next-generation AI models to sellers. We’ve built the only AI revenue generation solution for enterprise companies that is always on, learning, and optimized for revenue. Our models works to empower teams to focus on what matters most—connecting with prospects. Some of the cool things we do to accomplish this: - Help reps gain a competitive edge by automating account/contact research: ActivelyAI aggregates and analyzes data across both your TAM and internal data (emails, calls, videos, signals, etc.), providing real-time revenue optimized insights to ensure your team focuses on high-value opportunities. - Make sure the pipeline never runs dry: An auto-prospecting agent consistently identifies and adds high-potential prospects, keeping your sales funnel full of quality leads without manual effort. What separates us from all the noise? A custom reasoning engine built on top of your data and what your A players do best. - Ensure you are closing more deals by engaging the right people at the right time: Our machine learning models rank top contacts and accounts, prioritizing outreach to maximize conversions and minimize wasted effort. - Achieve 10x efficiency with smarter outbound strategies: ActivelyAI tells your GTM teams exactly who to target, when to reach out, and what to say—so you can scale your outbound efforts without scaling your headcount. Beyond the office: avid cook (Big Fan of Cacio e Pepe), big brother, global adventure seeker (next up: New Zealand), dirty chai lover and serial entrepreneur.\n\nTotal Experience: 16 years and 5 months\n\n## Experience\n\n### Chief Revenue Officer (CRO) at [Actively AI](https://www.linkedin.com/company/actively-ai) (Current)\n\nNov 2024 - Present (1 year and 7 months) in New York City Metropolitan Area\n\nNew York City Metropolitan Area\n\nDepartment: Sales • Level: C-Level\n\nActively AI is a Software Development company. Actively AI is an AI pipegen machine that helps GTM teams 10x efficiency by telling sales reps who to focus on, when, and what to say. Actively AI employs 61 people (+133.3% YoY, +44 people), founded in 2021. Headquartered in New York City, New York, United States.\n\n### CRO Advisory Board Member at [Bain Capital Ventures](https://www.linkedin.com/company/bain-capital-ventures) (Current)\n\nSep 2025 - Present (1 month)\n\nDepartment: Consulting • Level: Partner\n\nBain Capital Ventures (BCV) is a Venture Capital and Private Equity Principals company. Bain Capital Ventures is a company that helps companies realize their potential by providing expertise and global network. Bain Capital Ventures (BCV) employs 160 people (+13.2% YoY, +28 peop",
+        "summary": "Summary:\n\n- Current role and tenure: Chief Revenue Officer (CRO) at Actively AI, since November 2024 (about 1 year 7 months) in the NYC metro area.\n- What they own/lead: Revenue leadership overseeing GTM strategy and sales enablement for Actively AI, a software company focused on AI-powered go-to-market tooling. The role implies responsibility for sales, marketing, and revenue operations to drive growth.\n- Notable background: Previously associated with Navan, Zenefits, and Yelp (Alum), indicating strong experience in operations, HR tech, and consumer-facing platforms. Describes themselves as an entrepreneur at heart and travel enthusiast.\n- Recent references worth noting: Actively AI is positioned as an AI “pipegen” machine designed to boost GTM efficiency by guiding sales reps on who to target, when, and what to say; the company was founded in 2021 and is headquartered in New York City with ~61 employees, showing rapid growth.",
+        "image": "https://media.licdn.com/dms/image/v2/C4E03AQHg1-v0d9wtsg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1659993008204?e=2147483647&v=beta&t=0IrcMpAO-056VYY8410kHs9wVBkWc5B0k6V61GWKqNQ",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/m99dmf017bz",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Tyler John",
+              "firstName": "Tyler",
+              "lastName": "John",
+              "location": "New York City Metropolitan Area",
+              "workHistory": [
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2024-11-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/6l4pstv2j94",
+                    "name": "Actively AI"
+                  }
+                },
+                {
+                  "title": "CRO Advisory Board Member",
+                  "location": null,
+                  "dates": {
+                    "from": "2025-09-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/kn8dv92n1s5",
+                    "name": "Bain Capital Ventures"
+                  }
+                },
+                {
+                  "title": "Advisor",
+                  "location": "Miami, Florida, United States",
+                  "dates": {
+                    "from": "2024-06-01",
+                    "to": "2024-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/5xr90h3y522",
+                    "name": "Monta"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "Copenhagen, Denmark & Barcelona, Spain",
+                  "dates": {
+                    "from": "2022-12-01",
+                    "to": "2024-05-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/5xr90h3y522",
+                    "name": "Monta"
+                  }
+                },
+                {
+                  "title": "Chief Sales Officer",
+                  "location": "New York, New York, United States",
+                  "dates": {
+                    "from": "2021-01-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/bzn96y4bskz",
+                    "name": "Vise"
+                  }
+                },
+                {
+                  "title": "SVP Sales, North America",
+                  "location": "New York, New York, United States",
+                  "dates": {
+                    "from": "2020-01-01",
+                    "to": "2021-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/fpl3xgxl7qj",
+                    "name": "Navan"
+                  }
+                },
+                {
+                  "title": "VP Sales, East",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2018-01-01",
+                    "to": "2020-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/fpl3xgxl7qj",
+                    "name": "Navan"
+                  }
+                },
+                {
+                  "title": "VP Sales",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2018-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/m0m7zp55khn",
+                    "name": "Order"
+                  }
+                },
+                {
+                  "title": "VP Sales",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2014-01-01",
+                    "to": "2016-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                    "name": "Zenefits"
+                  }
+                },
+                {
+                  "title": "Director of Sales",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-01-01",
+                    "to": "2014-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                    "name": "Zenefits"
+                  }
+                },
+                {
+                  "title": "Director of Sales",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2011-01-01",
+                    "to": "2013-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                },
+                {
+                  "title": "Sales Manager",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2010-01-01",
+                    "to": "2011-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                },
+                {
+                  "title": "Senior Account Executive",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2009-01-01",
+                    "to": "2010-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor's degree Economics",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/7lr4q2wnsq2",
+                    "name": "Pitzer College"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "statuses": [
+      {
+        "id": "https://exa.ai/library/person/m99dmf017bz",
+        "status": "success",
+        "source": "cached"
+      }
+    ],
+    "costDollars": {
+      "total": 0.002,
+      "contents": {
+        "text": 0.001,
+        "summary": 0.001
+      }
+    },
+    "searchTime": 2335.72549099999
+  },
+  "durationMs": 2412
+}
