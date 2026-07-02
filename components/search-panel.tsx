@@ -22,7 +22,9 @@ import { AsciiWordmark } from "@/components/ascii-logo";
 import { CostMeter } from "@/components/cost-meter";
 
 // Hero queries replay cached fixtures (demo-safe); the extras run live.
+// The Nvidia query is demo beat 1 — first chip so it's one click on stage.
 const SUGGESTED_QUERIES = [
+  "Nvidia: Jensen Huang's direct reports",
   ...HERO_QUERIES,
   "VPs and above at Meta",
   "Sound Engineers at Apple",

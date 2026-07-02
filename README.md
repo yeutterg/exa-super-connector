@@ -56,32 +56,29 @@ Exa primitive map — `/search`, `/contents`, deep + `outputSchema`,
 cost/latency envelope (fast search $0.005/1.5s → deep pipeline ~$0.05/15s →
 agent run ~$0.20/60s), because devs will ask.
 
-**Live demo (~15 min).** One continuous thread; every beat is one click, and
-the request JSON is always on screen (hover any key for its docs):
+**Live demo (~15 min).** Three beats, the request JSON always on screen
+(hover any key for its docs):
 
-1. *One parameter gets you people* — `category: "people"` on `/search` returns
-   structured entities: name, location, full dated work history. No parsing,
-   no scraping. Click a person: the drawer's Brief + Profile show
-   `/agent/runs` and `/contents` composing off the same result id.
-2. *The corpus lesson, live* — the results look right but aren't (existing
-   RevOps leaders, not companies who haven't hired one). Embedding search can
-   only match what lives in the corpus, and can't encode "not". **Verify with
-   Agent** hands the same rows to `/agent/runs` via `input.data` and gets
-   verdicts with reasons.
-3. *Escalate the primitive, not the phrasing* — **Re-run as deep**. The
-   pipeline narrates itself: gpt-5-nano rewrites the query (that call is
-   shown too) → deep search + `outputSchema` finds the companies with
-   citations → a parallel join runs one people search per company. Includes
-   the blended-query pitfall: one query across five companies embeds as an
-   average and drifts; five focused queries don't.
-4. *Enrichment with receipts* — **Build Brief** in the drawer: Connect
-   providers attached explicitly, routed automatically, billed only when
-   called. Includes the schema pitfall we hit ourselves: describing the email
-   field as "from Fiber.ai" made the agent return null instead of falling
-   back to web inference.
-5. *Patterns they'll copy* — "10 more profiles" shows the exclusion pattern
-   (`/search` has no exclusion param: over-fetch + filter by id, list shown
-   in the UI); the cost meter shows every call in real dollars.
+1. **Search.** Query: *"Nvidia: Jensen Huang's direct reports."*
+   Plain `/search` with `category: "people"` — one natural-language sentence
+   in, structured people out: names, titles, locations, dated work history.
+   No filters, no parsing.
+2. **Agent, then deep.** Query: *"Revenue or sales leaders at companies that
+   raised a Series B in the last 6 months and are rapidly scaling their
+   go-to-market team."* The results look plausible — **Verify with Agent**
+   hands the same rows to `/agent/runs` via `input.data` and returns verdicts
+   with reasons. Then **Re-run as deep**: gpt-5-nano rewrites the query →
+   deep search finds the companies web-wide → a parallel join finds one
+   leader per company. Pause on the middle deep call's **Structured output**
+   table — that's `outputSchema` on `/search`: schema in, cited entities out.
+3. **One person, end to end.** Click a profile. The drawer's **Profile**
+   section is `/contents` — the search result id goes straight in, extracted
+   summary + page text come back (note the cached/crawled provenance pill).
+   The **Brief** renders when its `/agent/runs` call finishes — this is
+   **Exa Connect**: partner providers (Fiber.ai, Financial Datasets) attached
+   explicitly, routed automatically, billed only when called; the email comes
+   back verified from partner data or inferred from the open web, grounded
+   either way.
 
 **Narrative close (~5 min).** The app *is* the integration guide — fixtures
 for demo determinism, client-side caching so nothing bills twice, honest
