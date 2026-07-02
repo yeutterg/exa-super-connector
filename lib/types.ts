@@ -122,6 +122,14 @@ export interface SearchRecord {
   /** What the user actually typed, if a follow-up like "3 more people" was
    *  expanded (via GPT-5 nano) into a standalone query before it hit Exa. */
   rawInput?: string;
+  /** Already-shown profiles excluded from this turn — applied CLIENT-SIDE by
+   *  result id, because /search has no exclusion parameter and embedding
+   *  queries can't reliably encode "not these people". The request over-
+   *  fetches by this list's length to compensate; the UI renders this list
+   *  next to the request code so the numResults math is visible. */
+  exclusion?: { id: string; name: string; company: string }[];
+  /** How many fetched results were actually dropped as already-shown. */
+  excludedHits?: number;
   /** Deep re-runs are a two-step pipeline: deep web-wide extraction finds the
    *  companies (this record's request/response), then a fan-out join — ONE
    *  people search per company, in parallel — fills `people` with one leader

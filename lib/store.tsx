@@ -342,15 +342,19 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // for parameterized re-runs (same query on purpose, different knobs).
       let effectiveQuery = trimmed;
       let rawInput: string | undefined = rawInputOverride;
-      // Ids of everyone already shown in this session — "10 more profiles"
-      // must not re-serve them. Exclusion happens HERE, deterministically:
-      // embeddings can't reliably encode "not these people" (the negation
-      // weakness this app demonstrates), so we over-fetch and filter by id
-      // instead of asking the query to exclude names.
-      const seenIds = new Set(
-        activeTurns.flatMap((t) => t.people.map((p) => p.id)),
+      // Everyone already shown in this session — "10 more profiles" must not
+      // re-serve them. Exclusion happens HERE, deterministically: /search has
+      // no exclusion parameter, and embeddings can't reliably encode "not
+      // these people" (the negation weakness this app demonstrates) — so we
+      // over-fetch and filter by result id instead of asking the query to
+      // exclude names. The list is kept on the record so the UI can show it
+      // next to the request code.
+      const seenPeople = activeTurns.flatMap((t) =>
+        t.people.map((p) => ({ id: p.id, name: p.name, company: p.company })),
       );
+      const seenIds = new Set(seenPeople.map((p) => p.id));
       let requestedCount: number | null = null;
+      let exclusionApplied = false;
       if (activeTurns.length > 0 && !isHeroExact && !options) {
         try {
           const res = await fetch("/api/expand-query", {
@@ -359,9 +363,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
             body: JSON.stringify({
               originalQuery: activeTurns[0].query,
               followUp: trimmed,
-              shownPeople: activeTurns.flatMap((t) =>
-                t.people.map((p) => `${p.name} (${p.company})`),
-              ),
+              shownPeople: seenPeople.map((p) => `${p.name} (${p.company})`),
             }),
           });
           if (res.ok) {
@@ -381,6 +383,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         // re-serving: build explicit options with headroom for the dedup.
         if (requestedCount !== null || seenIds.size > 0) {
           const want = requestedCount ?? 5;
+          exclusionApplied = seenIds.size > 0;
           options = {
             type: "auto",
             category: "people",
@@ -426,9 +429,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
             const data = await res.json();
             // Drop anyone already shown earlier in the session, then trim to
             // the count the user asked for (we over-fetched to compensate).
-            const fresh = normalizePeople(data.response).filter(
-              (p) => !seenIds.has(p.id),
-            );
+            const normalized = normalizePeople(data.response);
+            const fresh = normalized.filter((p) => !seenIds.has(p.id));
             record = {
               id: `live-${Date.now()}-${idCounter.current++}`,
               query: effectiveQuery,
@@ -439,6 +441,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
               response: data.response,
               people: targetCount ? fresh.slice(0, targetCount) : fresh,
               durationMs: data.durationMs,
+              exclusion: exclusionApplied ? seenPeople : undefined,
+              excludedHits: exclusionApplied
+                ? normalized.length - fresh.length
+                : undefined,
             };
             isNewRecord = true;
           } else if (options) {
