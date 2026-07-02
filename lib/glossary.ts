@@ -97,6 +97,16 @@ const FLAT: Record<string, string> = {
   search: "Cost split by search type.",
   neural: "Cost attributed to neural retrieval.",
   searchTime: "Time Exa spent searching, as reported by the API.",
+  // OpenAI chat.completions keys (the gpt-5-nano rewrite call)
+  model:
+    "OpenAI model id. gpt-5-nano: cheap, fast text editing — used for query rewriting, not research.",
+  messages: "Chat-completion messages: a system instruction plus the user's query.",
+  role: 'Who is "speaking" — the system message carries the rewriting instructions.',
+  // Exa /contents keys (profile drawer)
+  ids: "Exa result ids to fetch contents for — the id returned by /search works directly here.",
+  maxCharacters: "Cap on how much page text Exa returns (1–10,000).",
+  statuses:
+    "Per-document fetch status: success/error, and whether the content came from Exa's cache or a live crawl.",
 };
 
 /** Context-dependent keys, resolved by JSON path. */
@@ -111,6 +121,8 @@ function describeKey(key: string, path: string[]): string | undefined {
     case "query":
       if (path.includes("highlights"))
         return "Steers which excerpt is pulled from each result — the snippet is chosen for similarity to this phrase, not the main query.";
+      if (path.includes("summary"))
+        return "Steers what Exa's generated summary focuses on for each document.";
       return "The natural-language search query. Exa's neural model reads intent directly from the sentence — no filters or dropdowns.";
     case "highlights":
       if (path.includes("results"))
@@ -139,6 +151,20 @@ function describeKey(key: string, path: string[]): string | undefined {
       if (path.includes("data"))
         return "Current company from the search result row we're asking the Agent to verify.";
       return FLAT.company;
+    case "content":
+      if (path.includes("messages"))
+        return "The message text — instructions for the system role, the raw query for the user role.";
+      if (path.includes("output"))
+        return "The schema-conforming object Exa synthesized (deep modes with outputSchema).";
+      return FLAT[key];
+    case "text":
+      if (path.includes("results"))
+        return "The page text Exa extracted for this document.";
+      return "Ask for page text; the nested options cap length and control verbosity.";
+    case "summary":
+      if (path.includes("results"))
+        return "The summary Exa generated for this document, steered by the summary query in the request.";
+      return "Ask Exa to summarize each document — the nested query steers what the summary focuses on.";
     default:
       return FLAT[key];
   }

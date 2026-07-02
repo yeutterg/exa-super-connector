@@ -6,6 +6,7 @@
 // company/news/web corpora) render a source list + extracted findings
 // instead of the people table.
 
+import { ExternalLink } from "lucide-react";
 import { useApp } from "@/lib/store";
 import type { Person, SearchRecord } from "@/lib/types";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -102,7 +103,9 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
             <Button
               variant="outline"
               size="xs"
-              disabled={rewriting || searchLoading}
+              // Disable while ANY pipeline is running — the guard in the
+              // store already no-ops, but the button should show it.
+              disabled={Boolean(rerunningDeepId) || searchLoading}
               onClick={() => rerunAsDeep(record)}
               title="GPT-5 nano rewrites the query into deep-search format (comma-separated constraints), then re-runs it as an agentic deep search with entity extraction"
             >
@@ -152,6 +155,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
                   <PersonRow
                     key={p.id}
                     person={p}
+                    recordId={record.id}
                     loading={briefLoadingId === p.id}
                     active={openBriefPersonId === p.id}
                     onBrief={() => runBrief(p, record.id)}
@@ -186,19 +190,22 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
 
 function PersonRow({
   person,
+  recordId,
   loading,
   active,
   onBrief,
 }: {
   person: Person;
+  recordId: string;
   loading: boolean;
   active: boolean;
   onBrief: () => void;
 }) {
+  const { runContents } = useApp();
   return (
     <TableRow className={active ? "bg-accent/60 hover:bg-accent/60" : undefined}>
       <TableCell>
-        <div className="flex items-center gap-2.5">
+        <div className="group flex items-center gap-2.5">
           <Avatar className="size-8">
             {person.image && <AvatarImage src={person.image} alt="" />}
             <AvatarFallback className="text-[10px]">
@@ -206,13 +213,22 @@ function PersonRow({
             </AvatarFallback>
           </Avatar>
           <div>
+            <button
+              type="button"
+              onClick={() => runContents(person, recordId)}
+              title="Extract this profile via /contents"
+              className="text-left text-xs font-medium hover:underline"
+            >
+              {person.name}
+            </button>
             <a
               href={person.url}
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-medium hover:underline"
+              title="Open source profile"
+              className="ml-1 inline-flex align-middle opacity-0 transition-opacity group-hover:opacity-100"
             >
-              {person.name}
+              <ExternalLink className="size-3 text-muted-foreground hover:text-foreground" />
             </a>
             {person.location && (
               <div className="text-[10px] text-muted-foreground">

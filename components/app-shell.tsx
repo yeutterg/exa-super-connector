@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { HistorySidebar } from "@/components/history-sidebar";
 import { SearchPanel } from "@/components/search-panel";
 import { CallHistorySidebar } from "@/components/call-history-sidebar";
+import { ProfileDrawer } from "@/components/profile-drawer";
 
 export function AppShell() {
   return (
@@ -14,6 +15,7 @@ export function AppShell() {
           <HistorySidebar />
           <SearchPanel />
           <CallHistorySidebar />
+          <ProfileDrawer />
         </div>
       </TooltipProvider>
     </AppProvider>

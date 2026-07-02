@@ -14,8 +14,18 @@ import {
 import { Pill } from "@/components/pill";
 import { fmtUSD as fmt, relativeTime } from "@/lib/format";
 
-const TYPE_LABELS = { search: "search", brief: "brief", verify: "verify" } as const;
-const TYPE_TONES = { search: "blue", brief: "neutral", verify: "neutral" } as const;
+const TYPE_LABELS = {
+  search: "search",
+  brief: "brief",
+  verify: "verify",
+  contents: "contents",
+} as const;
+const TYPE_TONES = {
+  search: "blue",
+  brief: "neutral",
+  verify: "neutral",
+  contents: "neutral",
+} as const;
 
 export function CallHistorySidebar() {
   const { costEntries, costTotal, callCount, callHistoryOpen, setCallHistoryOpen, goToCall } =

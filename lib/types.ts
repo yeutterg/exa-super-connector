@@ -125,6 +125,10 @@ export interface SearchRecord {
    *  those companies fills `people`. This is that second call's body — shown
    *  as its own code block so the join stays visible. */
   joinRequest?: SearchRequestBody;
+  /** The OpenAI chat.completions body (gpt-5-nano) that rewrote the query
+   *  into deep-search format — shown as its own code block above the deep
+   *  call so every step of the pipeline is inspectable. */
+  rewriteRequest?: object;
 }
 
 /** A sidebar entry — a chat-style session that can hold multiple appended
@@ -188,10 +192,48 @@ export interface BriefRecord {
   raw?: unknown;
 }
 
+// ---------- Profile drawer (Exa /contents) ----------
+
+/** POST /contents body — ids from /search work directly (for people results
+ *  that's the library entity URL). */
+export interface ContentsRequestBody {
+  ids: string[];
+  text: { maxCharacters: number };
+  summary: { query: string };
+}
+
+export interface ContentsResult {
+  id: string;
+  url: string;
+  title: string | null;
+  author?: string | null;
+  publishedDate?: string | null;
+  image?: string | null;
+  text?: string;
+  summary?: string;
+}
+
+export interface ContentsResponse {
+  requestId?: string;
+  results: ContentsResult[];
+  /** Per-document fetch status — `source` says cached vs live-crawled. */
+  statuses?: { id: string; status: string; source?: string }[];
+  costDollars?: { total: number };
+}
+
+/** Cached per person — a second click reopens without re-billing. */
+export interface ContentsRecord {
+  personId: string;
+  personName: string;
+  request: ContentsRequestBody;
+  response: ContentsResponse;
+  durationMs: number;
+}
+
 /** One entry in the session cost meter / call history. */
 export interface CostEntry {
   id: string;
-  type: "search" | "brief" | "verify";
+  type: "search" | "brief" | "verify" | "contents";
   /** Display text — the query for a search, the person's name for a brief. */
   label: string;
   amount: number;

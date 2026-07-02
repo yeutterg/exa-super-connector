@@ -16,6 +16,7 @@ import {
 } from "react";
 import type {
   BriefRecord,
+  ContentsRecord,
   CostEntry,
   Person,
   SearchRecord,
@@ -37,6 +38,7 @@ const LS_SESSIONS_KEY = "superconnector.liveSessions.v1";
 const LS_BRIEFS_KEY = "superconnector.liveBriefs.v1";
 const LS_VERIFY_KEY = "superconnector.liveVerify.v1";
 const LS_COST_KEY = "superconnector.liveCostEntries.v1";
+const LS_CONTENTS_KEY = "superconnector.liveContents.v1";
 // Simulated latency for cached-fixture replays — mimics real Exa response times.
 const FIXTURE_REPLAY_MS = 1100;
 const BRIEF_REPLAY_MS = 1800;
@@ -79,6 +81,14 @@ interface AppState {
   rerunningDeepId: string | null;
   runBrief: (person: Person, searchId: string) => Promise<void>;
   closeBrief: () => void;
+  /** Profile drawer (Exa /contents): cached per person — the call bills once
+   *  and lands in the call history; re-clicks reopen from cache. */
+  contentsRecords: Record<string, ContentsRecord>;
+  openContentsPersonId: string | null;
+  contentsLoadingId: string | null;
+  contentsError: string | null;
+  runContents: (person: Person, searchId: string) => Promise<void>;
+  closeContents: () => void;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -102,6 +112,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
   const [rerunningDeepId, setRerunningDeepId] = useState<string | null>(null);
+  const [contentsRecords, setContentsRecords] = useState<Record<string, ContentsRecord>>({});
+  const [openContentsPersonId, setOpenContentsPersonId] = useState<string | null>(null);
+  const [contentsLoadingId, setContentsLoadingId] = useState<string | null>(null);
+  const [contentsError, setContentsError] = useState<string | null>(null);
   const [verifyResults, setVerifyResults] = useState<Record<string, VerifyRecord>>({});
   const [verifyLoadingId, setVerifyLoadingId] = useState<string | null>(null);
   const [verifyError, setVerifyError] = useState<string | null>(null);
@@ -137,6 +151,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     let restoredBriefs: Record<string, BriefRecord> = {};
     let restoredVerify: Record<string, VerifyRecord> = {};
     let restoredCost: CostEntry[] = [];
+    let restoredContents: Record<string, ContentsRecord> = {};
     try {
       const rawRecords = localStorage.getItem(LS_RECORDS_KEY);
       if (rawRecords) restoredRecords = JSON.parse(rawRecords) as SearchRecord[];
@@ -148,6 +163,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       if (rawVerify) restoredVerify = JSON.parse(rawVerify) as Record<string, VerifyRecord>;
       const rawCost = localStorage.getItem(LS_COST_KEY);
       if (rawCost) restoredCost = JSON.parse(rawCost) as CostEntry[];
+      const rawContents = localStorage.getItem(LS_CONTENTS_KEY);
+      if (rawContents)
+        restoredContents = JSON.parse(rawContents) as Record<string, ContentsRecord>;
     } catch {
       // corrupt persisted state — start clean
     }
@@ -161,6 +179,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setSearches([...restoredRecords, ...seeded]);
     setSessions([...restoredSessions, ...seededSessions]);
     setVerifyResults(restoredVerify);
+    setContentsRecords(restoredContents);
     // The example searches already "cost" something — count them in the
     // session meter from the start, not just live/wildcard queries. Restored
     // (real, previously billed) entries are layered on top so a reload never
@@ -234,10 +253,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem(LS_BRIEFS_KEY, JSON.stringify(liveBriefs));
       localStorage.setItem(LS_VERIFY_KEY, JSON.stringify(verifyResults));
       localStorage.setItem(LS_COST_KEY, JSON.stringify(liveCost));
+      localStorage.setItem(LS_CONTENTS_KEY, JSON.stringify(contentsRecords));
     } catch {
       // quota exceeded — persistence is best-effort
     }
-  }, [searches, sessions, briefs, verifyResults, costEntries]);
+  }, [searches, sessions, briefs, verifyResults, costEntries, contentsRecords]);
 
   const activeTurns = useMemo(() => {
     const session = sessions.find((s) => s.id === activeSessionId);
@@ -507,6 +527,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // comma-separated explicit constraints decompose better agentically.
       // Fails open to the original query.
       let rewritten = record.query;
+      let rewriteRequest: object | undefined;
       try {
         const res = await fetch("/api/rewrite-deep", {
           method: "POST",
@@ -516,6 +537,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         if (res.ok) {
           const data = await res.json();
           if (data.rewritten) rewritten = data.rewritten;
+          if (data.request) rewriteRequest = data.request;
         }
       } catch {
         // fall through with the original query
@@ -591,6 +613,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           people,
           durationMs: (deepData.durationMs ?? 0) + joinMs,
           joinRequest,
+          rewriteRequest,
         };
         setSearches((prev) => [newRecord, ...prev]);
         const now = Date.now();
@@ -638,6 +661,53 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
     [searchLoading, rerunningDeepId, activeSessionId, addCost, syncUrl],
   );
+
+  const runContents = useCallback(
+    async (person: Person, searchId: string) => {
+      setContentsError(null);
+      setOpenContentsPersonId(person.id);
+      // Cached — reopen instantly, no re-bill.
+      if (contentsRecords[person.id] || contentsLoadingId) return;
+      setContentsLoadingId(person.id);
+      try {
+        const res = await fetch("/api/contents", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: person.id }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? `HTTP ${res.status}`);
+        const rec: ContentsRecord = {
+          personId: person.id,
+          personName: person.name,
+          request: data.request,
+          response: data.response,
+          durationMs: data.durationMs,
+        };
+        setContentsRecords((prev) => ({ ...prev, [person.id]: rec }));
+        addCost({
+          id: nextId(),
+          type: "contents",
+          label: `contents · ${person.name}`,
+          amount: data.response?.costDollars?.total ?? 0,
+          timestamp: Date.now(),
+          searchId,
+          personId: person.id,
+        });
+        bumpSessionActivity(searchId);
+      } catch (err) {
+        setContentsError(err instanceof Error ? err.message : "contents fetch failed");
+      } finally {
+        setContentsLoadingId(null);
+      }
+    },
+    [contentsRecords, contentsLoadingId, addCost, bumpSessionActivity],
+  );
+
+  const closeContents = useCallback(() => {
+    setOpenContentsPersonId(null);
+    setContentsError(null);
+  }, []);
 
   const runVerify = useCallback(
     async (record: SearchRecord) => {
@@ -756,6 +826,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         syncUrl(session.id);
       }
       setOpenBriefPersonId(entry.type === "brief" ? (entry.personId ?? null) : null);
+      // Contents entries reopen the profile drawer straight from cache.
+      setOpenContentsPersonId(
+        entry.type === "contents" ? (entry.personId ?? null) : null,
+      );
       setBriefError(null);
       setRawView(false);
       setCallHistoryOpen(false);
@@ -799,6 +873,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     rerunningDeepId,
     runBrief,
     closeBrief,
+    contentsRecords,
+    openContentsPersonId,
+    contentsLoadingId,
+    contentsError,
+    runContents,
+    closeContents,
   };
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

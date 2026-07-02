@@ -3,6 +3,7 @@
 
 import type {
   BriefRequestBody,
+  ContentsRequestBody,
   ExaSearchResponse,
   ExaSearchResult,
   Person,
@@ -99,6 +100,22 @@ export function buildSearchBody(
 /** The join step: given extracted companies, find the people to contact. */
 export function buildPeopleAtCompaniesQuery(companies: string[]): string {
   return `Head of Sales, CRO, or revenue leader at ${companies.join(", ")}`;
+}
+
+/** Profile drawer: /contents accepts search-result ids directly. Text gives
+ *  the raw extracted profile; the summary query steers Exa's synthesis
+ *  toward what a rep needs before outreach. */
+export function buildContentsBody(id: string): ContentsRequestBody {
+  return {
+    ids: [id],
+    text: { maxCharacters: 4000 },
+    summary: {
+      query:
+        "Summarize this person's profile for a sales rep preparing outreach: " +
+        "current role and tenure, what they own, notable background, and " +
+        "anything recent worth referencing.",
+    },
+  };
 }
 
 export function buildBriefBody(person: {
