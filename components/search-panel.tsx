@@ -4,10 +4,12 @@
 // state, or one block per SearchRecord in the active session), with the
 // search bar fixed at the bottom. Typing while a session is open appends a
 // new turn instead of replacing the view; the first query stays pinned to
-// the top as the session's title.
+// the top as the session's title. Each turn heading is a permalink anchor
+// (/s/<sessionId>#<recordId>) — a hash in the URL scrolls to that turn on
+// load instead of snapping to the bottom.
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Check, Link as LinkIcon } from "lucide-react";
 import { useApp } from "@/lib/store";
 import type { SearchRecord } from "@/lib/types";
 import { HERO_QUERIES } from "@/lib/fixtures";
@@ -34,10 +36,25 @@ export function SearchPanel() {
   } = useApp();
   const [value, setValue] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
+  // A #recordId fragment on first load wins over scroll-to-bottom, once.
+  const pendingHashRef = useRef<string | null>(
+    typeof window !== "undefined" && window.location.hash
+      ? decodeURIComponent(window.location.hash.slice(1))
+      : null,
+  );
 
   // Auto-scroll to the bottom as new turns are appended to the thread — new
   // search results, opening a brief, a brief completing, or a verify pass.
   useEffect(() => {
+    const pending = pendingHashRef.current;
+    if (pending && activeTurns.length > 0) {
+      pendingHashRef.current = null; // one attempt — stale links fall through
+      const el = document.getElementById(pending);
+      if (el) {
+        el.scrollIntoView({ block: "start" });
+        return;
+      }
+    }
     scrollRef.current?.scrollTo({
       top: scrollRef.current.scrollHeight,
       behavior: "smooth",
@@ -142,18 +159,68 @@ export function SearchPanel() {
   );
 }
 
+/** Hover-revealed permalink button — copies /s/<sessionId>#<recordId> and
+ *  sets the fragment so the address bar reflects the linked turn. */
+function PermalinkButton({ recordId }: { recordId: string }) {
+  const { activeSessionId } = useApp();
+  const [copied, setCopied] = useState(false);
+  if (!activeSessionId) return null;
+
+  const copy = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}/s/${encodeURIComponent(activeSessionId)}#${encodeURIComponent(recordId)}`;
+    await navigator.clipboard.writeText(url);
+    window.history.replaceState(null, "", url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1200);
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      title="Copy link to this message"
+      className="inline-flex opacity-0 transition-opacity group-hover:opacity-100"
+    >
+      {copied ? (
+        <Check className="size-3.5 text-emerald-600 dark:text-emerald-400" />
+      ) : (
+        <LinkIcon className="size-3.5 text-muted-foreground hover:text-foreground" />
+      )}
+    </button>
+  );
+}
+
 function Turn({ record, pinned }: { record: SearchRecord; pinned: boolean }) {
   return (
     <>
       {pinned ? (
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b bg-background px-6 py-3">
-          <h2 className="text-sm font-semibold">{record.query}</h2>
+        <div
+          id={record.id}
+          className="group sticky top-0 z-10 flex scroll-mt-2 items-center justify-between border-b bg-background px-6 py-3"
+        >
+          <h2 className="flex items-center gap-2 text-sm font-semibold">
+            {record.query}
+            <PermalinkButton recordId={record.id} />
+          </h2>
           <CostMeter />
         </div>
       ) : (
-        <h2 className="border-b px-6 py-3 text-sm font-semibold">{record.query}</h2>
+        <h2
+          id={record.id}
+          className="group flex scroll-mt-14 items-center gap-2 border-b px-6 py-3 text-sm font-semibold"
+        >
+          {record.query}
+          <PermalinkButton recordId={record.id} />
+        </h2>
       )}
       <div className="px-6 py-6">
+        {record.rawInput && record.rawInput !== record.query && (
+          <p className="mb-3 text-[11px] text-muted-foreground">
+            Query rewritten by gpt-5-nano — original:{" "}
+            <span className="italic">&ldquo;{record.rawInput}&rdquo;</span>
+          </p>
+        )}
         <ApiCallInline record={record} />
         <ResultsTable record={record} />
         <VerifyThread record={record} />

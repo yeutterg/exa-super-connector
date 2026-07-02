@@ -66,7 +66,16 @@ interface AppState {
   selectSession: (id: string) => void;
   deleteSession: (id: string) => void;
   resetToHome: () => void;
-  runQuery: (query: string, options?: RerunOptions) => Promise<void>;
+  runQuery: (
+    query: string,
+    options?: RerunOptions,
+    rawInputOverride?: string,
+  ) => Promise<void>;
+  /** One-click debug path: GPT-5 nano rewrites the query into deep-search
+   *  format (comma-separated constraints), then re-runs it as deep + web +
+   *  entity extraction — the rewritten query is visible in the request code. */
+  rerunAsDeep: (record: SearchRecord) => Promise<void>;
+  rerunningDeepId: string | null;
   runBrief: (person: Person, searchId: string) => Promise<void>;
   closeBrief: () => void;
 }
@@ -91,6 +100,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [briefError, setBriefError] = useState<string | null>(null);
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
+  const [rerunningDeepId, setRerunningDeepId] = useState<string | null>(null);
   const [verifyResults, setVerifyResults] = useState<Record<string, VerifyRecord>>({});
   const [verifyLoadingId, setVerifyLoadingId] = useState<string | null>(null);
   const [verifyError, setVerifyError] = useState<string | null>(null);
@@ -99,6 +109,22 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [callHistoryOpen, setCallHistoryOpen] = useState(false);
   const idCounter = useRef(0);
   const nextId = () => `cost-${Date.now()}-${idCounter.current++}`;
+
+  // Shallow URL sync: each session gets /s/<id>, home is /. History entries
+  // are pushed so browser back/forward walks between chats; popstate below
+  // maps URL changes back into state.
+  const syncUrl = useCallback((sessionId: string | null) => {
+    if (typeof window === "undefined") return;
+    const path = sessionId ? `/s/${encodeURIComponent(sessionId)}` : "/";
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, "", path);
+    }
+  }, []);
+
+  const sessionIdFromPath = () => {
+    const m = window.location.pathname.match(/^\/s\/([^/]+)$/);
+    return m ? decodeURIComponent(m[1]) : null;
+  };
 
   // Seed fixtures + restore persisted live sessions once, on mount.
   // localStorage is unavailable during SSR, so this must live in an effect;
@@ -165,6 +191,29 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       ),
       ...restoredBriefs,
     });
+    // Deep link: /s/<id> activates that session if it exists on this browser;
+    // unknown ids fall back to home without leaving a broken URL behind.
+    const linked = sessionIdFromPath();
+    if (linked) {
+      const all = [...restoredSessions, ...seededSessions];
+      if (all.some((s) => s.id === linked)) {
+        setActiveSessionId(linked);
+      } else {
+        window.history.replaceState(null, "", "/");
+      }
+    }
+  }, []);
+
+  // Browser back/forward walks between chats.
+  useEffect(() => {
+    const onPop = () => {
+      setActiveSessionId(sessionIdFromPath());
+      setOpenBriefPersonId(null);
+      setBriefError(null);
+      setRawView(false);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
 
   // Persist everything real — non-seed records/sessions, live briefs, verify
@@ -210,13 +259,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     );
   }, []);
 
-  const selectSession = useCallback((id: string) => {
-    // History navigation: instant, no network, no cost tick.
-    setActiveSessionId(id);
-    setOpenBriefPersonId(null);
-    setBriefError(null);
-    setRawView(false);
-  }, []);
+  const selectSession = useCallback(
+    (id: string) => {
+      // History navigation: instant, no network, no cost tick.
+      setActiveSessionId(id);
+      setOpenBriefPersonId(null);
+      setBriefError(null);
+      setRawView(false);
+      syncUrl(id);
+    },
+    [syncUrl],
+  );
 
   const resetToHome = useCallback(() => {
     // "New chat"-style reset: back to the empty state, ready to start a new
@@ -225,7 +278,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setOpenBriefPersonId(null);
     setBriefError(null);
     setRawView(false);
-  }, []);
+    syncUrl(null);
+  }, [syncUrl]);
 
   const deleteSession = useCallback(
     (id: string) => {
@@ -235,13 +289,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setOpenBriefPersonId(null);
         setBriefError(null);
         setRawView(false);
+        syncUrl(null);
       }
     },
-    [activeSessionId],
+    [activeSessionId, syncUrl],
   );
 
   const runQuery = useCallback(
-    async (query: string, options?: RerunOptions) => {
+    async (query: string, options?: RerunOptions, rawInputOverride?: string) => {
       const trimmed = query.trim();
       if (!trimmed || searchLoading) return;
       setSearchLoading(true);
@@ -260,7 +315,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // first query of a fresh session (nothing to expand against yet), and
       // for parameterized re-runs (same query on purpose, different knobs).
       let effectiveQuery = trimmed;
-      let rawInput: string | undefined;
+      let rawInput: string | undefined = rawInputOverride;
       if (activeTurns.length > 0 && !isHeroExact && !options) {
         try {
           const res = await fetch("/api/expand-query", {
@@ -390,7 +445,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           ...prev,
         ];
       });
-      if (!activeSessionId) setActiveSessionId(newSessionId);
+      if (!activeSessionId) {
+        setActiveSessionId(newSessionId);
+        syncUrl(newSessionId);
+      }
 
       addCost({
         id: nextId(),
@@ -402,7 +460,46 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       });
       setSearchLoading(false);
     },
-    [searches, searchLoading, activeSessionId, activeTurns, addCost],
+    [searches, searchLoading, activeSessionId, activeTurns, addCost, syncUrl],
+  );
+
+  const rerunAsDeep = useCallback(
+    async (record: SearchRecord) => {
+      if (searchLoading || rerunningDeepId) return;
+      setRerunningDeepId(record.id);
+      // Step 1: GPT-5 nano rewrites the query into deep-search format —
+      // comma-separated explicit constraints decompose better agentically.
+      // Fails open to the original query.
+      let rewritten = record.query;
+      try {
+        const res = await fetch("/api/rewrite-deep", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: record.query }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.rewritten) rewritten = data.rewritten;
+        }
+      } catch {
+        // fall through with the original query
+      }
+      setRerunningDeepId(null);
+      // Step 2: run it deep + web-wide + entity extraction. The rewritten
+      // query is visible in the new turn's request code; the original is
+      // kept as rawInput so the turn can show what it was rewritten from.
+      await runQuery(
+        rewritten,
+        {
+          type: "deep",
+          category: null,
+          numResults: record.request.numResults ?? 5,
+          extractEntities: true,
+        },
+        rewritten !== record.query ? record.query : undefined,
+      );
+    },
+    [searchLoading, rerunningDeepId, runQuery],
   );
 
   const runVerify = useCallback(
@@ -516,13 +613,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // Historical calls are always already-completed — jump straight to the
       // cached data, no re-fetch, no loading state.
       const session = sessions.find((s) => s.recordIds.includes(entry.searchId));
-      if (session) setActiveSessionId(session.id);
+      if (session) {
+        setActiveSessionId(session.id);
+        syncUrl(session.id);
+      }
       setOpenBriefPersonId(entry.type === "brief" ? (entry.personId ?? null) : null);
       setBriefError(null);
       setRawView(false);
       setCallHistoryOpen(false);
     },
-    [sessions],
+    [sessions, syncUrl],
   );
 
   const costTotal = useMemo(
@@ -557,6 +657,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     deleteSession,
     resetToHome,
     runQuery,
+    rerunAsDeep,
+    rerunningDeepId,
     runBrief,
     closeBrief,
   };

@@ -18,7 +18,8 @@ function sanitizeOptions(raw: unknown): RerunOptions | undefined {
   const category = VALID_CATEGORIES.has(String(o.category))
     ? (String(o.category) as RerunOptions["category"])
     : null;
-  const numResults = Math.min(Math.max(Number(o.numResults) || 5, 1), 25);
+  // Docs allow 1–100 (results beyond 10 bill extra at $1/1k).
+  const numResults = Math.min(Math.max(Number(o.numResults) || 5, 1), 100);
   const startPublishedDate =
     typeof o.startPublishedDate === "string" &&
     /^\d{4}-\d{2}-\d{2}T[\d:.]+Z$/.test(o.startPublishedDate)

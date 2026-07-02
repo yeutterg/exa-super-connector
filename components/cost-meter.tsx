@@ -43,7 +43,6 @@ export function CostMeter() {
           />
         }
       >
-        <span className="font-semibold">Exa</span>
         <span className="text-muted-foreground">
           {callCount} {callCount === 1 ? "call" : "calls"}
         </span>

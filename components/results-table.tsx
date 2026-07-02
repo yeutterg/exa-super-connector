@@ -6,7 +6,6 @@
 // company/news/web corpora) render a source list + extracted findings
 // instead of the people table.
 
-import { useState } from "react";
 import { useApp } from "@/lib/store";
 import type { Person, SearchRecord } from "@/lib/types";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -23,8 +22,7 @@ import {
 import { CodeBlock } from "@/components/code-block";
 import { Pill } from "@/components/pill";
 import { HighlightsCell } from "@/components/highlights-cell";
-import { RerunModal } from "@/components/rerun-modal";
-import { FindingsCard, WebResultsList } from "@/components/web-results";
+import { FindingsTable, WebResultsList } from "@/components/web-results";
 import { fmtUSD } from "@/lib/format";
 
 function initials(name: string) {
@@ -61,10 +59,14 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
     briefLoadingId,
     runVerify,
     verifyLoadingId,
+    rerunAsDeep,
+    rerunningDeepId,
+    searchLoading,
   } = useApp();
-  const [rerunOpen, setRerunOpen] = useState(false);
   const verifying = verifyLoadingId === record.id;
+  const rewriting = rerunningDeepId === record.id;
   const isPeople = record.request.category === "people";
+  const isDeepAlready = record.request.type.startsWith("deep");
 
   return (
     <div className="space-y-3">
@@ -79,14 +81,17 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
           <Pill tone="neutral">{(record.durationMs / 1000).toFixed(1)}s</Pill>
         </div>
         <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="xs"
-            onClick={() => setRerunOpen(true)}
-            title="Debug this query: re-run it with a different search type, corpus, freshness, or structured extraction"
-          >
-            Re-run…
-          </Button>
+          {!isDeepAlready && (
+            <Button
+              variant="outline"
+              size="xs"
+              disabled={rewriting || searchLoading}
+              onClick={() => rerunAsDeep(record)}
+              title="GPT-5 nano rewrites the query into deep-search format (comma-separated constraints), then re-runs it as an agentic deep search with entity extraction"
+            >
+              {rewriting ? "Rewriting query…" : "Re-run as deep"}
+            </Button>
+          )}
           {isPeople && (
             <Button
               variant="outline"
@@ -146,14 +151,19 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
             ))}
           </TableBody>
         </Table>
-      ) : (
+      ) : record.response.output?.content?.findings?.length ? (
+        // Deep run with structured output: the findings ARE the data — they
+        // get the table; the raw sources demote to a secondary list.
         <>
-          <FindingsCard record={record} />
+          <FindingsTable record={record} />
+          <div className="pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+            Sources
+          </div>
           <WebResultsList record={record} />
         </>
+      ) : (
+        <WebResultsList record={record} />
       )}
-
-      <RerunModal record={record} open={rerunOpen} onOpenChange={setRerunOpen} />
     </div>
   );
 }
