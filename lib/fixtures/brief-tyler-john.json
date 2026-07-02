@@ -171,5 +171,50 @@
         "fiber_ai": 0.02
       }
     }
+  },
+  "request": {
+    "query": "Profile Tyler John, Chief Revenue Officer (CRO) at Actively AI. Return their work email (verified if available, otherwise the best-supported inference from reputable public sources), and 2-3 recent, specific \"why now\" signals a salesperson could open a cold email with — funding, launches, hiring, exec talks, migrations, or press from the last 6 months. Each signal must cite a source URL and date.",
+    "dataSources": [
+      {
+        "provider": "fiber_ai"
+      },
+      {
+        "provider": "financial_datasets"
+      }
+    ],
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "work email — verified when a data source has it, otherwise inferred from reputable public listings"
+        },
+        "whyNow": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "signal",
+              "source",
+              "date"
+            ],
+            "properties": {
+              "signal": {
+                "type": "string",
+                "description": "recent news for public cos, from Financial Datasets; else web"
+              },
+              "source": {
+                "type": "string",
+                "description": "citation URL"
+              },
+              "date": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -206,11 +206,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           personId,
           {
             ...b,
-            request: buildBriefBody({
-              name: b.personName,
-              title: "",
-              company: "",
-            }),
+            // Prefer the request captured with the fixture (real echo from
+            // the run) — synthesize one only for older fixtures without it.
+            request:
+              (b as BriefRecord).request ??
+              buildBriefBody({ name: b.personName, title: "", company: "" }),
           } as BriefRecord,
         ]),
       ),

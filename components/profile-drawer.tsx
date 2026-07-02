@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ApiCallBlock } from "@/components/api-call-block";
 import { BriefCard } from "@/components/brief-card";
@@ -50,6 +51,7 @@ export function ProfileDrawer() {
     runBrief,
   } = useApp();
   const [showRaw, setShowRaw] = useState(false);
+  const [imageOpen, setImageOpen] = useState(false);
 
   const person = openContentsPersonId
     ? searches.flatMap((s) => s.people).find((p) => p.id === openContentsPersonId)
@@ -99,12 +101,19 @@ export function ProfileDrawer() {
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2.5">
             {person && (
-              <Avatar className="size-7">
-                <AvatarImage src={person.image ?? undefined} alt="" />
-                <AvatarFallback className="text-[10px]">
-                  {person.name.slice(0, 2).toUpperCase()}
-                </AvatarFallback>
-              </Avatar>
+              <button
+                type="button"
+                onClick={() => person.image && setImageOpen(true)}
+                title={person.image ? "View larger photo" : undefined}
+                className={person.image ? "cursor-zoom-in" : "cursor-default"}
+              >
+                <Avatar className="size-7">
+                  <AvatarImage src={person.image ?? undefined} alt="" />
+                  <AvatarFallback className="text-[10px]">
+                    {person.name.slice(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </button>
             )}
             <span>
               {person?.name ?? record?.personName ?? "Profile"}
@@ -153,7 +162,10 @@ export function ProfileDrawer() {
           )}
         </SheetHeader>
 
-        <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 pb-4">
+        {/* [&>*]:shrink-0 — children of a scrollable flex column compress to
+            fit before overflow kicks in; the brief card was getting squashed
+            to its header instead of pushing content into the scroll. */}
+        <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 pb-4 [&>*]:shrink-0">
           {/* ---------------- BRIEF (agent run, on demand) ---------------- */}
           {person && (
             <>
@@ -339,6 +351,23 @@ export function ProfileDrawer() {
             </div>
           )}
         </div>
+
+        {/* Click the avatar → full-size photo */}
+        {person?.image && (
+          <Dialog open={imageOpen} onOpenChange={setImageOpen}>
+            <DialogContent className="w-auto max-w-[80vw] p-2">
+              <DialogTitle className="sr-only">
+                {person.name} — photo
+              </DialogTitle>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={person.image}
+                alt={person.name}
+                className="max-h-[80vh] rounded-md object-contain"
+              />
+            </DialogContent>
+          </Dialog>
+        )}
       </SheetContent>
     </Sheet>
   );

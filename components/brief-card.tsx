@@ -13,7 +13,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock } from "@/components/code-block";
 import { CopyInline } from "@/components/copy-inline";
 import { Pill } from "@/components/pill";
-import { PROVIDER_LABELS } from "@/lib/exa";
 import { fmtUSD } from "@/lib/format";
 
 /** The agent's own grounding citation for the email field — the only honest
@@ -134,18 +133,6 @@ export function BriefCard({
         <div className="group flex items-start gap-1 rounded-md border bg-muted/40 p-3 text-xs leading-relaxed">
           <span className="flex-1">{opener}</span>
           <CopyInline value={opener} />
-        </div>
-        <div className="text-right text-[10px] text-muted-foreground">
-          {brief.routedTo.length > 0 ? (
-            <>
-              Routed to: Exa web research +{" "}
-              {brief.routedTo.map((r) => PROVIDER_LABELS[r] ?? r).join(" + ")}
-              {!brief.routedTo.includes("financial_datasets") &&
-                " — Financial Datasets not called (private company or no ticker news)"}
-            </>
-          ) : (
-            "Routed to: Exa web research only — no Connect partner data source was needed"
-          )}
         </div>
           </>
         )}
