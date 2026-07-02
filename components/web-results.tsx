@@ -1,16 +1,10 @@
 "use client";
 
-// Rendering for non-people turns (company/news/web re-runs). When the deep
-// run carried an outputSchema, the structured findings ARE the data — they
-// get the first-class table treatment (mirroring the people table), with the
-// raw sources demoted to a secondary list. Each finding row has a "Find
-// people" button that fires the join (people search at that company) as a
-// new turn.
+// Rendering for deep-search extras and non-people turns. When a deep run
+// carried an outputSchema, the structured findings render as a table
+// mirroring the people table; the raw sources are a secondary list below.
 
-import { ArrowRight } from "lucide-react";
-import { useApp } from "@/lib/store";
 import type { SearchRecord } from "@/lib/types";
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -20,10 +14,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Pill } from "@/components/pill";
-import { buildPeopleAtCompanyQuery } from "@/lib/exa";
 
 export function FindingsTable({ record }: { record: SearchRecord }) {
-  const { runQuery, searchLoading } = useApp();
   const findings = record.response.output?.content?.findings;
   if (!findings?.length) return null;
 
@@ -32,9 +24,8 @@ export function FindingsTable({ record }: { record: SearchRecord }) {
       <TableHeader>
         <TableRow>
           <TableHead className="w-[18%]">Entity</TableHead>
-          <TableHead className="w-[52%]">Why it matches</TableHead>
-          <TableHead className="w-[15%]">Evidence</TableHead>
-          <TableHead className="w-[15%]" />
+          <TableHead className="w-[57%]">Why it matches</TableHead>
+          <TableHead className="w-[25%]">Evidence</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -44,26 +35,21 @@ export function FindingsTable({ record }: { record: SearchRecord }) {
             <TableCell className="text-xs leading-relaxed text-muted-foreground">
               {f.note ?? "—"}
             </TableCell>
-            <TableCell className="text-xs">
-              <a
-                href={f.evidence}
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground underline decoration-dotted underline-offset-2"
-              >
-                {safeHostname(f.evidence)}
-              </a>
-            </TableCell>
-            <TableCell className="text-right">
-              <Button
-                size="xs"
-                variant="outline"
-                disabled={searchLoading}
-                onClick={() => runQuery(buildPeopleAtCompanyQuery(f.entity))}
-                title="The join: feed this company back into fast people search"
-              >
-                Find people <ArrowRight className="size-3" />
-              </Button>
+            <TableCell className="text-xs leading-relaxed text-muted-foreground">
+              {/* On the people corpus the synthesis sometimes returns prose
+                  here instead of a URL — only link real links. */}
+              {/^https?:\/\//.test(f.evidence) ? (
+                <a
+                  href={f.evidence}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-dotted underline-offset-2"
+                >
+                  {safeHostname(f.evidence)}
+                </a>
+              ) : (
+                <span className="line-clamp-3">{f.evidence}</span>
+              )}
             </TableCell>
           </TableRow>
         ))}

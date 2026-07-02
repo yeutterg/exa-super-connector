@@ -33,6 +33,7 @@ export function SearchPanel() {
     briefs,
     verifyLoadingId,
     verifyResults,
+    rerunningDeepId,
   } = useApp();
   const [value, setValue] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,9 @@ export function SearchPanel() {
   );
 
   // Auto-scroll to the bottom as new turns are appended to the thread — new
-  // search results, opening a brief, a brief completing, or a verify pass.
+  // search results, opening a brief, a brief completing, a verify pass, or
+  // the instant "Re-run as deep" is clicked (rerunningDeepId flips before
+  // the skeleton exists, so the jump feels immediate).
   useEffect(() => {
     const pending = pendingHashRef.current;
     if (pending && activeTurns.length > 0) {
@@ -67,6 +70,7 @@ export function SearchPanel() {
     briefs,
     verifyLoadingId,
     verifyResults,
+    rerunningDeepId,
   ]);
 
   const submit = (q: string) => {

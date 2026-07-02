@@ -177,6 +177,10 @@ export interface BriefRecord {
   cost: BriefCostBreakdown;
   durationMs: number;
   source: "fixture" | "live";
+  /** The complete agent run object as returned by /agent/runs — includes
+   *  output.text, output.grounding[] (per-field citations), usage, and the
+   *  echoed request. Shown by the Raw toggle on the brief card. */
+  raw?: unknown;
 }
 
 /** One entry in the session cost meter / call history. */

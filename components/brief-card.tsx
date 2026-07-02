@@ -11,6 +11,7 @@ import { Check, Copy } from "lucide-react";
 import type { BriefRecord, Person } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CodeBlock } from "@/components/code-block";
 import { Pill } from "@/components/pill";
 import { PROVIDER_LABELS } from "@/lib/exa";
 import { fmtUSD } from "@/lib/format";
@@ -61,6 +62,7 @@ export function BriefCard({
   onClose: () => void;
 }) {
   const [copied, setCopied] = useState(false);
+  const [showRaw, setShowRaw] = useState(false);
   const opener = buildOpener(person, brief);
 
   const copy = async () => {
@@ -80,9 +82,19 @@ export function BriefCard({
               &nbsp;— {person.title}, {person.company}
             </span>
           </CardTitle>
-          <Button variant="ghost" size="sm" onClick={onClose}>
-            Close
-          </Button>
+          <div className="flex items-center gap-1">
+            <Button
+              variant={showRaw ? "secondary" : "ghost"}
+              size="xs"
+              onClick={() => setShowRaw((v) => !v)}
+              title="The complete agent run object — output.text, per-field grounding citations, usage, cost"
+            >
+              Raw
+            </Button>
+            <Button variant="ghost" size="xs" onClick={onClose}>
+              Close
+            </Button>
+          </div>
         </div>
         <div className="group flex items-center gap-2 text-xs">
           <span className="text-muted-foreground">
@@ -100,6 +112,14 @@ export function BriefCard({
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
+        {showRaw ? (
+          <CodeBlock
+            code={JSON.stringify(brief.raw ?? brief, null, 2)}
+            lang="json"
+            maxHeightClassName="max-h-[60vh]"
+          />
+        ) : (
+          <>
         <div>
           <div className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
             Why reach out now
@@ -144,6 +164,8 @@ export function BriefCard({
             )}
           </span>
         </div>
+          </>
+        )}
       </CardContent>
     </Card>
   );

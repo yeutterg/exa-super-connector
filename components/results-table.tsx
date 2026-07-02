@@ -67,6 +67,7 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
   const rewriting = rerunningDeepId === record.id;
   const isPeople = record.request.category === "people";
   const isDeepAlready = record.request.type.startsWith("deep");
+  const hasFindings = Boolean(record.response.output?.content?.findings?.length);
 
   return (
     <div className="space-y-3">
@@ -128,41 +129,51 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
           lang="json"
           maxHeightClassName="max-h-[70vh]"
         />
-      ) : isPeople ? (
-        <Table className="table-fixed [&_td]:whitespace-normal">
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[21%]">Person</TableHead>
-              <TableHead className="w-[17%]">Title</TableHead>
-              <TableHead className="w-[15%]">Company</TableHead>
-              <TableHead className="w-[36%]">Highlights</TableHead>
-              <TableHead className="w-[11%]" />
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {record.people.map((p) => (
-              <PersonRow
-                key={p.id}
-                person={p}
-                loading={briefLoadingId === p.id}
-                active={openBriefPersonId === p.id}
-                onBrief={() => runBrief(p, record.id)}
-              />
-            ))}
-          </TableBody>
-        </Table>
-      ) : record.response.output?.content?.findings?.length ? (
-        // Deep run with structured output: the findings ARE the data — they
-        // get the table; the raw sources demote to a secondary list.
-        <>
-          <FindingsTable record={record} />
-          <div className="pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-            Sources
-          </div>
-          <WebResultsList record={record} />
-        </>
       ) : (
-        <WebResultsList record={record} />
+        <>
+          {isPeople && (
+            <Table className="table-fixed [&_td]:whitespace-normal">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[21%]">Person</TableHead>
+                  <TableHead className="w-[17%]">Title</TableHead>
+                  <TableHead className="w-[15%]">Company</TableHead>
+                  <TableHead className="w-[36%]">Highlights</TableHead>
+                  <TableHead className="w-[11%]" />
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {record.people.map((p) => (
+                  <PersonRow
+                    key={p.id}
+                    person={p}
+                    loading={briefLoadingId === p.id}
+                    active={openBriefPersonId === p.id}
+                    onBrief={() => runBrief(p, record.id)}
+                  />
+                ))}
+              </TableBody>
+            </Table>
+          )}
+          {hasFindings && (
+            // Deep run with structured output: rendered alongside the people
+            // table (deep people re-runs) or as the primary data (web runs).
+            <>
+              <div className="pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                Structured output
+              </div>
+              <FindingsTable record={record} />
+            </>
+          )}
+          {(!isPeople || isDeepAlready) && (
+            <>
+              <div className="pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                Sources
+              </div>
+              <WebResultsList record={record} />
+            </>
+          )}
+        </>
       )}
     </div>
   );

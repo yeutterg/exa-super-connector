@@ -485,14 +485,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         // fall through with the original query
       }
       setRerunningDeepId(null);
-      // Step 2: run it deep + web-wide + entity extraction. The rewritten
-      // query is visible in the new turn's request code; the original is
-      // kept as rawInput so the turn can show what it was rewritten from.
+      // Step 2: run it deep on the people corpus + entity extraction — one
+      // call returns BOTH people results (entities[] intact, so the familiar
+      // people table renders) AND the synthesized findings (verified live).
+      // The rewritten query is visible in the new turn's request code; the
+      // original is kept as rawInput so the turn shows what it was rewritten
+      // from.
       await runQuery(
         rewritten,
         {
           type: "deep",
-          category: null,
+          category: "people",
           numResults: record.request.numResults ?? 5,
           extractEntities: true,
         },
@@ -590,6 +593,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           cost: data.cost,
           durationMs: data.durationMs,
           source: "live",
+          raw: data.raw,
         };
         setBriefs((prev) => ({ ...prev, [person.id]: record }));
         addCost(briefCostEntry(nextId(), person, record, searchId));
