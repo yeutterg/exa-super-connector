@@ -56,6 +56,8 @@ export interface ExaSearchResponse {
   requestId: string;
   resolvedSearchType?: string;
   results: ExaSearchResult[];
+  /** Exa-reported search time in ms — distinct from our round-trip. */
+  searchTime?: number;
   costDollars: CostDollars;
   /** Structured synthesis when the request carried an outputSchema (deep
    *  modes) — the schema-conforming object lives at output.content. */
@@ -132,6 +134,10 @@ export interface SearchRecord {
    *  into deep-search format — shown as its own code block above the deep
    *  call so every step of the pipeline is inspectable. */
   rewriteRequest?: object;
+  /** Whole-turn cost when the turn made multiple calls (deep + join fan-out).
+   *  response.costDollars stays untouched (Raw view shows the real body);
+   *  the cost pill uses this when present. */
+  turnCostDollars?: number;
 }
 
 /** A sidebar entry — a chat-style session that can hold multiple appended
@@ -280,4 +286,6 @@ export interface VerifyRecord {
   output: VerifyOutput;
   cost: BriefCostBreakdown;
   durationMs: number;
+  /** The complete agent run object — same Raw affordance as briefs. */
+  raw?: unknown;
 }

@@ -38,6 +38,12 @@ export function ProfileDrawer() {
   const person = searches
     .flatMap((s) => s.people)
     .find((p) => p.id === openContentsPersonId);
+  // People-category results already carry structured entities[] — surface the
+  // work history the search returned, no extra call needed.
+  const workHistory = searches
+    .flatMap((s) => s.response.results)
+    .find((r) => r.id === openContentsPersonId)?.entities?.[0]?.properties
+    .workHistory;
 
   const doc = record?.response.results?.[0];
   const status = record?.response.statuses?.[0];
@@ -106,6 +112,45 @@ export function ProfileDrawer() {
                   <p className="rounded-md border bg-muted/40 p-3 text-xs leading-relaxed">
                     {doc.summary}
                   </p>
+                </div>
+              )}
+
+              {workHistory && workHistory.length > 0 && (
+                <div>
+                  <div className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                    Work history{" "}
+                    <span className="font-normal normal-case tracking-normal">
+                      — structured entities[] already on the search result, no
+                      extra call
+                    </span>
+                  </div>
+                  <ul className="divide-y rounded-md border">
+                    {workHistory.slice(0, 8).map((w, i) => (
+                      <li
+                        key={i}
+                        className="flex items-baseline justify-between gap-3 px-3 py-2 text-xs"
+                      >
+                        <span>
+                          <span className="font-medium">{w.title}</span>
+                          <span className="text-muted-foreground">
+                            {" "}
+                            · {w.company.name}
+                          </span>
+                        </span>
+                        <span className="shrink-0 text-[10px] tabular-nums text-muted-foreground">
+                          {w.dates?.from?.slice(0, 7) ?? "…"} –{" "}
+                          {w.dates?.to === null
+                            ? "present"
+                            : (w.dates?.to?.slice(0, 7) ?? "…")}
+                        </span>
+                      </li>
+                    ))}
+                    {workHistory.length > 8 && (
+                      <li className="px-3 py-1.5 text-[10px] text-muted-foreground">
+                        + {workHistory.length - 8} earlier roles (in Raw view)
+                      </li>
+                    )}
+                  </ul>
                 </div>
               )}
 

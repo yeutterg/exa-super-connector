@@ -80,6 +80,9 @@ interface AppState {
    *  entity extraction — the rewritten query is visible in the request code. */
   rerunAsDeep: (record: SearchRecord) => Promise<void>;
   rerunningDeepId: string | null;
+  /** What the deep pipeline is doing right now — narrated under the loading
+   *  skeleton so the 10s deep call isn't a silent gap on stage. */
+  pipelineStage: string | null;
   runBrief: (person: Person, searchId: string) => Promise<void>;
   closeBrief: () => void;
   /** Profile drawer (Exa /contents): cached per person — the call bills once
@@ -113,6 +116,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
   const [rerunningDeepId, setRerunningDeepId] = useState<string | null>(null);
+  const [pipelineStage, setPipelineStage] = useState<string | null>(null);
   const [contentsRecords, setContentsRecords] = useState<Record<string, ContentsRecord>>({});
   const [openContentsPersonId, setOpenContentsPersonId] = useState<string | null>(null);
   const [contentsLoadingId, setContentsLoadingId] = useState<string | null>(null);
@@ -523,6 +527,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       if (searchLoading || rerunningDeepId) return;
       setRerunningDeepId(record.id);
       setSearchError(null);
+      setSearchLoading(true);
+      setPipelineStage("1/3 · gpt-5-nano is rewriting the query into deep-search format…");
 
       // Step 1: GPT-5 nano rewrites the query into deep-search format —
       // comma-separated explicit constraints decompose better agentically.
@@ -544,7 +550,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         // fall through with the original query
       }
       setRerunningDeepId(null);
-      setSearchLoading(true);
+      setPipelineStage(
+        "2/3 · deep search is decomposing the query across the web (with outputSchema extraction)…",
+      );
 
       try {
         // Step 2: deep search WEB-WIDE with entity extraction. Deliberately
@@ -588,6 +596,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           const companies = [
             ...new Set(findings.slice(0, 5).map((f) => f.entity)),
           ];
+          setPipelineStage(
+            `3/3 · join: ${companies.length} parallel people searches, one leader per company…`,
+          );
           const joinStarted = Date.now();
           const joins = await Promise.all(
             companies.map(async (company) => {
@@ -644,6 +655,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           durationMs: (deepData.durationMs ?? 0) + joinMs,
           joinRequests: joinRequests.length ? joinRequests : undefined,
           rewriteRequest,
+          // Whole-turn cost: the deep call plus every join call — the pill
+          // shouldn't under-report a multi-call turn.
+          turnCostDollars:
+            (deepData.response?.costDollars?.total ?? 0) +
+            joinCosts.reduce((acc, jc) => acc + jc.amount, 0),
         };
         setSearches((prev) => [newRecord, ...prev]);
         const now = Date.now();
@@ -687,6 +703,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setSearchError(err instanceof Error ? err.message : "deep re-run failed");
       } finally {
         setSearchLoading(false);
+        setPipelineStage(null);
       }
     },
     [searchLoading, rerunningDeepId, activeSessionId, addCost, syncUrl],
@@ -758,6 +775,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           output: data.output,
           cost: data.cost,
           durationMs: data.durationMs,
+          raw: data.raw,
         };
         setVerifyResults((prev) => ({ ...prev, [record.id]: verifyRecord }));
         addCost(verifyCostEntry(nextId(), record, verifyRecord));
@@ -901,6 +919,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     runQuery,
     rerunAsDeep,
     rerunningDeepId,
+    pipelineStage,
     runBrief,
     closeBrief,
     contentsRecords,

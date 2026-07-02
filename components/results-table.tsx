@@ -82,10 +82,37 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
           </Pill>
           <Pill tone="blue">{record.request.category ?? "web"}</Pill>
           <Pill tone="neutral">{record.request.type}</Pill>
-          <Pill tone="green">
-            {fmtUSD(record.response.costDollars?.total ?? 0)}
-          </Pill>
-          <Pill tone="neutral">{(record.durationMs / 1000).toFixed(1)}s</Pill>
+          {/* Multi-call turns (deep + join fan-out) show the whole-turn cost;
+              the tooltip carries the API's own breakdown. */}
+          <span
+            title={
+              record.turnCostDollars !== undefined
+                ? `deep ${fmtUSD(record.response.costDollars?.total ?? 0)} + joins ${fmtUSD(
+                    record.turnCostDollars -
+                      (record.response.costDollars?.total ?? 0),
+                  )} — real costDollars from each response`
+                : record.response.costDollars?.search
+                  ? `costDollars.search: ${JSON.stringify(record.response.costDollars.search)}`
+                  : undefined
+            }
+          >
+            <Pill tone="green">
+              {fmtUSD(
+                record.turnCostDollars ??
+                  record.response.costDollars?.total ??
+                  0,
+              )}
+            </Pill>
+          </span>
+          <span
+            title={
+              record.response.searchTime !== undefined
+                ? `Exa-reported searchTime: ${(record.response.searchTime / 1000).toFixed(1)}s · shown: full round trip`
+                : undefined
+            }
+          >
+            <Pill tone="neutral">{(record.durationMs / 1000).toFixed(1)}s</Pill>
+          </span>
         </div>
         <div className="flex items-center gap-2">
           {hasPeople && (

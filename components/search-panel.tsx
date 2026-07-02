@@ -41,6 +41,7 @@ export function SearchPanel() {
     verifyLoadingId,
     verifyResults,
     rerunningDeepId,
+    pipelineStage,
   } = useApp();
   const [value, setValue] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -103,6 +104,11 @@ export function SearchPanel() {
             ))}
             {searchLoading && (
               <div className="px-6 py-6">
+                {pipelineStage && (
+                  <p className="mb-3 text-xs text-muted-foreground">
+                    {pipelineStage}
+                  </p>
+                )}
                 <ResultsSkeleton />
               </div>
             )}
