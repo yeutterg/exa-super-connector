@@ -75,7 +75,10 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <Pill tone="neutral">{record.response.results.length} results</Pill>
+          <Pill tone="neutral">
+            {hasPeople ? record.people.length : record.response.results.length}{" "}
+            results
+          </Pill>
           <Pill tone="blue">{record.request.category ?? "web"}</Pill>
           <Pill tone="neutral">{record.request.type}</Pill>
           <Pill tone="green">

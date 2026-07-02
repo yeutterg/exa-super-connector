@@ -317,6 +317,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       // for parameterized re-runs (same query on purpose, different knobs).
       let effectiveQuery = trimmed;
       let rawInput: string | undefined = rawInputOverride;
+      // Ids of everyone already shown in this session — "10 more profiles"
+      // must not re-serve them. Exclusion happens HERE, deterministically:
+      // embeddings can't reliably encode "not these people" (the negation
+      // weakness this app demonstrates), so we over-fetch and filter by id
+      // instead of asking the query to exclude names.
+      const seenIds = new Set(
+        activeTurns.flatMap((t) => t.people.map((p) => p.id)),
+      );
+      let requestedCount: number | null = null;
       if (activeTurns.length > 0 && !isHeroExact && !options) {
         try {
           const res = await fetch("/api/expand-query", {
@@ -325,6 +334,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
             body: JSON.stringify({
               originalQuery: activeTurns[0].query,
               followUp: trimmed,
+              shownPeople: activeTurns.flatMap((t) =>
+                t.people.map((p) => `${p.name} (${p.company})`),
+              ),
             }),
           });
           if (res.ok) {
@@ -333,11 +345,27 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
               effectiveQuery = data.expandedQuery;
               rawInput = trimmed;
             }
+            if (typeof data.numResults === "number") {
+              requestedCount = data.numResults;
+            }
           }
         } catch {
           // fall through with the raw follow-up text unchanged
         }
+        // Nano edited numResults, or there are prior people to avoid
+        // re-serving: build explicit options with headroom for the dedup.
+        if (requestedCount !== null || seenIds.size > 0) {
+          const want = requestedCount ?? 5;
+          options = {
+            type: "auto",
+            category: "people",
+            numResults: Math.min(want + seenIds.size, 100),
+            extractEntities: false,
+          };
+        }
       }
+      // How many rows the turn should end up with after dedup.
+      const targetCount = requestedCount ?? undefined;
 
       // Hero queries replay their fixture with full theater — recorded latency
       // and recorded cost — so the scripted beats are deterministic on stage.
@@ -371,6 +399,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           });
           if (res.ok) {
             const data = await res.json();
+            // Drop anyone already shown earlier in the session, then trim to
+            // the count the user asked for (we over-fetched to compensate).
+            const fresh = normalizePeople(data.response).filter(
+              (p) => !seenIds.has(p.id),
+            );
             record = {
               id: `live-${Date.now()}-${idCounter.current++}`,
               query: effectiveQuery,
@@ -379,7 +412,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
               source: "live",
               request: data.request,
               response: data.response,
-              people: normalizePeople(data.response),
+              people: targetCount ? fresh.slice(0, targetCount) : fresh,
               durationMs: data.durationMs,
             };
             isNewRecord = true;
