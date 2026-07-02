@@ -81,17 +81,6 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
           <Pill tone="neutral">{(record.durationMs / 1000).toFixed(1)}s</Pill>
         </div>
         <div className="flex items-center gap-2">
-          {!isDeepAlready && (
-            <Button
-              variant="outline"
-              size="xs"
-              disabled={rewriting || searchLoading}
-              onClick={() => rerunAsDeep(record)}
-              title="GPT-5 nano rewrites the query into deep-search format (comma-separated constraints), then re-runs it as an agentic deep search with entity extraction"
-            >
-              {rewriting ? "Rewriting query…" : "Re-run as deep"}
-            </Button>
-          )}
           {isPeople && (
             <Button
               variant="outline"
@@ -101,6 +90,17 @@ export function ResultsTable({ record }: { record: SearchRecord }) {
               title="Have the Agent research and verify each result against the query — catches what semantic search can't (like negation)"
             >
               {verifying ? "Verifying…" : "Verify with Agent"}
+            </Button>
+          )}
+          {!isDeepAlready && (
+            <Button
+              variant="outline"
+              size="xs"
+              disabled={rewriting || searchLoading}
+              onClick={() => rerunAsDeep(record)}
+              title="GPT-5 nano rewrites the query into deep-search format (comma-separated constraints), then re-runs it as an agentic deep search with entity extraction"
+            >
+              {rewriting ? "Rewriting query…" : "Re-run as deep"}
             </Button>
           )}
           <div className="flex rounded-md border p-0.5">
