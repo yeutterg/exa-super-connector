@@ -1,5 +1,8 @@
 # Slide deck brief — "Exa for People Search"
 
+> **The final deck lives at [`slides.pdf`](slides.pdf)** — this file is the
+> design brief it was built from.
+
 Outline + design instructions, ready to paste into a design tool.
 3 slides, 16:9, presented for ~5 minutes before a live app demo.
 Audience: developers building a people-search product.

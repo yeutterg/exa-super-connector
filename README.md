@@ -49,36 +49,43 @@ joins, and enrichment needs verification. This applet is a **teaching demo**:
 every screen shows the exact API call and the exact response, and the demo
 walks each failure mode next to the primitive that fixes it.
 
-**Slides (2–3, ~5 min).** One: what devs actually hit building people search
-(the four lessons above — each one a support ticket you won't file). Two: the
-Exa primitive map — `/search`, `/contents`, deep + `outputSchema`,
-`/agent/runs` + Connect — and which lesson each solves. Optional three: the
-cost/latency envelope (fast search $0.005/1.5s → deep pipeline ~$0.05/15s →
-agent run ~$0.20/60s), because devs will ask.
+**Slides (3, ~5 min — [`slides.pdf`](slides.pdf)).**
+1. *Exa for People Search* — "Web search API for agents," opening on the
+   HubSpot quote (faster, cheaper, better coverage — the demo substantiates
+   all three).
+2. *Why not just ask the model?* — built-in LLM knowledge vs. Exa, three
+   rows: frozen at cutoff vs. live index; reasons-but-can't-enumerate vs.
+   actual profiles; unsourced vs. every result carries a URL. Used-by strip:
+   Cursor, Cognition, HubSpot, OpenRouter, Monday.com.
+3. *How Exa works* — "Low-latency, token-efficient web search": crawl 3M
+   URLs/hour → embedding model (next-link prediction) → custom vector DB →
+   search results + contents → API. Footer hands off to the app:
+   **today's demo = `/search` (auto, deep, structured output) · `/agent`
+   (connect) · `/contents`**.
 
-**Live demo (~15 min).** Three beats, the request JSON always on screen
-(hover any key for its docs):
+**Live demo (~15 min).** Three beats matching the slide-3 footer, the
+request JSON always on screen (hover any key for its docs):
 
-1. **Search.** Query: *"Nvidia: Jensen Huang's direct reports."*
-   Plain `/search` with `category: "people"` — one natural-language sentence
-   in, structured people out: names, titles, locations, dated work history.
-   No filters, no parsing.
-2. **Agent, then deep.** Query: *"Revenue or sales leaders at companies that
-   raised a Series B in the last 6 months and are rapidly scaling their
-   go-to-market team."* The results look plausible — **Verify with Agent**
-   hands the same rows to `/agent/runs` via `input.data` and returns verdicts
-   with reasons. Then **Re-run as deep**: gpt-5-nano rewrites the query →
-   deep search finds the companies web-wide → a parallel join finds one
-   leader per company. Pause on the middle deep call's **Structured output**
-   table — that's `outputSchema` on `/search`: schema in, cited entities out.
-3. **One person, end to end.** Click a profile. The drawer's **Profile**
-   section is `/contents` — the search result id goes straight in, extracted
-   summary + page text come back (note the cached/crawled provenance pill).
-   The **Brief** renders when its `/agent/runs` call finishes — this is
-   **Exa Connect**: partner providers (Fiber.ai, Financial Datasets) attached
-   explicitly, routed automatically, billed only when called; the email comes
-   back verified from partner data or inferred from the open web, grounded
-   either way.
+1. **`/search` (auto).** Query: *"Nvidia: Jensen Huang's direct reports."*
+   One natural-language sentence in, structured people out: names, titles,
+   locations, dated work history. No filters, no parsing.
+2. **`/agent`, then `/search` (deep + structured output).** Query: *"Revenue
+   or sales leaders at companies that raised a Series B in the last 6 months
+   and are rapidly scaling their go-to-market team."* The results look
+   plausible — **Verify with Agent** hands the same rows to `/agent/runs`
+   via `input.data` and returns verdicts with reasons. Then **Re-run as
+   deep**: gpt-5-nano rewrites the query → deep search finds the companies
+   web-wide → a parallel join finds one leader per company. Pause on the
+   middle deep call's **Structured output** table — that's `outputSchema`
+   on `/search`: schema in, cited entities out.
+3. **`/contents`, then `/agent` (connect).** Click a profile. The drawer's
+   **Profile** section is `/contents` — the search result id goes straight
+   in, extracted summary + page text come back (note the cached/crawled
+   provenance pill). The **Brief** renders when its `/agent/runs` call
+   finishes — this is **Exa Connect**: partner providers (Fiber.ai,
+   Financial Datasets) attached explicitly, routed automatically, billed
+   only when called; the email comes back verified from partner data or
+   inferred from the open web, grounded either way.
 
 **Narrative close (~5 min).** The app *is* the integration guide — fixtures
 for demo determinism, client-side caching so nothing bills twice, honest
