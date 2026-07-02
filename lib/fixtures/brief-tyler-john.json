@@ -1,0 +1,33 @@
+{
+  "personId": "https://exa.ai/library/person/m99dmf017bz",
+  "personName": "Tyler John",
+  "durationMs": 33305,
+  "routedTo": ["fiber_ai"],
+  "output": {
+    "email": null,
+    "whyNow": [
+      {
+        "signal": "Actively announced a $45M Series B co-led by TCV and First Harmonic, bringing total funding to $68M; the company said proceeds will fund new GTM products, hiring, enterprise expansion, and a new San Francisco office.",
+        "source": "https://www.businesswire.com/news/home/20260428810008/en/Actively-Raises-%2445M-Series-B-to-Scale-Intelligence-Led-Revenue-Platform",
+        "date": "2026-04-28"
+      },
+      {
+        "signal": "Actively published a product/market thesis around dedicated “Per-Account Agents,” arguing that every account should have a continuously working AI agent to handle signal monitoring, context, and next-best actions—useful opener around their push from per-rep assistants to account-level agents.",
+        "source": "https://www.actively.ai/blog/the-future-of-gtm-every-sales-rep-needs-a-dedicated-ai-agent",
+        "date": "2026-06-26"
+      },
+      {
+        "signal": "Tyler John spoke at the Chief Revenue Officer Summit New York on “The AI-native GTM reckoning,” sharing customer proof points including Ramp reporting 23% higher win rates and Ironclad generating over $10M in qualified pipeline with a leaner team.",
+        "source": "https://events.revenueoperationsalliance.com/location/cronewyork/speaker/tylerjohn",
+        "date": "2026-03-11"
+      }
+    ]
+  },
+  "cost": {
+    "total": 0.1599,
+    "agentCompute": 0.1109,
+    "search": 0.009,
+    "dataSources": { "fiber_ai": 0.04 }
+  },
+  "source": "fixture"
+}

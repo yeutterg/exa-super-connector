@@ -1,0 +1,686 @@
+{
+  "query": "People who've written publicly about migrating off Salesforce",
+  "durationMs": 1385,
+  "response": {
+    "requestId": "fa77f40e2b083a642827e1f2bad6db73",
+    "resolvedSearchType": "",
+    "results": [
+      {
+        "id": "https://exa.ai/library/person/p1v6rc8nnw7",
+        "title": "Amit Arora",
+        "url": "https://linkedin.com/in/amit-arora17",
+        "publishedDate": "2026-06-13T14:55:12.000Z",
+        "highlights": [
+          "### Founder at CC for SF (Current)\n...\nBuilt and teach Claude Code for Salesforce, a course for Salesforce admins and developers who want to ship faster using Claude Code and the Salesforce DX MCP server. 24 lessons across 9 modules. Over 3 hours of content. Lifetime access for $197. Students learn to generate Apex triggers, batch jobs, Lightning Web Components, validation rules, flows, and full metadata deployments from natural language prompts. The capstone is BrightPath Energy, a fictional solar installation org with 9 custom objects, 71 custom fields, approval processes, triggers, a batch job, and 10 LWCs. It doubles as a portfolio piece. The course is built for Salesforce pros at growth-stage companies who already know the platform and want to move faster without giving up control of the code. ccforsf.com\n...\n### RevOps Leader Building AI Agents for GTM Teams Salesforce, HubSpot, Clay, Claude Code at webAI\n...\nBuilt the GTM operating system for an enterprise AI company from scratch. One source of truth for Sales, Marketing, CS, and Finance. Clean data, consistent process, numbers leadership could actually trust. What I owned: ▪️Architected and scaled the full revenue tech stack (Salesforce, HubSpot, Slack, Apollo, Clay) ▪️Led Salesforce strategy and executive reporting with real-time visibility into pipeline health, conversion rates, ARR, CAC, and LTV ▪️Designed multi-year deal flows, lead routing, lifecycle stages, commission models, and forecasting frameworks ▪️Aligned Sales, Marketing, and CS around a single source of truth and eliminated cross-team data silos Automated manual workflows from lead intake through renewal, unlocking 10+ hours per week for frontline reps ▪️Translated pipeline and forecasting data into board-ready insights for executive decision-making 💾 Stack: Salesforce, HubSpot, Apollo, Clay, n8n, Claude Code\n...\nOwned the full\n...\nand turned messy revenue data into\n...\n. What I owned: ▪️Owned the full G\n...\ntech stack (\n...\nHubSpot, Salesloft, ZoomInfo, DealHub CPQ) end-to-end ▪️Built pipeline, forecasting, and lifecycle frameworks from the ground up, improving forecasting accuracy by 25% ▪️Designed executive dashboards for CAC, LTV, ARR, and funnel metrics powering board reporting ▪️Partnered with Sales, Marketing, and Finance on lead routing, lifecycle stages, and comp alignment ▪️Identified funnel bottlenecks and optimized workflows for faster deal velocity and cleaner data ▪️Managed vendor relationships and influenced platform decisions through structured business reviews 💾 Stack:\n...\n, HubSpot, ChurnZero, Salesloft, ZoomInfo, DealHub CPQ, Tableau, Netsuite, Zuora"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQHGks1Ejq3l3g/profile-displayphoto-scale_200_200/B56Z2xjP.OIQAc-/0/1776800301782?e=2147483647&v=beta&t=TkcuGsbvlsq8TnY9zEeBRhknqHR_Eo_r80goFytLmC0",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/p1v6rc8nnw7",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Amit Arora",
+              "firstName": "Amit",
+              "lastName": "Arora",
+              "location": "Aubrey, Texas, United States",
+              "workHistory": [
+                {
+                  "title": "Founder",
+                  "location": "Frisco, Texas, United States",
+                  "dates": {
+                    "from": "2026-04-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "CC for SF"
+                  }
+                },
+                {
+                  "title": "Community Coordinator",
+                  "location": "Dallas-Fort Worth Metroplex",
+                  "dates": {
+                    "from": "2026-04-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "ClawPlex"
+                  }
+                },
+                {
+                  "title": "RevOps Leader Building AI Agents for GTM Teams Salesforce, HubSpot, Clay, Claude Code",
+                  "location": "Remote",
+                  "dates": {
+                    "from": "2025-03-01",
+                    "to": "2026-04-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "webAI"
+                  }
+                },
+                {
+                  "title": "Business Systems & Revenue Operations",
+                  "location": "Denver, Colorado, United States",
+                  "dates": {
+                    "from": "2021-10-01",
+                    "to": "2024-07-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "DHI Group, Inc."
+                  }
+                },
+                {
+                  "title": "Senior Salesforce Consultant",
+                  "location": "Plano, Texas, United States",
+                  "dates": {
+                    "from": "2018-05-01",
+                    "to": "2021-10-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Slalom"
+                  }
+                },
+                {
+                  "title": "Senior Salesforce Administrator",
+                  "location": "Orange, Connecticut, United States",
+                  "dates": {
+                    "from": "2015-06-01",
+                    "to": "2018-05-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "The United Illuminating Company"
+                  }
+                },
+                {
+                  "title": "General Manager",
+                  "location": "Meriden, Connecticut, United States",
+                  "dates": {
+                    "from": "2012-09-01",
+                    "to": "2015-05-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Hawthorn Suites By Wyndham Hartford Meriden"
+                  }
+                },
+                {
+                  "title": "Hotel Manager",
+                  "location": "Warwick, RI",
+                  "dates": {
+                    "from": "2008-10-01",
+                    "to": "2012-09-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Extended Stay Hotels"
+                  }
+                },
+                {
+                  "title": "Hotel manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2008-10-01",
+                    "to": "2012-09-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Extended Stay Hotels"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor's degree, Hospitality Administration/Management",
+                  "dates": {
+                    "from": "2003",
+                    "to": "2006"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/55vvkcqqd6h",
+                    "name": "Institute of Hotel Management, Catering Technology and Applied Nutrition, Mumbai"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/vbm5vwxhj45",
+        "title": "Sandy V",
+        "url": "https://linkedin.com/in/sandy-v-177b3a240",
+        "publishedDate": "2026-05-20T15:38:43.000Z",
+        "author": "Exa",
+        "highlights": [
+          "# Sandy V\n\nChief Executive Officer at ITEIO\n\nHyderabad, Telangana, India (IN)\n\n50 connections • 58 followers\n\n## About\n\nI am passionate about solving business problems through technology, helping executives achieve business success with Salesforce and deliver impeccable solutions, also help companies to turn their ideas into the Salesforce AppExchange Apps. Whether you’re brand new to Salesforce, migrating from another CRM platform, or aiming to improve your existing Salesforce solution, we have wide-ranging expertise that can help you to grow your business. My goal is to take your complex requirements and deliver groundbreaking solutions that focus on long-term success while engaging your team with the platform. Let's talk about your goals and how I can help, ✉ sandeep@iteio.com Thanks!\n\n## Experience\n\n### Chief Executive Officer at [ITEIO](https://www.linkedin.com/company/iteio)\n\nDepartment: General Management • Level: C-Level\n\nITEIO is a IT Services and IT Consulting company. ITEIO employs 5 people (+5.9% YoY, +1 person), founded in 2020. Headquartered in Clarksburg, Maryland, United States.\n\n## Skills\n\nexecutive officer • migrating • growth • salesforce appexchange • requirements management • turn • appexchange • chief executive • salesforce • chief executive officer • crm • brand management • ideas • executive leadership • solving business problems"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/C5603AQHOk_6cU_h-pg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1657902833589?e=2147483647&v=beta&t=gbvlyOwSr4DBmv9iXCzYUf9K_uo9yBdF9o045sEDxnU",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/vbm5vwxhj45",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Sandy V",
+              "firstName": "Sandy",
+              "lastName": "V",
+              "location": "Hyderabad, Telangana, India",
+              "workHistory": [
+                {
+                  "title": "Chief Executive Officer",
+                  "location": null,
+                  "dates": null,
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cnf2zjdryc3",
+                    "name": "ITEIO"
+                  }
+                }
+              ],
+              "educationHistory": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/vj24v4kxb32",
+        "title": "Elise Pottinger",
+        "url": "https://linkedin.com/in/elise-pottinger-0a51581a6",
+        "publishedDate": "2026-05-11T22:58:39.000Z",
+        "author": "Exa",
+        "highlights": [
+          "### Salesforce Data Migration & Solution Architecture at [SMC Migrations](https://www.linkedin.com/company/smc-migrations) (Current)\n...\nMay 2023 - Present (3 years) in Louisville, Kentucky, United States\n...\nSalesforce Data Migration specialist Salesforce Solution Architect Salesforce Consulting\n...\nDepartment: Engineering and Technical • Level: Specialist\n...\nSMC Migrations is a IT Services and IT Consulting company. SMC Migrations is a company that specializes in data migration and provides services related to salesforce financial services cloud, sales cloud, and service cloud. SMC Migrations employs 1 person, founded in 2023.\n...\nDepartment: Engineering and Technical • Level: Specialist"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/C4D03AQGp6CYtruuo1g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1645725720011?e=2147483647&v=beta&t=_0g3bK7KudmZKrOgKR-Yh2XvWHYECARHmurASb8OIJ0",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/vj24v4kxb32",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Elise Pottinger",
+              "firstName": "Elise",
+              "lastName": "Pottinger",
+              "location": "Louisville, Kentucky, United States",
+              "workHistory": [
+                {
+                  "title": "Salesforce Data Migration & Solution Architecture",
+                  "location": "Louisville, Kentucky, United States",
+                  "dates": {
+                    "from": "2023-05-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cgdvvcdslx0",
+                    "name": "SMC Migrations"
+                  }
+                },
+                {
+                  "title": "Salesforce Solution Architect",
+                  "location": "Chicago, IL, US",
+                  "dates": {
+                    "from": "2022-10-01",
+                    "to": "2024-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/9gm4tw0jcf7",
+                    "name": "ADM"
+                  }
+                },
+                {
+                  "title": "Senior Salesforce Consultant",
+                  "location": "Covington, Kentucky, US",
+                  "dates": {
+                    "from": "2021-10-01",
+                    "to": "2023-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/fxzdfgvdz6t",
+                    "name": "Prolocity Salesforce Consultants"
+                  }
+                },
+                {
+                  "title": "Senior Solution Engineer",
+                  "location": "San Francisco, California, US",
+                  "dates": {
+                    "from": "2020-10-01",
+                    "to": "2021-10-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/xzvhgwbbjfz",
+                    "name": "Salesforce"
+                  }
+                },
+                {
+                  "title": "Senior Salesforce Consultant",
+                  "location": "Chicago, Illinois, US",
+                  "dates": {
+                    "from": "2013-01-01",
+                    "to": "2020-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/bklr2z1fjh5",
+                    "name": "Sikich"
+                  }
+                },
+                {
+                  "title": "Salesforce Consultant",
+                  "location": null,
+                  "dates": {
+                    "from": "2010-01-01",
+                    "to": "2013-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/24430d3t2dq",
+                    "name": "MONDAYCALL SOLUTIONS"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor of Arts - BA English/Language Arts Teacher Education",
+                  "dates": {
+                    "from": "1999",
+                    "to": "2003"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/vkhhb8z98m1",
+                    "name": "Michigan State University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/m5hgxhmrhvl",
+        "title": "Marcelo Keppy",
+        "url": "https://linkedin.com/in/marcelokeppy",
+        "publishedDate": "2026-06-12T15:52:38.000Z",
+        "author": "Exa",
+        "highlights": [
+          "Senior Manager, Technical Consulting (Data) at Salesforce\n...\nSenior Manager, Technical Consulting at [Salesforce](https://www.linkedin.com/company/salesforce)\n...\n### Senior Manager, Technical Consulting at [Salesforce](https://www.linkedin.com/company/salesforce) (Current)\n...\n022 - Present (4 years) in United States\n...\nWork as an advisor, designer, and data manager throughout its life cycle, specifically focused on migrations and modeling.\n...\nDepartment: Consulting • Level: Senior\n...\nWorks with Business Analysts to gather and translate business needs into supporting data model designs for migrations from various non-profit CRM systems to Salesforce. Works across multiple functional projects and teams to understand data usage and implications for data migration. Designs, plans, and manages the data migration process. Work with subject matter experts and project team to identify, define, collate, document and communicate the data migration requirements and process. Prepares data migration plans including migration risk, milestones, quality and business sign-off details. Performs source system data analysis in order to manage source to target data mapping. Manages assigned risks and monitors potential impacts as part of the data migration plan. Performs data migration audit, reconciliation and exception reporting. Works on data migration scripting and data loading for test and final migrations. Works with the team and client on user acceptance testing and issues resolution. Conducts data audits, cleansing, and de-deduplication projects to clean data. Works with the data team to develop best practices, processes, and standards for effectively carrying out data migration activities.\n...\nPrepares storage needs estimates for\n...\nSalesforce apps for\n...\nsystem data analysis\n...\nPerforms the transformation in\n...\nplans, manages, reviews and enhances the data migration practices and processes to improve efficiency and effectiveness for a successful data\n...\n. Customer Relations\n...\n- Works with customers in gathering business requirements for data migration needs;\n...\n- Provides technical support to customers during the data migration process;\n...\n- Provides post launch assistance and support to customers; Leadership and Supervision\n...\n- Leads, supervises and assists the Data Migrations team and Consulting team on implementation projects with a data migration component;\n...\n- Provides leadership and technical support to team members during the data migration process;\n...\n- Works with Project Managers to identify risk areas and provides solutions;\n...\nsupports, assists and manages outsourcing partners.\n...\n: Consulting • Level: Senior"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/m5hgxhmrhvl",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Marcelo Keppy",
+              "firstName": "Marcelo",
+              "lastName": "Keppy",
+              "location": "Chicago, Illinois, United States",
+              "workHistory": [
+                {
+                  "title": "Senior Manager, Technical Consulting",
+                  "location": "United States",
+                  "dates": {
+                    "from": "2022-06-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/xzvhgwbbjfz",
+                    "name": "Salesforce"
+                  }
+                },
+                {
+                  "title": "Senior Data Architect",
+                  "location": null,
+                  "dates": {
+                    "from": "2019-06-01",
+                    "to": "2022-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/rh6f9qcw7q2",
+                    "name": "Traction on Demand"
+                  }
+                },
+                {
+                  "title": "Senior Data Migrations Analyst",
+                  "location": null,
+                  "dates": {
+                    "from": "2005-06-01",
+                    "to": "2019-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/dkdl3d0jnq2",
+                    "name": "Heller Consulting"
+                  }
+                },
+                {
+                  "title": "Senior Consultant, Technical Services",
+                  "location": null,
+                  "dates": {
+                    "from": "2005-06-01",
+                    "to": "2012-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/dkdl3d0jnq2",
+                    "name": "Heller Consulting"
+                  }
+                },
+                {
+                  "title": "Data Entry Assistant",
+                  "location": null,
+                  "dates": {
+                    "from": "2001-05-01",
+                    "to": "2005-05-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Metropolitan State University (University Advancement Division)"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "BA Computer Information Systems",
+                  "dates": {
+                    "from": "2001",
+                    "to": "2005"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/ny19t926ckr",
+                    "name": "Metro State University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/tcls9f0g001",
+        "title": "MCIS Samuel Tucker",
+        "url": "https://linkedin.com/in/samuelltucker",
+        "publishedDate": "2026-06-10T04:05:23.000Z",
+        "highlights": [
+          "Director, Salesforce at Learning A-Z\n...\nDirector, Salesforce Platform and Product Strategy at [Learning A-Z](https://www.linkedin.com/company/learning-a-z)\n...\n### Director, Salesforce Platform and Product Strategy at [Learning A-Z](https://www.linkedin.com/company/learning-a-z) (Current)\n...\nSep 2025 - Present (9 months)\n...\nDepartment: Product • Level: Director\n...\nLearning A-Z (ABCD) is a E-Learning Providers company. Learning A-Z is a company dedicated to improving learning through an enlightened approach to literacy. Learning A-Z employs 250 people (+14.4% YoY, +182 people) and has an annual revenue of $7.3M, founded in 2002. Headquartered in Tucson, Arizona, United States, operates in 27 countries (including India, Canada, Pakistan, United Arab Emirates, and Mexico).\n...\nPerfect for someone who loves strategic problem\n...\nI'm thrilled to share that I've joined Learning A-Z as Director, Salesforce Platform and Performance Strategy!\n...\nLearning A-Z’s mission to deliver innovative literacy solutions aligns perfectly with my passion for driving impactful technology strategies that empower educators and learners. In this role, I’ll be focused on optimizing our Salesforce ecosystem to support scalable growth, performance excellence, and transformative customer experiences.\n...\nGrateful for the opportunity to work alongside a talented team committed to making a difference in education. Looking forward to this next chapter of growth, collaboration, and innovation! Shoutout to Kari Fines and Ron Hughes who helped me so much with this process!\n...\n📚🚀 #NewRole #SalesforceStrategy #EdTech #LearningAZ #DigitalTransformation #Leadership #Gratitude"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D4D03AQFcQp32c3SOPw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1705585458157?e=2147483647&v=beta&t=bBqad0b8isTjOP0mhmfBLZq1a7GVr7jqajA5ZtTHS94",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/tcls9f0g001",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "MCIS Samuel Tucker",
+              "firstName": "MCIS",
+              "lastName": "Tucker",
+              "location": "Charlotte, North Carolina, United States",
+              "workHistory": [
+                {
+                  "title": "Director, Salesforce Platform and Product Strategy",
+                  "location": null,
+                  "dates": {
+                    "from": "2025-09-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/5yqzvl1jmc8",
+                    "name": "Learning A-Z"
+                  }
+                },
+                {
+                  "title": "Technical Architect",
+                  "location": null,
+                  "dates": {
+                    "from": "2025-01-01",
+                    "to": "2025-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/rhcq39zthb6",
+                    "name": "Xede Consulting Group"
+                  }
+                },
+                {
+                  "title": "Salesforce Solution Architect and Developer Lead",
+                  "location": null,
+                  "dates": {
+                    "from": "2024-01-01",
+                    "to": "2024-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/79ytd5vw515",
+                    "name": "EMS Consulting"
+                  }
+                },
+                {
+                  "title": "Senior Salesforce Engineer",
+                  "location": null,
+                  "dates": {
+                    "from": "2022-01-01",
+                    "to": "2024-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/f8pjh5b00v3",
+                    "name": "Cambium Learning Group"
+                  }
+                },
+                {
+                  "title": "Business System Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2021-06-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/sly2tfzxzh9",
+                    "name": "PrismHR"
+                  }
+                },
+                {
+                  "title": "Salesforce Solution Architect",
+                  "location": null,
+                  "dates": {
+                    "from": "2020-11-01",
+                    "to": "2021-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/2llcsbvsbq9",
+                    "name": "Saggezza"
+                  }
+                },
+                {
+                  "title": "Project Lead, Delivery Manager and Data Expert",
+                  "location": "Remote",
+                  "dates": {
+                    "from": "2019-11-01",
+                    "to": "2020-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/06qtz1c7ksh",
+                    "name": "Vantage Point Consulting"
+                  }
+                },
+                {
+                  "title": "CRM Administrator - Salesforce",
+                  "location": "Overland Park, Kansas",
+                  "dates": {
+                    "from": "2019-02-01",
+                    "to": "2019-10-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/g134fbsxb05",
+                    "name": "Mariner Wealth Advisors"
+                  }
+                },
+                {
+                  "title": "Business System Analyst - Tech Solutions",
+                  "location": "Leawood, Kansas",
+                  "dates": {
+                    "from": "2018-08-01",
+                    "to": "2019-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/g134fbsxb05",
+                    "name": "Mariner Wealth Advisors"
+                  }
+                },
+                {
+                  "title": "Information Technology Intern",
+                  "location": "Leawood, KS",
+                  "dates": {
+                    "from": "2018-05-01",
+                    "to": "2018-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/g134fbsxb05",
+                    "name": "Mariner Wealth Advisors"
+                  }
+                },
+                {
+                  "title": "Web Designer Developer",
+                  "location": "Fort Collins, Colorado Area",
+                  "dates": {
+                    "from": "2018-01-01",
+                    "to": "2018-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/mvpq1djmfvz",
+                    "name": "Colorado State University"
+                  }
+                },
+                {
+                  "title": "IT Sourcing Strategist",
+                  "location": "Greater Chicago Area",
+                  "dates": {
+                    "from": "2015-06-01",
+                    "to": "2017-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/m9bqcw7np8z",
+                    "name": "Optiver"
+                  }
+                },
+                {
+                  "title": "Recruitment Consultant",
+                  "location": "Greater Chicago Area",
+                  "dates": {
+                    "from": "2014-09-01",
+                    "to": "2015-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/hvcnrwfhqh4",
+                    "name": "PowerReviews"
+                  }
+                },
+                {
+                  "title": "English as a Second Language Teacher",
+                  "location": "Guangzhou, Guangdong, China",
+                  "dates": {
+                    "from": "2013-08-01",
+                    "to": "2014-07-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Worlda Cultural Education Program"
+                  }
+                },
+                {
+                  "title": "Senior Technical Recruiter",
+                  "location": "Greater Chicago Area",
+                  "dates": {
+                    "from": "2012-02-01",
+                    "to": "2013-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/ncbzxzhf0dd",
+                    "name": "Instant Technology"
+                  }
+                },
+                {
+                  "title": "Technical Recruiter",
+                  "location": null,
+                  "dates": {
+                    "from": "2010-07-01",
+                    "to": "2012-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/1qfs8s3rz6d",
+                    "name": "Objective Paradigm"
+                  }
+                },
+                {
+                  "title": "DePaul Campus Representative",
+                  "location": null,
+                  "dates": {
+                    "from": "2009-02-01",
+                    "to": "2009-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/yxdlj7dpkrg",
+                    "name": "Apple Inc."
+                  }
+                },
+                {
+                  "title": "Data Analyst (Intern)",
+                  "location": null,
+                  "dates": {
+                    "from": "2008-06-01",
+                    "to": "2008-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/phjhtvrwkly",
+                    "name": "Language Stars"
+                  }
+                },
+                {
+                  "title": "Tour Guide",
+                  "location": null,
+                  "dates": {
+                    "from": "2007-09-01",
+                    "to": "2008-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/6ybt1lffzcc",
+                    "name": "DePaul University"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "B.A. Industrial/Oganizational Psychology; Minor in Digital Cinema",
+                  "dates": {
+                    "from": "2006",
+                    "to": "2010"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/6ybt1lffzcc",
+                    "name": "DePaul University"
+                  }
+                },
+                {
+                  "degree": "Master Computer Information Systems",
+                  "dates": {
+                    "from": "2017",
+                    "to": "2019"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/mvpq1djmfvz",
+                    "name": "Colorado State University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "searchTime": 1311.1,
+    "costDollars": {
+      "total": 0.007,
+      "search": {
+        "neural": 0.007
+      }
+    }
+  }
+}

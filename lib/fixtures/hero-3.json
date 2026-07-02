@@ -1,0 +1,864 @@
+{
+  "query": "Sales leaders at Series B SaaS companies hiring their first RevOps role",
+  "durationMs": 1128,
+  "response": {
+    "requestId": "48fd24b87ee2294f21fcae2f3f1746c0",
+    "resolvedSearchType": "",
+    "results": [
+      {
+        "id": "https://exa.ai/library/person/jwxbxsr4zyd",
+        "title": "Sarah Baron",
+        "url": "https://linkedin.com/in/sarah-baron-0a05504",
+        "publishedDate": "2026-06-10T22:36:52.000Z",
+        "highlights": [
+          "Head of Operations VP of Operations at [Casted](https://www.linkedin.com/company/gocasted)\n...\n#### Head of Operations VP of Operations (Current)\n...\nNov 2023 - Present (2 years and 7 months) in Remote\n...\no Collaborates directly with the CEO to strategize and oversee day-to-day operations during a company pivot o Manages purchasing, sales, marketing, and customer account operations to enhance efficiency o Mitigates operational risks by organizing data to forecast performance trends o Negotiates contracts to reduce budgetary expenditures and secure more advantageous terms o Supervises sales and customer success teams, providing guidance and support for successful task completion o Partners closely with the finance team to streamline operational processes o Oversees the contract signing process and ensured compliance o Creates detailed reporting and decks for board meetings o Schedules appointments and meetings to facilitate smooth daily operations"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/jwxbxsr4zyd",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Sarah Baron",
+              "firstName": "Sarah",
+              "lastName": "Baron",
+              "location": "Greater Indianapolis",
+              "workHistory": [
+                {
+                  "title": "Head of Operations VP of Operations",
+                  "location": "Remote",
+                  "dates": {
+                    "from": "2023-11-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/40zjwc5fs3g",
+                    "name": "Casted"
+                  }
+                },
+                {
+                  "title": "Revenue Operations Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2021-11-01",
+                    "to": "2023-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/40zjwc5fs3g",
+                    "name": "Casted"
+                  }
+                },
+                {
+                  "title": "Senior Revenue Operations Analyst at Lessonly",
+                  "location": "Indiana, United States",
+                  "dates": {
+                    "from": "2020-03-01",
+                    "to": "2021-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/kq9vpq6hbyk",
+                    "name": "Lessonly"
+                  }
+                },
+                {
+                  "title": "Dealer Sales Operations Program Manager",
+                  "location": "Carmel, Indiana",
+                  "dates": {
+                    "from": "2017-06-01",
+                    "to": "2020-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k8pt4gd584g",
+                    "name": "KAR Global"
+                  }
+                },
+                {
+                  "title": "Sales Operations Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2016-06-01",
+                    "to": "2017-05-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/dy6zp0nsg4x",
+                    "name": "DIGIOP"
+                  }
+                },
+                {
+                  "title": "Inside Sales Account Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2015-02-01",
+                    "to": "2016-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/dy6zp0nsg4x",
+                    "name": "DIGIOP"
+                  }
+                },
+                {
+                  "title": "Inside Account Manager",
+                  "location": "Indianapolis, Indiana Area",
+                  "dates": {
+                    "from": "2013-11-01",
+                    "to": "2015-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cn8l6yyhdl5",
+                    "name": "Infinias"
+                  }
+                },
+                {
+                  "title": "Sales Development Specialist - North East Region",
+                  "location": "Indianapolis, Indiana Area",
+                  "dates": {
+                    "from": "2012-01-01",
+                    "to": "2013-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/4fjnlwl66dk",
+                    "name": "ExactTarget"
+                  }
+                },
+                {
+                  "title": "Solutions Consultant",
+                  "location": null,
+                  "dates": {
+                    "from": "2008-01-01",
+                    "to": "2011-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/rcgq8fy133q",
+                    "name": "InfoDynamics"
+                  }
+                },
+                {
+                  "title": "Executive Assistant to the National Secretary COO",
+                  "location": null,
+                  "dates": {
+                    "from": "2006-04-01",
+                    "to": "2007-11-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "American Legion Auxiliary National Headquarters"
+                  }
+                },
+                {
+                  "title": "Meeting Assistant",
+                  "location": null,
+                  "dates": {
+                    "from": "2005-06-01",
+                    "to": "2006-04-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "American Legion Auxiliary National Headquarters"
+                  }
+                },
+                {
+                  "title": "Marketing Coordinator",
+                  "location": null,
+                  "dates": {
+                    "from": "2004-08-01",
+                    "to": "2005-04-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Renfro Productions"
+                  }
+                },
+                {
+                  "title": "Front Desk",
+                  "location": null,
+                  "dates": {
+                    "from": "2004-07-01",
+                    "to": "2005-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/ltz4jn3y4t5",
+                    "name": "Hilton Garden Inn"
+                  }
+                },
+                {
+                  "title": "Zone Leader Volunteer Assistant",
+                  "location": null,
+                  "dates": {
+                    "from": "2005-03-01",
+                    "to": "2005-03-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "NCAA Women's Final Four Hoop City"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor of Arts Journalism with a Public Relations & Advertising concentration",
+                  "dates": {
+                    "from": "2003",
+                    "to": "2005"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/1s2zkqf4nfg",
+                    "name": "Butler University"
+                  }
+                },
+                {
+                  "degree": "Communications",
+                  "dates": {
+                    "from": "2001",
+                    "to": "2002"
+                  },
+                  "institution": {
+                    "id": null,
+                    "name": "DePauw University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/3kym13ygm9q",
+        "title": "Keith Loo",
+        "url": "https://linkedin.com/in/keithloo",
+        "publishedDate": "2026-06-13T15:13:13.000Z",
+        "highlights": [
+          "VP Revenue Operations | Scaling GTM from $5M → $500M+ ARR | 2x IPO Operator | PLG · SLG · Consumption | AI & SaaS\n...\nI've built Revenue Operations from scratch — twice. At Elastic, I was the first…\n...\n“Keith is one of those rare leaders who combines strategic clarity with exceptional execution. He has an impressive ability to navigate massive scope, limited resources, and challenging timelines while still creating focus, momentum, and trust across teams.\n...\nWhat I appreciate most about Keith is not only how sharp and thoughtful he is, but also the way he leads people. He creates an environment of collaboration, psychological safety, and accountability that allows teams to perform at their best. He is a true doer with a strategic mindset — someone who can see the bigger picture while ensuring things actually get done.\n...\nexperience tremendously.\n...\nintegrity, and ability to bring people together around a common goal.”\n...\n“I have had the pleasure of working with Keith at Elastic and Amplitude. \nKeith is an extremely smart and talented revenue operations & sales strategy expert, who does not hide behind a spreadsheet. He actively seeks feedback from the sales front & openly shares his vision with the broader organisation. \nBesides his in depth domain expert, he is an awesome, humble and honest leader. To him people are not just numbers, he lifts people around him and you can always count on him, no matter whether in business or private life. \nI hope that our paths will cross a third time.”"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/3kym13ygm9q",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Keith Loo",
+              "firstName": "Keith",
+              "lastName": "Loo",
+              "location": "San Francisco Bay Area",
+              "workHistory": [],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor of Science (B.S.) Accounting",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/84k516sv5k2",
+                    "name": "USC Marshall School of Business"
+                  }
+                },
+                {
+                  "degree": "High School Diploma",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/f89tz250jzx",
+                    "name": "Crystal Springs Uplands School"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/y6jjl56v3gw",
+        "title": "Don Torrance",
+        "url": "https://linkedin.com/in/dontorrance",
+        "publishedDate": "2026-06-10T04:22:27.000Z",
+        "highlights": [
+          "GTM Operations Manager at [evaluagent®](https://www.linkedin.com/company/evaluagent)\n...\nI architect revenue engines that don't just grow - they compound. Over five years\n...\nd pipeline in\n...\n18 months\n...\n, architecting\n...\ndefinitions) that unified\n...\ndata - Built\n...\nand CS enablement from the ground\n...\n, creating programs\n...\nperformers - Designed territory\n...\nenergizes me\n...\n-$5M\n...\n$50M\n...\nWhere founders realize\n...\nneed systems that scale, not just more hustle\n...\nthe role isn\n...\nt just executing someone else\n...\ns strategy - it\n...\ns shaping it.\n...\nbest fit: strategic partner to\n...\nlasts. Open to Director\n...\nOperations roles at growth\n...\nB SaaS companies (Series A-\n...\n$5-50M ARR\n...\nnot just an implementer. d\n...\nrance@gmail.com |\n...\n317.709.6525 Specialties: G\n...\n| Sales Enable\n...\n| Forecasting & Analytics |\n...\n-Functional Leadership | HubSpot\n...\nRevGenius\n...\nCo-op, Sales Enablement Collective\n...\nAlways up for coffee chats about\n...\n### GTM Operations Manager at [evaluagent®](https://www.linkedin.com/company/evaluagent) (Current)\n...\nApr 2026 - Present (2 months) in New York City Metropolitan Area\n...\nDepartment: Operations • Level: Manager\n...\nevaluagent® is a Software Development company. Evaluagent is a call center QA and performance improvement software that allows users to auto-QA every conversation across all channels to coach, train, and motivate their agents. Evaluagent® employs 46 people (-12.1% YoY, -8 people) and has an annual revenue of $3.0M, founded in 2012. Headquartered in Middlesbrough, England, United Kingdom, with presence in United States and Spain. Has $21.0M in total funding, with 4 prior funding rounds.\n...\n#### Director of Revenue Operations\n...\n20\n...\n- Dec\n...\n) in New York City Metropolitan Area\n...\nLed strategic revenue operations for enterprise B2B SaaS serving nonprofit organizations and institutional funders, optimizing performance, driving growth, and enhancing operational efficiency across the organization\n...\nDepartment: Operations\n...\n#### Director, Revenue Enablement\n...\nJul 2024 - Jan 2025 (6 months) in New York City Metropolitan Area\n...\nArchitected a comprehensive Revenue Enablement function for enterprise B2B SaaS, spanning Sales Enablement, Customer Success Enablement, and Revenue Operations\n...\nDepartment: Sales • Level: Director\n...\n#### Director, Sales Enablement\n...\n023 -\n...\n024\n...\nNew York City Metropolitan Area\n...\nLed Sales Enablement, Sales Development, and Revenue Operations for enterprise B2B SaaS, driving organizational transformation and pipeline growth\n...\nLaunched Sales Enablement function for enterprise B2B SaaS during Series B funding to strategically scale revenue operations"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/C4E03AQH1HroZoVKynw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1595090884752?e=2147483647&v=beta&t=PoK-657nReQGnqSkkXVRMsOiUuWWL0ZO2vd0kQr67B0",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/y6jjl56v3gw",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Don Torrance",
+              "firstName": "Don",
+              "lastName": "Torrance",
+              "location": "New York City Metropolitan Area",
+              "workHistory": [
+                {
+                  "title": "GTM Operations Manager",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2026-04-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/43qyf368pgy",
+                    "name": "evaluagent®"
+                  }
+                },
+                {
+                  "title": "Member",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2021-02-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/h0j8swgd4x5",
+                    "name": "Pavilion"
+                  }
+                },
+                {
+                  "title": "Director of Revenue Operations",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2025-01-01",
+                    "to": "2025-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/3b04lbvb0mg",
+                    "name": "Resilia"
+                  }
+                },
+                {
+                  "title": "Director, Revenue Enablement",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2024-07-01",
+                    "to": "2025-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/3b04lbvb0mg",
+                    "name": "Resilia"
+                  }
+                },
+                {
+                  "title": "Director, Sales Enablement",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2023-03-01",
+                    "to": "2024-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/3b04lbvb0mg",
+                    "name": "Resilia"
+                  }
+                },
+                {
+                  "title": "Senior Manager, Sales Enablement",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2022-02-01",
+                    "to": "2023-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/3b04lbvb0mg",
+                    "name": "Resilia"
+                  }
+                },
+                {
+                  "title": "Senior Sales Development Representative",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2020-10-01",
+                    "to": "2022-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/3b04lbvb0mg",
+                    "name": "Resilia"
+                  }
+                },
+                {
+                  "title": "Community Manager",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2018-10-01",
+                    "to": "2020-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vwr4s8xl7pr",
+                    "name": "Paintzen"
+                  }
+                },
+                {
+                  "title": "Inside Sales Manager",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2018-06-01",
+                    "to": "2018-10-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vwr4s8xl7pr",
+                    "name": "Paintzen"
+                  }
+                },
+                {
+                  "title": "Sales Development Manager",
+                  "location": "New York, New York",
+                  "dates": {
+                    "from": "2017-02-01",
+                    "to": "2018-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vwr4s8xl7pr",
+                    "name": "Paintzen"
+                  }
+                },
+                {
+                  "title": "Sales Development Team Lead",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2016-07-01",
+                    "to": "2017-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vwr4s8xl7pr",
+                    "name": "Paintzen"
+                  }
+                },
+                {
+                  "title": "Sales Consultant",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2016-02-01",
+                    "to": "2016-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vwr4s8xl7pr",
+                    "name": "Paintzen"
+                  }
+                },
+                {
+                  "title": "Sales Consultant",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2015-08-01",
+                    "to": "2016-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/qpnrsrh4w9b",
+                    "name": "Oscar Health"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Class Audit, Business of Film",
+                  "dates": {
+                    "from": "2011",
+                    "to": "2011"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/lvsvj7hrtdx",
+                    "name": "Columbia University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/x67p0kvhw9x",
+        "title": "Jordan Kreun",
+        "url": "https://linkedin.com/in/jordankreun",
+        "publishedDate": "2026-06-11T02:31:14.000Z",
+        "author": "Exa",
+        "highlights": [
+          "Head of Revenue Operations @ Clearstory | Architecting Scalable GTM Systems\n...\nHead of Revenue Operations at [Clearstory](https://www.linkedin.com/company/extracker)\n...\nI’m a GTM and RevOps leader focused on building high-performing revenue systems and teams. I lead with alignment, data, and a bias toward execution—scaling what works and fixing what doesn’t. Now at Clearstory as Head of RevOps, I’m helping scale one of construction tech’s fastest-growing platforms—where change is constant (and usually in order form).\n...\n### Head of Revenue Operations at [Clearstory](https://www.linkedin.com/company/extracker) (Current)\n...\nMay 2025 - Present (1 year and 1 month) in San Francisco Bay Area\n...\nLeading RevOps at Clearstory to scale go-to-market strategy, systems, and execution.\n...\nDepartment: Operations • Level: Head\n...\nClearstory is a Software Development company. Clearstory is a change order communication tool that streamlines project communication for general contractors, specialty contractors, and owners. They offer collaborative change order request logs, digital time and material tags, mobile app to track field directed extra work, change notifications, distribute changes and track cost impacts, change order request templates, create clean cors from imported project rates, integrations, and customer stories. Clearstory employs 78 people (+37.5% YoY, +27 people) and has an annual revenue of $4.5M, founded in 2018. Headquartered in San Francisco, California, United States, with presence in Philippines and Canada. Has $33.8M in total funding, with 3 prior funding rounds."
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQHa23u5PsTRVw/profile-displayphoto-scale_200_200/B56ZopZJrMJ8AY-/0/1761631050995?e=2147483647&v=beta&t=mAXJqjrO0j36UR1zKEVFn3wDtexmRbXQ9ECv1THGzrs",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/x67p0kvhw9x",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Jordan Kreun",
+              "firstName": "Jordan",
+              "lastName": "Kreun",
+              "location": "Berkeley, California, United States",
+              "workHistory": [
+                {
+                  "title": "Head of Revenue Operations",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2025-05-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k1xnmh228my",
+                    "name": "Clearstory"
+                  }
+                },
+                {
+                  "title": "Marketing and Growth Operations Consultant",
+                  "location": null,
+                  "dates": {
+                    "from": "2023-08-01",
+                    "to": "2025-05-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Freelance"
+                  }
+                },
+                {
+                  "title": "Director, Business Applications",
+                  "location": "Berkeley, California, United States",
+                  "dates": {
+                    "from": "2022-07-01",
+                    "to": "2023-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/wl7dbv5fv6c",
+                    "name": "Planview, Inc."
+                  }
+                },
+                {
+                  "title": "Director, Marketing Strategy & Operations",
+                  "location": "Berkeley, California, United States",
+                  "dates": {
+                    "from": "2021-11-01",
+                    "to": "2023-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/2g04662q97h",
+                    "name": "Tasktop"
+                  }
+                },
+                {
+                  "title": "Sr. Manager, Growth Marketing",
+                  "location": "United States",
+                  "dates": {
+                    "from": "2020-06-01",
+                    "to": "2021-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/826d5dyt7n4",
+                    "name": "Digital.ai"
+                  }
+                },
+                {
+                  "title": "Growth Marketing and Operations",
+                  "location": "San Jose, California",
+                  "dates": {
+                    "from": "2019-11-01",
+                    "to": "2021-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/28dy4wyhx3w",
+                    "name": "Numerify"
+                  }
+                },
+                {
+                  "title": "Marketing Operations Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2019-02-01",
+                    "to": "2019-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/28dy4wyhx3w",
+                    "name": "Numerify"
+                  }
+                },
+                {
+                  "title": "Product Marketing Manager",
+                  "location": "Campbell, California",
+                  "dates": {
+                    "from": "2017-08-01",
+                    "to": "2019-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/d6s36ncrbv3",
+                    "name": "Komprise"
+                  }
+                },
+                {
+                  "title": "Product Marketing",
+                  "location": "Campbell, Ca",
+                  "dates": {
+                    "from": "2015-08-01",
+                    "to": "2016-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b6yr9tgt0lf",
+                    "name": "ChargePoint, Inc."
+                  }
+                },
+                {
+                  "title": "Marketing Specialist",
+                  "location": "Sacramento, California Area",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2017-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Vantage Pointe, Inc."
+                  }
+                },
+                {
+                  "title": "Marketing Specialist",
+                  "location": "2116 6th street Sacramento, Ca 95818",
+                  "dates": {
+                    "from": "2013-08-01",
+                    "to": "2015-07-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Vantage Pointe, Inc."
+                  }
+                },
+                {
+                  "title": "Web Marketing Manager",
+                  "location": "Granite Bay",
+                  "dates": {
+                    "from": "2012-04-01",
+                    "to": "2013-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/16m8cmpthzh",
+                    "name": "Joe Produce"
+                  }
+                },
+                {
+                  "title": "Sales and Digital Media Intern",
+                  "location": null,
+                  "dates": {
+                    "from": "2012-01-01",
+                    "to": "2012-04-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "myCampmate"
+                  }
+                },
+                {
+                  "title": "Administrative Assistant",
+                  "location": null,
+                  "dates": {
+                    "from": "2009-12-01",
+                    "to": "2011-12-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Granite Bay Digital"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Business Honors Student - Bachelor of Science: Business Administration (BSBA) Marketing Entrepreneurship",
+                  "dates": {
+                    "from": "2013",
+                    "to": "2015"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/bhxbn62z05f",
+                    "name": "California State University-Sacramento"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/hdwkvmk5x7g",
+        "title": "Jessica Ashar",
+        "url": "https://linkedin.com/in/jessicaashar",
+        "publishedDate": "2026-06-13T14:27:14.000Z",
+        "author": "Exa",
+        "highlights": [
+          "Build and scale\n...\npassion for business\n...\nthought leadership, data driven insights and sound execution\n...\nGTM Strategy, Operations & Enable\n...\n: GTM Strategy, Sales Operations, Account Profiling and Segmentation, Territory Design,\n...\nCoverage, Quota Setting, Sales Compensation,\n...\nProductivity, Operational\n...\nence, Sales Forecasting, Pipeline Management, Business Analytics\n...\nSales Tools, Enablement, Lead Management\n...\nTM Roles Partner\n...\nField Sales, Cust. Success, Marketing, BDR/SDR, Inside\n...\nSpecialists Customer Segments: Enterprise, Commercial\n...\n### VP of Revenue Operations at [Medely](https://www.linkedin.com/company/medely) (Current)\n...\nAug 2023 - Present (2 years and 10 months)\n...\nDepartment: Operations • Level: President/Vice President\n...\nMedely is a Hospitals and Health Care company. Medely is a digital network that empowers nurses and allied health professionals to work on their schedules, earn more, and get paid fast. They offer per diem shifts, local assignments, and travel assignments on one platform. They provide an all-in-one platform that allows users to find opportunities, book shifts, and track their earnings. Medely employs 818 people (+5.2% YoY, +66 people) and has an annual revenue of $120.0M, founded in 2015. Headquartered in Santa Monica, California, United States, operates in 5 countries (including Brazil, Hong Kong, Cayman Islands, and Austria).\n...\n“Jessica supported our team as VP of Strategy & Operations for the Americas in my time as EVP & GM of the Americas at New Relic. She was my trusted business partner and someone who I could implicitly rely on to have a sound handle on the business.  Specifically, she ran my operational cadences (QBRs, Weekly Forecast Meetings, Weekly Front-Line-Manager Calls, Large Deal Reviews, etc.), had a tight pulse on the business at all times, proactively brought insights from data to make our leadership team aware of trends before they became larger issues, worked cross-functionally to design and solve for critical processes that our teams needed to succeed, and was someone I could always rely on for helping navigate the inevitable escalations. Jessica also played an instrumental role in leading the Americas at New Relic successfully through its major transformation from a SaaS company to a Consumption business model.\n...\nAn early win\n...\nexample of strong\n...\nblend of strategic thinking along\n...\nJessica instituted business intelligence and rigor\n...\nteams find sales trends.\n...\nThese trends drove\n...\nand opportunities contributing\n...\nmy revenue growth"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/hdwkvmk5x7g",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Jessica Ashar",
+              "firstName": "Jessica",
+              "lastName": "Ashar",
+              "location": "Cupertino, California, United States",
+              "workHistory": [
+                {
+                  "title": "VP of Revenue Operations",
+                  "location": null,
+                  "dates": {
+                    "from": "2023-08-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cxr7vrhqgmx",
+                    "name": "Medely"
+                  }
+                },
+                {
+                  "title": "VP, Americas Revenue Operations",
+                  "location": "United States",
+                  "dates": {
+                    "from": "2021-01-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/989ykbkmrqg",
+                    "name": "New Relic, Inc."
+                  }
+                },
+                {
+                  "title": "Head of Revenue Operations and Strategy",
+                  "location": "Seattle, Washington, United States",
+                  "dates": {
+                    "from": "2018-09-01",
+                    "to": "2021-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/mcz1pvgkv4g",
+                    "name": "Amazon Web Services (AWS)"
+                  }
+                },
+                {
+                  "title": "Global Director of Sales and Business Operations, Worldwide Dell EMC Synergy Acceleration",
+                  "location": null,
+                  "dates": {
+                    "from": "2017-01-01",
+                    "to": "2018-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/rk42pld7nzd",
+                    "name": "VMware"
+                  }
+                },
+                {
+                  "title": "Director, Sales Strategy and Operations - North America Commercial Sales",
+                  "location": "Palo Alto",
+                  "dates": {
+                    "from": "2012-04-01",
+                    "to": "2016-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/rk42pld7nzd",
+                    "name": "VMware"
+                  }
+                },
+                {
+                  "title": "Senior Finance Controller, Americas Services Sales",
+                  "location": "San Jose, CA",
+                  "dates": {
+                    "from": "2010-08-01",
+                    "to": "2012-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Senior Operations Manager Co-Lead Ease of Doing Business Initiative",
+                  "location": "San Jose, CA",
+                  "dates": {
+                    "from": "2009-02-01",
+                    "to": "2010-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Senior Operations Manager, Commerce Transformation",
+                  "location": "San Jose, CA",
+                  "dates": {
+                    "from": "2007-08-01",
+                    "to": "2009-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Senior Controller Low End Plant Manufacturing Operations",
+                  "location": "San Jose, CA",
+                  "dates": {
+                    "from": "2004-11-01",
+                    "to": "2007-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Controller Multiple Business Units ( 2B)",
+                  "location": "San Jose, CA",
+                  "dates": {
+                    "from": "2000-03-01",
+                    "to": "2004-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Consultant",
+                  "location": "Greater Chicago Area",
+                  "dates": {
+                    "from": "1998-01-01",
+                    "to": "2000-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/bbcptvjvtvz",
+                    "name": "The Boston Consulting Group"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Master of Management (MBA), Majors in management and strategy, marketing and finance",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/ws2hyrhyxxb",
+                    "name": "Northwestern University - Kellogg School of Management"
+                  }
+                },
+                {
+                  "degree": "BA/ MA - 1st Class Honors, Mathematics",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/whzvdn03xb1",
+                    "name": "University of Oxford"
+                  }
+                },
+                {
+                  "degree": "Executive Leadership Program: Aligning Strategy and Sales",
+                  "dates": {
+                    "from": "2016",
+                    "to": "2016"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/q8rbwx85n3j",
+                    "name": "Harvard Business School"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "searchTime": 1059,
+    "costDollars": {
+      "total": 0.007,
+      "search": {
+        "neural": 0.007
+      }
+    }
+  }
+}

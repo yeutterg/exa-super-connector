@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SuperConnector — Signal-Based Sales Intelligence (Exa Demo)
 
-## Getting Started
+A demo applet for the Exa enterprise walkthrough. One persona: an AE selling
+RevOps tooling to Series B SaaS. One thesis: **neural intent search +
+auto-routed live research does what a keyword database can't.**
 
-First, run the development server:
+See `../PLAN.md` for the full demo plan, slides, and narrative script.
+
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Works with **zero configuration** — the three hero queries are pre-cached
+fixtures (synthetic, fictional people/companies) sitting in the sidebar, so the
+app demos with no network and no API key.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Go live
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Put your key in `.env.local`:
+   ```
+   EXA_API_KEY=your-key
+   ```
+2. Regenerate the fixtures with real Exa responses:
+   ```bash
+   npm run fixtures
+   ```
+   Inspect the regenerated `lib/fixtures/hero-*.json` — pick queries whose
+   result sets look good, and pre-warm the Build Brief for the one person
+   you'll click on stage (see the note the script prints).
+3. Any non-hero query typed in the search bar now fires a **live** Exa call
+   (`/api/search`). Build Brief on a non-pre-warmed person fires a live
+   **Agent run with Connect providers attached** (`/api/brief`).
 
-## Learn More
+If a live call fails mid-demo, the client silently falls back to the nearest
+fixture — no visible failure on stage.
 
-To learn more about Next.js, take a look at the following resources:
+## What maps to what
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| App feature | Exa surface |
+|---|---|
+| Search bar / hero chips | `POST /search` — `category: "people"`, natural-language intent |
+| Results table | `results[]` + `entities[].properties` (native structured people data) |
+| Raw toggle | The exact response JSON — no transformation layer |
+| Build Brief | `POST /agent/runs` — Connect (`fiber_ai`, `financial_datasets`) auto-routed + web research |
+| Cost meter | `costDollars` from every response, per-source attribution on hover |
+| History sidebar | Cached searches — instant replay, zero network risk |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Demo-day checklist
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] `npm run fixtures` with a real key; sanity-check all three result sets
+- [ ] Pre-warm the brief for the person you'll click (save as `lib/fixtures/brief-<id>.json`)
+- [ ] Rehearse the one live wildcard query
+- [ ] `npm run build && npm start` (prod mode — no dev overlay button)

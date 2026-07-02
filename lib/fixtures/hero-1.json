@@ -1,0 +1,1182 @@
+{
+  "query": "Revenue or sales leaders at companies that raised a Series B in the last 6 months and are rapidly scaling their go-to-market team",
+  "durationMs": 1450,
+  "response": {
+    "requestId": "a23e500d27d52510395ef379d3b3239a",
+    "resolvedSearchType": "",
+    "results": [
+      {
+        "id": "https://exa.ai/library/person/m99dmf017bz",
+        "title": "Tyler John",
+        "url": "https://linkedin.com/in/tylerjohn",
+        "publishedDate": "2026-06-12T15:33:55.000Z",
+        "highlights": [
+          "moving to NYC\n...\nthinking twice, I\n...\nan interview in\n...\ndead of winter,\n...\nwool coat, and passed myself as\n...\ncreative follow-up\n...\nYelp offered me the job, and I made the cross-country move to launch my career. I quickly moved into 1st, 2nd, and\n...\n3rd line leadership,\n...\ncompanies like Zen\n...\nits and Navan\n...\nimplemented innovative training programs\n...\nproduct I’\n...\nat Actively,\n...\nI’m using those experiences to help shape the future of outbound and revenue optimization At ActivelyAI, we’re in the business of bringing next-generation AI models to sellers. We’ve built the only AI revenue generation solution for enterprise companies that is always on, learning, and optimized for revenue\n...\nOur models works to empower teams to focus on what matters most—connecting with prospects\n...\nSome of the cool things we do to accomplish this:\n...\nHelp reps gain a competitive edge by automating account/contact research\n...\nActivelyAI aggregates and analyzes data across both your TAM and internal data (emails, calls, videos, signals, etc.), providing real-time revenue optimized insights to ensure your team focuses on high-value opportunities\n...\n- Make sure the pipeline never runs dry\n...\nAn auto-prospecting agent consistently identifies and adds high-potential prospects\n...\nkeeping your sales funnel full of quality leads without manual effort\n...\nWhat separates us from all\n...\nnoise? A custom reasoning engine built on top of your data and what your A players do best\n...\n- Ensure you are closing more deals by engaging the right people at\n...\nright time: Our machine learning models rank top contacts and accounts, prioritizing outreach to maximize conversions and minimize wasted effort\n...\n10x efficiency with smarter outbound strategies: ActivelyAI tells your GTM teams exactly who to target, when to reach out, and what to say—so you can scale your outbound efforts without scaling your headcount. Beyond the office: avid cook (Big Fan of Cacio e Pepe), big brother, global adventure seeker (next up: New Zealand), dirty chai lover and serial entrepreneur.\n...\n### Chief Revenue Officer (CRO) at [Actively AI](https://www.linkedin.com/company/actively-ai) (Current)\n...\nDepartment: Sales • Level: C-Level\n...\nActively AI is a Software Development company. Actively AI is an AI pipegen machine that helps GTM teams 10x efficiency by telling sales reps who to focus on, when, and what to say. Actively AI employs 61 people (+133.3% YoY, +44 people), founded in 2021. Headquartered in New York City, New York, United States."
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/C4E03AQHg1-v0d9wtsg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1659993008204?e=2147483647&v=beta&t=0IrcMpAO-056VYY8410kHs9wVBkWc5B0k6V61GWKqNQ",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/m99dmf017bz",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Tyler John",
+              "firstName": "Tyler",
+              "lastName": "John",
+              "location": "New York City Metropolitan Area",
+              "workHistory": [
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2024-11-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/6l4pstv2j94",
+                    "name": "Actively AI"
+                  }
+                },
+                {
+                  "title": "CRO Advisory Board Member",
+                  "location": null,
+                  "dates": {
+                    "from": "2025-09-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/kn8dv92n1s5",
+                    "name": "Bain Capital Ventures"
+                  }
+                },
+                {
+                  "title": "Advisor",
+                  "location": "Miami, Florida, United States",
+                  "dates": {
+                    "from": "2024-06-01",
+                    "to": "2024-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/5xr90h3y522",
+                    "name": "Monta"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "Copenhagen, Denmark & Barcelona, Spain",
+                  "dates": {
+                    "from": "2022-12-01",
+                    "to": "2024-05-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/5xr90h3y522",
+                    "name": "Monta"
+                  }
+                },
+                {
+                  "title": "Chief Sales Officer",
+                  "location": "New York, New York, United States",
+                  "dates": {
+                    "from": "2021-01-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/bzn96y4bskz",
+                    "name": "Vise"
+                  }
+                },
+                {
+                  "title": "SVP Sales, North America",
+                  "location": "New York, New York, United States",
+                  "dates": {
+                    "from": "2020-01-01",
+                    "to": "2021-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/fpl3xgxl7qj",
+                    "name": "Navan"
+                  }
+                },
+                {
+                  "title": "VP Sales, East",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2018-01-01",
+                    "to": "2020-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/fpl3xgxl7qj",
+                    "name": "Navan"
+                  }
+                },
+                {
+                  "title": "VP Sales",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2018-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/m0m7zp55khn",
+                    "name": "Order"
+                  }
+                },
+                {
+                  "title": "VP Sales",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2014-01-01",
+                    "to": "2016-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                    "name": "Zenefits"
+                  }
+                },
+                {
+                  "title": "Director of Sales",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-01-01",
+                    "to": "2014-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/v0ws3bwxtkg",
+                    "name": "Zenefits"
+                  }
+                },
+                {
+                  "title": "Director of Sales",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2011-01-01",
+                    "to": "2013-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                },
+                {
+                  "title": "Sales Manager",
+                  "location": "Phoenix, Arizona Area",
+                  "dates": {
+                    "from": "2010-01-01",
+                    "to": "2011-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                },
+                {
+                  "title": "Senior Account Executive",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2009-01-01",
+                    "to": "2010-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor's degree Economics",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/7lr4q2wnsq2",
+                    "name": "Pitzer College"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/k1g9f13qvyb",
+        "title": "Steve Bailey",
+        "url": "https://linkedin.com/in/steventbailey",
+        "publishedDate": "2026-06-13T14:08:53.000Z",
+        "highlights": [
+          "Chief Revenue Officer\n...\nChief Revenue Officer (CRO) at [CodeSignal](https://www.linkedin.com/company/codesignal)\n...\n### Chief Revenue Officer (CRO) at [CodeSignal](https://www.linkedin.com/company/codesignal) (Current)\n...\nNov 2025 - Present (7 months) in San Francisco Bay Area\n...\nDepartment: Sales • Level: C-Level\n...\nCodeSignal is a Technology, Information and Internet company. CodeSignal is a company that helps individuals discover and develop in-demand skills in a realistic development environment. CodeSignal employs 133 people (+26.0% YoY, +34 people) and has an annual revenue of $3.9M, founded in 2014. Headquartered in San Francisco, California, United States, operates in 21 countries (including Armenia, Colombia, United Kingdom, Argentina, and Spain). Has $87.5M in total funding, with 5 prior funding rounds.\n...\nVentures to help venture\n...\nPE-backed SaaS\n...\n25M build or optimize\n...\ncan rapidly scale ARR. The companies I partner with are typically working to grow\n...\nrevenues more cost efficiently, expanding to the US market after a successful launch overseas, or have raised their initial/early funding round(s) and\n...\nexperienced GTM guidance as they onboard their first set of customers. Sample clients: Folloze uStudio Sensigo Zight iLE\n...\n#### Chief Revenue Officer (CRO)\n...\nSan Francisco Bay Area\n...\nAs the Chief Revenue Officer I lead all revenue functions — including Sales, Customer Success, Renewals, SDR's, Partnerships, and Revenue Operations.\n...\nDepartment: Sales • Level: C-Level\n...\n### Chief Revenue Officer (CRO) at [\n...\nNowsta is the leading AI-driven flex/gig workforce management software and on-demand talent marketplace built for the future of work. Nowsta's platform powers the logistics of managing and building flex workforces for businesses by automating processes like sourcing, scheduling, time-tracking, communications, and payments. I was responsible for sales, revenue operations, sales enablement, and partnerships.\n...\nDepartment: Sales • Level: C-Level\n...\nEdCast was a venture backed SaaS company in the Learning Experience Platform (LXP) space. I was recruited directly by the CEO after the $35M Series D raise. I was responsible for all direct and indirect revenues in the Americas: new business, existing customer upsells and cross-sells, and partner generate revenues.\n...\nI was responsible for\n...\nplan. I managed\n...\nteams. I reported to the\n...\nquarterly to the Board/Investors."
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQEhKGhJ6oQrtw/profile-displayphoto-scale_200_200/B56ZplKhtVIYAY-/0/1762633860821?e=2147483647&v=beta&t=trLprgV2o4-Aylqjmcv6f6uIC0yluUu-IeKBpwnppBI",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/k1g9f13qvyb",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Steve Bailey",
+              "firstName": "Steve",
+              "lastName": "Bailey",
+              "location": "San Francisco Bay Area",
+              "workHistory": [
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2025-11-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cnqck47zcw6",
+                    "name": "CodeSignal"
+                  }
+                },
+                {
+                  "title": "Founder Owner",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2023-05-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Silverback Ventures, LLC."
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2024-07-01",
+                    "to": "2025-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/mhd8g6spmgv",
+                    "name": "Folloze"
+                  }
+                },
+                {
+                  "title": "GTM Growth Advisor",
+                  "location": null,
+                  "dates": {
+                    "from": "2023-12-01",
+                    "to": "2024-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/mhd8g6spmgv",
+                    "name": "Folloze"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2022-08-01",
+                    "to": "2023-05-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/d9m6nq9534b",
+                    "name": "Nowsta"
+                  }
+                },
+                {
+                  "title": "SVP Sales, Americas",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2020-05-01",
+                    "to": "2022-08-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "EdCast (Acquired by Cornerstone, March 2022)"
+                  }
+                },
+                {
+                  "title": "VP Sales, North America",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2019-01-01",
+                    "to": "2020-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/lm6svgs5385",
+                    "name": "Whatfix"
+                  }
+                },
+                {
+                  "title": "Head Of Sales",
+                  "location": "San Francisco, CA",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2019-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "EmployeeChannel, Inc. (Software acquired by JFA)"
+                  }
+                },
+                {
+                  "title": "Head Of Sales",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2017-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/wd59rrrhfr9",
+                    "name": "uStudio"
+                  }
+                },
+                {
+                  "title": "VP Sales, North America",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-01-01",
+                    "to": "2016-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/56kn32v43kp",
+                    "name": "Cornerstone OnDemand"
+                  }
+                },
+                {
+                  "title": "Regional VP of Sales",
+                  "location": "Chicago, IL",
+                  "dates": {
+                    "from": "2009-01-01",
+                    "to": "2013-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "SumTotal Systems (Acquired CyberShift in 2011)"
+                  }
+                },
+                {
+                  "title": "Vice President of Sales",
+                  "location": "Chicago, IL",
+                  "dates": {
+                    "from": "2006-01-01",
+                    "to": "2008-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "The Chicago Spire"
+                  }
+                },
+                {
+                  "title": "Regional Sales Manager",
+                  "location": "Chicago, IL",
+                  "dates": {
+                    "from": "2003-01-01",
+                    "to": "2005-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/vlqbjq8mhmq",
+                    "name": "Concur Technologies"
+                  }
+                },
+                {
+                  "title": "Regional Sales Manager",
+                  "location": "Chicago, IL",
+                  "dates": {
+                    "from": "2000-01-01",
+                    "to": "2003-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Extensity (Acquired by Geac in 2002)"
+                  }
+                },
+                {
+                  "title": "Regional Sales Manager",
+                  "location": "Chicago, IL",
+                  "dates": {
+                    "from": "1998-01-01",
+                    "to": "2000-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/l6mclk46lbm",
+                    "name": "PTC"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "B.A. Liberal Arts",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/b6bvt9q6rsc",
+                    "name": "DePauw University"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/r690jjyq14r",
+        "title": "Zack Sikora",
+        "url": "https://linkedin.com/in/zack-sikora",
+        "publishedDate": "2026-06-12T23:11:34.000Z",
+        "author": "Exa",
+        "highlights": [
+          "Chief Revenue Officer\n...\nChief Revenue Officer at [Endor Labs](https://www.linkedin.com/company/endorlabs)\n...\nExperienced Sales Leader focusing on recruiting top talent, developing people, driving activity and exceeding goals.\n...\n### Chief Revenue Officer at [Endor Labs](https://www.linkedin.com/company/endorlabs) (Current)\n...\nFeb 2026 - Present (4 months)\n...\nDepartment: Sales • Level: C-Level\n...\nEndor Labs is a Software Development company. Endor Labs provides software supply chain security solutions that make developers choose between developer productivity and fixing risks. Endor Labs employs 162 people (+32.2% YoY, +49 people) and has an annual revenue of $55.0M, founded in 2021. Headquartered in Palo Alto, California, United States, operates in 10 countries (including India, United Kingdom, Canada, Panama, and Netherlands). Has $188.0M in total funding, with 4 prior funding rounds.\n...\n• Level: C-Level\n...\nDepartment: Sales • Level: C-Level\n...\nThis week has been nothing short of exhilarating — I'm thrilled to announce that I've joined Endor Labs as their new Chief Revenue Officer. And what a way to kick things off: my very first day started at Endor's Sales Kickoff, which made for an unforgettable introduction to this incredible team.\n...\nAs AI coding assistants become a standard part of every developer's workflow, the pace of software development is accelerating faster than ever — and with it, the complexity of securing the applications being built. Application security is no longer a \"nice to have\"; it's mission-critical. Endor Labs is uniquely positioned at this intersection, empowering both development and security teams with the tools and insights they need to manage risk without slowing down innovation.\n...\nI couldn't be more excited to help bring this vision to more organizations and build something special with this team. The best is ahead! 🚀\n...\n10 years\n...\n’ve been certified\n...\nCommand of the Message\n...\nenablement facilitator, and now\n...\nhave the opportunity\n...\nCROs from around the world to\n...\nstrategic growth initiatives for the\n...\nthey serve. \n\nWhat\n...\nframework, and\n...\nmethodology - they harness the intellectual capital from across\n...\nand serve as a catalyst for executing highly successful G\n...\ntransformations - unlocking TRI\n...\nof dollars in\n...\nemployees, and your shareholders"
+        ],
+        "image": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/r690jjyq14r",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Zack Sikora",
+              "firstName": "Zack",
+              "lastName": "Sikora",
+              "location": "Newport Beach, California, United States",
+              "workHistory": [
+                {
+                  "title": "Chief Revenue Officer",
+                  "location": null,
+                  "dates": {
+                    "from": "2026-02-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/h1c87cdkpvy",
+                    "name": "Endor Labs"
+                  }
+                },
+                {
+                  "title": "GVP of Sales, Americas",
+                  "location": "Orange County, CA",
+                  "dates": {
+                    "from": "2024-06-01",
+                    "to": "2026-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/9jq5lpd9lx6",
+                    "name": "Benchling"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "Orange County, California, United States",
+                  "dates": {
+                    "from": "2023-09-01",
+                    "to": "2024-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/d57crr6jxpm",
+                    "name": "Heap"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "Orange County, California, United States",
+                  "dates": {
+                    "from": "2022-05-01",
+                    "to": "2023-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jchcfb17k1h",
+                    "name": "People.ai"
+                  }
+                },
+                {
+                  "title": "SVP of Worldwide Sales",
+                  "location": "Newport Beach, California, United States",
+                  "dates": {
+                    "from": "2020-12-01",
+                    "to": "2022-05-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jchcfb17k1h",
+                    "name": "People.ai"
+                  }
+                },
+                {
+                  "title": "Vice President of Sales - Americas",
+                  "location": null,
+                  "dates": {
+                    "from": "2020-04-01",
+                    "to": "2020-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jchcfb17k1h",
+                    "name": "People.ai"
+                  }
+                },
+                {
+                  "title": "Area Vice President - West",
+                  "location": null,
+                  "dates": {
+                    "from": "2019-11-01",
+                    "to": "2020-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jchcfb17k1h",
+                    "name": "People.ai"
+                  }
+                },
+                {
+                  "title": "Member",
+                  "location": null,
+                  "dates": {
+                    "from": "2020-02-01",
+                    "to": "2021-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/h0j8swgd4x5",
+                    "name": "Revenue Collective"
+                  }
+                },
+                {
+                  "title": "Regional Vice President - Southwest",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2018-04-01",
+                    "to": "2019-11-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/lhdp428fsz2",
+                    "name": "AppDynamics"
+                  }
+                },
+                {
+                  "title": "Area Sales Director - N. Cal and CO",
+                  "location": null,
+                  "dates": {
+                    "from": "2017-10-01",
+                    "to": "2018-03-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/lhdp428fsz2",
+                    "name": "AppDynamics"
+                  }
+                },
+                {
+                  "title": "Managing Director, Sales (I'm Hiring)",
+                  "location": null,
+                  "dates": {
+                    "from": "2015-09-01",
+                    "to": "2017-10-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/lhdp428fsz2",
+                    "name": "AppDynamics"
+                  }
+                },
+                {
+                  "title": "Regional Sales Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2015-02-01",
+                    "to": "2015-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/p7kb7tcgt3c",
+                    "name": "Wavefront Inc."
+                  }
+                },
+                {
+                  "title": "District Manager, MidMarket Select Sales",
+                  "location": null,
+                  "dates": {
+                    "from": "2012-10-01",
+                    "to": "2015-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/q4xrw5ytk81",
+                    "name": "EMC"
+                  }
+                },
+                {
+                  "title": "Named Account Executive",
+                  "location": null,
+                  "dates": {
+                    "from": "2007-01-01",
+                    "to": "2012-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/q4xrw5ytk81",
+                    "name": "EMC"
+                  }
+                },
+                {
+                  "title": "Account Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2004-01-01",
+                    "to": "2007-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Qwest"
+                  }
+                },
+                {
+                  "title": "Service Sales Representative",
+                  "location": null,
+                  "dates": {
+                    "from": "2002-11-01",
+                    "to": "2004-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/b03hcwlq9p4",
+                    "name": "Cisco Systems"
+                  }
+                },
+                {
+                  "title": "Executive Briefing Center Specialist",
+                  "location": null,
+                  "dates": {
+                    "from": "2000-06-01",
+                    "to": "2002-11-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "California Named Accounts"
+                  }
+                }
+              ],
+              "educationHistory": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/1rcshh05csl",
+        "title": "Kendra Searle",
+        "url": "https://linkedin.com/in/kendrasearle",
+        "publishedDate": "2026-06-12T15:26:05.000Z",
+        "author": "Exa",
+        "highlights": [
+          "VP of Revenue at [Paid](https://www.linkedin.com\n...\npaid-ai)\n...\n### VP of Revenue at [Paid](https://www.linkedin.com/company/paid-ai) (Current)\n...\nJan 2026 - Present (5 months) in San Francisco Bay Area\n...\nAs AI drives a shift toward more agentic products, the gap between what software does and how it’s monetized is being redefined. At Paid.ai, we’re building the infrastructure to help companies align value, outcomes, and revenue in this new world. Building a GTM playbook for the AI era and hiring across all roles in GTM. ⭐️\n...\nDepartment: Sales • Level: President/Vice President\n...\nInformation and Internet company\n...\n2 people (+\n...\n0.0% YoY, +19 people),\n...\n2024.\n...\nquartered in San Francisco, California, United States, with presence in United Kingdom and Switzerland. Has $31.6M in total funding, with 2 prior funding rounds.\n...\n### GTM Sales Leader, AMER at [Notion\n...\nhttps://www.linkedin.com/company/notionhq)\n...\nI joined Notion in early 2023 to build and scale the New Business Sales organization in AMER. Over the next two and a half years, my org scaled from fewer than 10 Account Executives to nearly 50 across Commercial, Mid-Market, and Enterprise. This work required close cross-functional partnership to redesign segmentation, hiring and onboarding processes, territory models, and to build durable coaching and career frameworks, enabling rapid growth as we shifted to an AI-first go-to-market strategy. In Q2 FY26, we expanded the sales leadership structure across Commercial and Enterprise while I continued leading the largest revenue segment in AMER as Head of Mid-Market. During this period, the organization I led delivered exceptional revenue growth (>3X YoY growth every year) and strong talent development, with nearly half of the team earning promotions, reflecting a culture of high performance, growth, and internal mobility."
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D5603AQGuT0m8Tsf0eQ/profile-displayphoto-scale_200_200/B56ZqDAQ.DG0AY-/0/1763134476706?e=2147483647&v=beta&t=QGF_pk1_y62ad-6fEVK9_5eM8II1x6PDpNIJbsVKkxI",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/1rcshh05csl",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Kendra Searle",
+              "firstName": "Kendra",
+              "lastName": "Searle",
+              "location": "San Francisco Bay Area",
+              "workHistory": [
+                {
+                  "title": "VP of Revenue",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2026-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/yy6cp9fw7zb",
+                    "name": "Paid"
+                  }
+                },
+                {
+                  "title": "Limited Partner",
+                  "location": null,
+                  "dates": {
+                    "from": "2023-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jy893dgxn8q",
+                    "name": "GTMfund"
+                  }
+                },
+                {
+                  "title": "Advisor",
+                  "location": null,
+                  "dates": {
+                    "from": "2022-01-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/zllr71x8rgw",
+                    "name": "Antler"
+                  }
+                },
+                {
+                  "title": "GTM Sales Leader, AMER",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2023-01-01",
+                    "to": "2026-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/stchl1qhzlj",
+                    "name": "Notion"
+                  }
+                },
+                {
+                  "title": "Mentor",
+                  "location": null,
+                  "dates": {
+                    "from": "2023-01-01",
+                    "to": "2024-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/hws7y6cy359",
+                    "name": "First Round Capital"
+                  }
+                },
+                {
+                  "title": "Regional Vice President, Enterprise Sales",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2020-01-01",
+                    "to": "2023-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/c0r5mmbg9xf",
+                    "name": "Slack"
+                  }
+                },
+                {
+                  "title": "Sr. Account Executive, Large Enterprise",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2017-01-01",
+                    "to": "2020-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/c0r5mmbg9xf",
+                    "name": "Slack"
+                  }
+                },
+                {
+                  "title": "Founding Advisor",
+                  "location": "San Luis Obispo, California, United States",
+                  "dates": {
+                    "from": "2022-01-01",
+                    "to": "2022-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/4v7gr2kpnl4",
+                    "name": "Cal Poly Tech Sales"
+                  }
+                },
+                {
+                  "title": "Global Client Executive",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2016-01-01",
+                    "to": "2017-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/65lpn4llm9r",
+                    "name": "LinkedIn"
+                  }
+                },
+                {
+                  "title": "Sr. Relationship Manager, Global Accounts",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2014-01-01",
+                    "to": "2016-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/65lpn4llm9r",
+                    "name": "LinkedIn"
+                  }
+                },
+                {
+                  "title": "Retention & Renewals Lead",
+                  "location": "San Francisco Bay Area",
+                  "dates": {
+                    "from": "2013-01-01",
+                    "to": "2014-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/sj09p6p44fv",
+                    "name": "Box"
+                  }
+                },
+                {
+                  "title": "Sr. Renewal Manager",
+                  "location": null,
+                  "dates": {
+                    "from": "2012-01-01",
+                    "to": "2014-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/sj09p6p44fv",
+                    "name": "Box"
+                  }
+                },
+                {
+                  "title": "Account Executive",
+                  "location": "Mountain View, CA",
+                  "dates": {
+                    "from": "2011-01-01",
+                    "to": "2012-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/k7t465sztky",
+                    "name": "Google"
+                  }
+                },
+                {
+                  "title": "Account Executive",
+                  "location": null,
+                  "dates": {
+                    "from": "2010-01-01",
+                    "to": "2011-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/64qjtk5kk5y",
+                    "name": "Yelp.com"
+                  }
+                },
+                {
+                  "title": "Senior Sales & Business Develoment Representative",
+                  "location": "San Luis Obispo, California Area",
+                  "dates": {
+                    "from": "2008-01-01",
+                    "to": "2010-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/p72qprb9zwz",
+                    "name": "MINDBODY, Inc."
+                  }
+                },
+                {
+                  "title": "Board of Directors",
+                  "location": "College of Liberal Arts",
+                  "dates": {
+                    "from": "2008-01-01",
+                    "to": "2009-01-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/qct39qkxxnk",
+                    "name": "Associated Students, Inc.-Cal Poly San Luis Obispo"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Semester at Sea",
+                  "dates": {
+                    "from": null,
+                    "to": "2008"
+                  },
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/s7fnchj1z29",
+                    "name": "Semester At Sea / ISE"
+                  }
+                },
+                {
+                  "degree": "Bachelor of Science, Graphic Communication",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/7m6tc40rgqk",
+                    "name": "California Polytechnic State University-San Luis Obispo"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "https://exa.ai/library/person/bswkyr23nb5",
+        "title": "Emil Dyrvig",
+        "url": "https://linkedin.com/in/emildyrvig",
+        "publishedDate": "2026-06-12T15:28:06.000Z",
+        "author": "Exa",
+        "highlights": [
+          "returning time @ Laurel\n...\nChief Revenue Officer at [Laurel](https://www.linkedin.com/company/p.i.n.g.)\n...\n### Chief Revenue Officer at [Laurel](https://www.linkedin.com/company/p.i.n.g.) (Current)\n...\nFeb 2026 - Present (4 months) in New York City Metropolitan Area\n...\nActively returning time alongside a world class team across NY, SF, LA and London. Backed by IVP, Google Ventures, O1A, Workday Ventures, ACME, Anthos and a number of brilliant individuals.\n...\nDepartment: Sales • Level: C-Level\n...\nLaurel is a Software Development company. Laurel applies AI to automate timesheets for enterprise legal and accounting firms, helping them save time, grow profit, and answer vital efficiency questions. Laurel employs 138 people (+109.1% YoY) and has an annual revenue of $27.8M, founded in 2018. Headquartered in San Francisco, California, United States, operates in 11 countries (including United Kingdom, Canada, Sri Lanka, Sweden, and Hong Kong). Has $231.7M in total funding, with 9 prior funding rounds.\n...\nInvesting in and Working\n...\nto accelerate and\n...\nAdvising on overall strategy\n...\nAdditionally also acting as Subject\n...\n### VP WW Sales & Business Development at [Laurel](https://www.linkedin.com/company/p.i.n.g.)\n...\nMar 2025 - Feb 2026 (11 months) in New York City Metropolitan Area\n...\nActively returning time alongside a world class team across NY, SF, LA and London. Backed by IVP, Google Ventures, O1A, Workday Ventures, ACME, Anthos and a number of brilliant individuals.\n...\nDepartment: Sales • Level: President/Vice President\n...\nSuccessful exit to PE fund ✅ Doubled the company’s valuation in 10 months, and successfully led all commercial efforts in connection to taking the company private and the subsequent sale to Copilot Capital May 2024. In July 2023 I was hired to come in and help the two founders of Relesys improve the revenue engine in order to facilitate an attractive take private and subsequent capital raise. I led and rewamped all revenue functions, including revenue operations, sales, SDRs, client success, implementation, design, support, account management, and marketing. To help me accelerate the processesa and deliver high short term impact I brought in a small team of former co-workers whilst also spending 50% of my time with the teams in Europe. During the period we consistently overdelivered on budgets with high forecast accuracy. We did that efficiently with fewer FTEs than originally planned but despite that we managed to break a lot of records, and importantly also had a lot of fun along the way. Select highlights:\n...\n023\n...\n, with\n...\nDepartment: Sales • Level: C-Level\n...\nDepartment: Sales • Level: C-Level"
+        ],
+        "image": "https://media.licdn.com/dms/image/v2/D4D03AQFB3b2tUbB5qQ/profile-displayphoto-shrink_200_200/B4DZWrDEYwGcAY-/0/1742331463472?e=2147483647&v=beta&t=z0Wy9z37vjiAniYXlDnasj59S3jaoNmrHi_RtWtUCYU",
+        "entities": [
+          {
+            "id": "https://exa.ai/library/person/bswkyr23nb5",
+            "type": "person",
+            "version": 1,
+            "properties": {
+              "name": "Emil Dyrvig",
+              "firstName": "Emil",
+              "lastName": "Dyrvig",
+              "location": "Brooklyn, New York, United States",
+              "workHistory": [
+                {
+                  "title": "Chief Revenue Officer",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2026-02-01",
+                    "to": null
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jrb7v25165k",
+                    "name": "Laurel"
+                  }
+                },
+                {
+                  "title": "VP WW Sales & Business Development",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2025-03-01",
+                    "to": "2026-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/jrb7v25165k",
+                    "name": "Laurel"
+                  }
+                },
+                {
+                  "title": "Revenue, US Market Entry & Commercial Due Diligence Advisory",
+                  "location": null,
+                  "dates": {
+                    "from": "2021-01-01",
+                    "to": null
+                  },
+                  "company": null
+                },
+                {
+                  "title": "Revenue Consultant & Advisor to Chief Executive Officer",
+                  "location": null,
+                  "dates": {
+                    "from": "2024-08-01",
+                    "to": "2024-10-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/prp38v7npwj",
+                    "name": "EIVEE™"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer (CRO)",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2023-08-01",
+                    "to": "2024-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/zdqxy3vxqmc",
+                    "name": "Relesys"
+                  }
+                },
+                {
+                  "title": "Chief Revenue Officer",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2021-09-01",
+                    "to": "2023-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/l12mp5kdhz9",
+                    "name": "Templafy"
+                  }
+                },
+                {
+                  "title": "Global Vice President, Business Development & Strategic Partnerships",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2020-06-01",
+                    "to": "2021-09-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/l12mp5kdhz9",
+                    "name": "Templafy"
+                  }
+                },
+                {
+                  "title": "Managing Director, Americas",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2019-08-01",
+                    "to": "2020-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/l12mp5kdhz9",
+                    "name": "Templafy"
+                  }
+                },
+                {
+                  "title": "Director of Sales, North America",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2018-07-01",
+                    "to": "2019-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/l12mp5kdhz9",
+                    "name": "Templafy"
+                  }
+                },
+                {
+                  "title": "Forbes Business Development Council",
+                  "location": "New York City Metropolitan Area",
+                  "dates": {
+                    "from": "2019-01-01",
+                    "to": "2023-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/8rf9dtr737r",
+                    "name": "Forbes Business Development Council"
+                  }
+                },
+                {
+                  "title": "Advisory Board Member",
+                  "location": null,
+                  "dates": {
+                    "from": "2019-05-01",
+                    "to": "2022-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/960607z9wnk",
+                    "name": "GoodiePack"
+                  }
+                },
+                {
+                  "title": "Global Accounts & Partnerships",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2017-08-01",
+                    "to": "2018-07-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                    "name": "Dropbox"
+                  }
+                },
+                {
+                  "title": "Enterprise Territory Manager",
+                  "location": "Greater New York City Area",
+                  "dates": {
+                    "from": "2017-02-01",
+                    "to": "2017-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                    "name": "Dropbox"
+                  }
+                },
+                {
+                  "title": "Senior Enterprise Account Executive",
+                  "location": "Copenhagen Area, Denmark",
+                  "dates": {
+                    "from": "2016-04-01",
+                    "to": "2017-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                    "name": "Dropbox"
+                  }
+                },
+                {
+                  "title": "Enterprise Account Executive",
+                  "location": "County Dublin, Ireland",
+                  "dates": {
+                    "from": "2015-02-01",
+                    "to": "2016-04-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cw70gt9bzw1",
+                    "name": "Dropbox"
+                  }
+                },
+                {
+                  "title": "Key Account Manager",
+                  "location": "Copenhagen Area, Denmark",
+                  "dates": {
+                    "from": "2013-06-01",
+                    "to": "2015-02-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/zmv0fvk9hnn",
+                    "name": "L'Oréal"
+                  }
+                },
+                {
+                  "title": "Analyst",
+                  "location": null,
+                  "dates": {
+                    "from": "2013-03-01",
+                    "to": "2013-06-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/cq020f8yck8",
+                    "name": "Procter & Gamble"
+                  }
+                },
+                {
+                  "title": "Head of Sales",
+                  "location": "Copenhagen Area, Denmark",
+                  "dates": {
+                    "from": "2012-09-01",
+                    "to": "2012-12-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/kzkp4njclc8",
+                    "name": "ARCHITECTMADE"
+                  }
+                },
+                {
+                  "title": "Sales Manager",
+                  "location": "Copenhagen Area, Denmark",
+                  "dates": {
+                    "from": "2012-02-01",
+                    "to": "2012-08-01"
+                  },
+                  "company": {
+                    "id": "https://exa.ai/library/organization/kzkp4njclc8",
+                    "name": "ARCHITECTMADE"
+                  }
+                },
+                {
+                  "title": "Various Sales & Customer Service positions",
+                  "location": "Denmark and South Korea",
+                  "dates": {
+                    "from": "2006-01-01",
+                    "to": "2011-01-01"
+                  },
+                  "company": {
+                    "id": null,
+                    "name": "Various"
+                  }
+                }
+              ],
+              "educationHistory": [
+                {
+                  "degree": "Bachelor of Science (BSc) Economics & Business Administration",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/5wj03x7sfdh",
+                    "name": "Ewha Womans University 이화여자대학교"
+                  }
+                },
+                {
+                  "degree": "Master of Science (MSc) International Business",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/s8m20n3h2gr",
+                    "name": "Copenhagen Business School"
+                  }
+                },
+                {
+                  "degree": "Bachelor of Science (BSc) Economics & Business administration",
+                  "dates": null,
+                  "institution": {
+                    "id": "https://exa.ai/library/organization/s8m20n3h2gr",
+                    "name": "Copenhagen Business School"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "searchTime": 1784.1,
+    "costDollars": {
+      "total": 0.007,
+      "search": {
+        "neural": 0.007
+      }
+    }
+  }
+}
