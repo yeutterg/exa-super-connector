@@ -63,7 +63,7 @@ export function BriefCard({
             Brief · {person.name}
             <CopyInline value={person.name} />
             <span className="font-normal text-muted-foreground">
-              &nbsp;— {person.title}, {person.company}
+              &nbsp;{person.title}, {person.company}
             </span>
           </CardTitle>
           <div className="flex rounded-md border p-0.5">

@@ -88,6 +88,7 @@ export function ProfileDrawer() {
   const status = record?.response.statuses?.[0];
 
   return (
+    <>
     <Sheet
       open={Boolean(openContentsPersonId)}
       onOpenChange={(open) => !open && closeContents()}
@@ -352,23 +353,25 @@ export function ProfileDrawer() {
           )}
         </div>
 
-        {/* Click the avatar → full-size photo */}
-        {person?.image && (
-          <Dialog open={imageOpen} onOpenChange={setImageOpen}>
-            <DialogContent className="w-auto max-w-[80vw] p-2">
-              <DialogTitle className="sr-only">
-                {person.name} — photo
-              </DialogTitle>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={person.image}
-                alt={person.name}
-                className="max-h-[80vh] rounded-md object-contain"
-              />
-            </DialogContent>
-          </Dialog>
-        )}
       </SheetContent>
     </Sheet>
+
+    {/* Click the avatar → full-size photo. Rendered as a SIBLING of the
+        sheet, not a child: a dialog nested inside another Base UI dialog
+        doesn't dismiss on outside click. */}
+    {person?.image && (
+      <Dialog open={imageOpen} onOpenChange={setImageOpen}>
+        <DialogContent className="w-auto max-w-[80vw] p-2">
+          <DialogTitle className="sr-only">{person.name} — photo</DialogTitle>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={person.image}
+            alt={person.name}
+            className="max-h-[80vh] rounded-md object-contain"
+          />
+        </DialogContent>
+      </Dialog>
+    )}
+    </>
   );
 }
