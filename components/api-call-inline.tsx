@@ -29,13 +29,22 @@ export function ApiCallInline({ record }: { record: SearchRecord }) {
             : `${record.request.type} · web-wide`
         }
       />
-      {record.joinRequest && (
+      {record.joinRequests?.length ? (
+        // The fan-out join: one focused query per extracted company, run in
+        // parallel. Show the first body; the tag carries the count — the
+        // other calls differ only in the company name.
+        <ApiCallBlock
+          json={apiJsonSnippet(record.joinRequests[0])}
+          path="/search"
+          tag={`join ×${record.joinRequests.length} · one leader per company, in parallel`}
+        />
+      ) : record.joinRequest ? (
         <ApiCallBlock
           json={apiJsonSnippet(record.joinRequest)}
           path="/search"
           tag="join · people at extracted companies"
         />
-      )}
+      ) : null}
     </div>
   );
 }

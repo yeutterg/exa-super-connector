@@ -121,9 +121,12 @@ export interface SearchRecord {
    *  expanded (via GPT-5 nano) into a standalone query before it hit Exa. */
   rawInput?: string;
   /** Deep re-runs are a two-step pipeline: deep web-wide extraction finds the
-   *  companies (this record's request/response), then a fast people search at
-   *  those companies fills `people`. This is that second call's body — shown
-   *  as its own code block so the join stays visible. */
+   *  companies (this record's request/response), then a fan-out join — ONE
+   *  people search per company, in parallel — fills `people` with one leader
+   *  each. These are those calls' bodies (first one shown as code, tag notes
+   *  the fan-out count). */
+  joinRequests?: SearchRequestBody[];
+  /** Legacy single blended join (older persisted records) — still rendered. */
   joinRequest?: SearchRequestBody;
   /** The OpenAI chat.completions body (gpt-5-nano) that rewrote the query
    *  into deep-search format — shown as its own code block above the deep

@@ -25,9 +25,10 @@ import type {
   VerifyRecord,
 } from "@/lib/types";
 import {
+  LEADER_TITLE_RE,
   PROVIDER_LABELS,
   buildBriefBody,
-  buildPeopleAtCompaniesQuery,
+  buildPeopleAtCompanyQuery,
   buildSearchBody,
   normalizePeople,
 } from "@/lib/exa";
@@ -573,32 +574,61 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         const findings: { entity: string }[] =
           deepData.response?.output?.content?.findings ?? [];
 
-        // Step 3: the join — fast people search at the extracted companies
-        // fills the familiar people table with the RIGHT people (sales
-        // leaders at companies that match), instead of profile lookalikes.
-        let people: Person[] = [];
-        let joinRequest: SearchRecord["joinRequest"];
-        let joinCost = 0;
+        // Step 3: the join — a FAN-OUT, one focused people search per
+        // extracted company, in parallel. A single blended query ("leader at
+        // A, B, C, D") embeds as an average and retrieval drifts: multiple
+        // people from one company, none from another, AEs outranking actual
+        // leaders. One query per company makes coverage structural; a title
+        // check picks the leader among each company's candidates.
+        const people: Person[] = [];
+        const joinRequests: SearchRecord["joinRequests"] = [];
+        const joinCosts: { company: string; amount: number }[] = [];
         let joinMs = 0;
         if (findings.length > 0) {
-          const joinQuery = buildPeopleAtCompaniesQuery(
-            findings.slice(0, 5).map((f) => f.entity),
+          const companies = [
+            ...new Set(findings.slice(0, 5).map((f) => f.entity)),
+          ];
+          const joinStarted = Date.now();
+          const joins = await Promise.all(
+            companies.map(async (company) => {
+              try {
+                const joinRes = await fetch("/api/search", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    query: buildPeopleAtCompanyQuery(company),
+                    options: {
+                      type: "auto",
+                      category: "people",
+                      numResults: 3, // headroom for the leader-title pick
+                      extractEntities: false,
+                    },
+                  }),
+                });
+                if (!joinRes.ok) return null;
+                return { company, data: await joinRes.json() };
+              } catch {
+                return null; // join is best-effort — findings still render
+              }
+            }),
           );
-          try {
-            const joinRes = await fetch("/api/search", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ query: joinQuery }),
-            });
-            if (joinRes.ok) {
-              const joinData = await joinRes.json();
-              people = normalizePeople(joinData.response);
-              joinRequest = joinData.request;
-              joinCost = joinData.response?.costDollars?.total ?? 0;
-              joinMs = joinData.durationMs ?? 0;
+          joinMs = Date.now() - joinStarted;
+          for (const j of joins) {
+            if (!j) continue;
+            const candidates = normalizePeople(j.data.response);
+            // First leader-titled candidate wins; fall back to the top match
+            // so a company without a titled leader still contributes someone.
+            const leader =
+              candidates.find((p) => LEADER_TITLE_RE.test(p.title)) ??
+              candidates[0];
+            if (leader && !people.some((p) => p.id === leader.id)) {
+              people.push(leader);
             }
-          } catch {
-            // join is best-effort — findings + sources still render
+            joinRequests.push(j.data.request);
+            joinCosts.push({
+              company: j.company,
+              amount: j.data.response?.costDollars?.total ?? 0,
+            });
           }
         }
 
@@ -612,7 +642,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           response: deepData.response,
           people,
           durationMs: (deepData.durationMs ?? 0) + joinMs,
-          joinRequest,
+          joinRequests: joinRequests.length ? joinRequests : undefined,
           rewriteRequest,
         };
         setSearches((prev) => [newRecord, ...prev]);
@@ -643,12 +673,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           timestamp: Date.now(),
           searchId: newRecord.id,
         });
-        if (joinRequest) {
+        for (const jc of joinCosts) {
           addCost({
             id: nextId(),
             type: "search",
-            label: `join · ${joinRequest.query}`,
-            amount: joinCost,
+            label: `join · leader at ${jc.company}`,
+            amount: jc.amount,
             timestamp: Date.now(),
             searchId: newRecord.id,
           });

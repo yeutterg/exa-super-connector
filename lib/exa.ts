@@ -97,10 +97,20 @@ export function buildSearchBody(
   return body;
 }
 
-/** The join step: given extracted companies, find the people to contact. */
-export function buildPeopleAtCompaniesQuery(companies: string[]): string {
-  return `Head of Sales, CRO, or revenue leader at ${companies.join(", ")}`;
+/** The join step: ONE focused query per extracted company (fan-out), never a
+ *  blended multi-company query. A single embedding of "leader at A, B, C, D"
+ *  averages the companies' semantics — retrieval returns whatever is nearest
+ *  the blend (two people from one company, none from another, AEs sneaking
+ *  in). One query per company keeps the seniority constraint sharp and makes
+ *  per-company coverage structural. */
+export function buildPeopleAtCompanyQuery(company: string): string {
+  return `Head of Sales, CRO, or most senior revenue leader currently at ${company}`;
 }
+
+/** Deterministic seniority check for join candidates — embedding similarity
+ *  alone lets "Senior Account Executive at X" outrank the actual sales lead. */
+export const LEADER_TITLE_RE =
+  /chief|cro|ceo|coo|founder|vp|vice president|head of|director|president|gm|general manager/i;
 
 /** Profile drawer: /contents accepts search-result ids directly. Text gives
  *  the raw extracted profile; the summary query steers Exa's synthesis

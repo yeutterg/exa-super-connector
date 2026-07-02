@@ -205,7 +205,19 @@ function PersonRow({
   return (
     <TableRow className={active ? "bg-accent/60 hover:bg-accent/60" : undefined}>
       <TableCell>
-        <div className="group flex items-center gap-2.5">
+        {/* The whole person cell opens the profile drawer, not just the name
+            text — clicking the avatar or the empty space around it should
+            work too. The external link stays a separate nested target. */}
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => runContents(person, recordId)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") runContents(person, recordId);
+          }}
+          title="Extract this profile via /contents"
+          className="group flex cursor-pointer items-center gap-2.5"
+        >
           <Avatar className="size-8">
             {person.image && <AvatarImage src={person.image} alt="" />}
             <AvatarFallback className="text-[10px]">
@@ -213,19 +225,15 @@ function PersonRow({
             </AvatarFallback>
           </Avatar>
           <div>
-            <button
-              type="button"
-              onClick={() => runContents(person, recordId)}
-              title="Extract this profile via /contents"
-              className="text-left text-xs font-medium hover:underline"
-            >
+            <span className="text-xs font-medium group-hover:underline">
               {person.name}
-            </button>
+            </span>
             <a
               href={person.url}
               target="_blank"
               rel="noreferrer"
               title="Open source profile"
+              onClick={(e) => e.stopPropagation()}
               className="ml-1 inline-flex align-middle opacity-0 transition-opacity group-hover:opacity-100"
             >
               <ExternalLink className="size-3 text-muted-foreground hover:text-foreground" />
