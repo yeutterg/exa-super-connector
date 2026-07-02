@@ -56,23 +56,28 @@ No gradients, no drop shadows, no rounded-corner card soup.
 
 ---
 
-## Slide 2 — Why Exa for people search
+## Slide 2 — Why not just ask the model?
 
-- Title (serif): **Why Exa for people search**
-- Subtitle (mono, muted): `what you're up against — and what maps to it`
-- Two-column ledger table, hairline rules, no fills. Left column = the
-  builder's pain (body ink), right column = the Exa answer (accent blue keys
-  in mono where an API concept is named):
+(Source for framing: exa.ai/blog/superknowledge — "intelligence is
+increasingly bottlenecked by knowledge": GPT-4 can solve physics problems
+but can't list the 457 physics PhDs in NYC.)
 
-| Building people search | Exa |
+- Title (serif): **Why not just ask the model?**
+- Subtitle (mono, muted): `LLM knowledge vs. live web search`
+- Two-column ledger table, hairline rules, no fills — exactly THREE rows:
+
+| Built-in LLM knowledge | Exa |
 |---|---|
-| Contact databases are stale the day you buy them | Live index of the open web — signals (funding, job posts, talks), not snapshots |
-| Users ask in sentences; keyword/boolean can't express intent | Neural search reads intent from one natural-language `query` string |
-| People data arrives as HTML to parse | `category: "people"` returns structured entities: name, location, dated work history |
-| Profile + evidence + contact = three vendors and a glue layer | One API: search → contents → research → agent, with partner data routed in a single run |
-| Cost and latency blow up at product scale | Fractions of a cent per call, ~1s fast search, exact `costDollars` on every response |
+| Frozen at the training cutoff — people change jobs weekly | Live index of the open web: current roles, funding, job posts |
+| Can reason about people but can't *enumerate* them — asked to list them, it improvises names | Retrieves the actual profiles, structured: name, location, dated work history |
+| Unsourced answers you can't ship to users | Every result carries a URL — verifiable, and token-efficient (five relevant docs, not a context dump) |
 
-- Design note: five rows max, one line each; let the table breathe
+- Bottom row (mono label + logo strip): **Used by:** Cursor · Cognition ·
+  HubSpot · OpenRouter · Monday.com
+  - Design note: small grayscale/monochrome official logos, evenly spaced on
+    the hairline, label in muted mono; source official marks from each
+    company's brand page
+- Design note: three rows, one line each; the table is the whole slide
 
 ---
 
@@ -94,9 +99,6 @@ No gradients, no drop shadows, no rounded-corner card soup.
   5. A return arrow looping bottom-right back to the Exa group (the loop:
      agents call search again)
 
-- One-line contrast beneath the diagram (body): *LLM weights froze at
-  training time and guess at specifics — Exa retrieves current documents
-  with URLs attached: current, verifiable, token-efficient.*
 - Footer strip (mono, hairline-boxed): **Demoed today:** `/search` ·
   `/contents` · `deep` (research + structured output) · `/agent/runs` (+ Connect)
 - Design note: this slide is the handoff — end on the footer strip and
@@ -108,7 +110,11 @@ No gradients, no drop shadows, no rounded-corner card soup.
 
 1. Open on the HubSpot quote: faster, cheaper, better coverage — "the demo
    will substantiate all three with real calls and real prices on screen."
-2. Slide 2: every row is *shown*, not asserted, in the next 15 minutes.
+2. Slide 2: the superknowledge line — models got smarter every month while
+   their *knowledge* stayed frozen; ask GPT for the physics PhDs in NYC and
+   it improvises. People search is the worst case for built-in knowledge and
+   the best case for live retrieval. Every row gets shown, not asserted, in
+   the next 15 minutes.
 3. Slide 3: the moat matters to developers — first-party crawler, embedding
    model, and vector DB is where the latency/cost numbers come from. Land on
    the four routes, then switch to the app.
