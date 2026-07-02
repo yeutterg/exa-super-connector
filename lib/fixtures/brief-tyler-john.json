@@ -1,59 +1,64 @@
 {
   "personId": "https://exa.ai/library/person/m99dmf017bz",
   "personName": "Tyler John",
-  "durationMs": 33305,
+  "durationMs": 39668,
   "routedTo": [
     "fiber_ai"
   ],
   "output": {
-    "email": null,
+    "email": "tyler@actively.ai",
     "whyNow": [
       {
-        "signal": "Actively announced a $45M Series B co-led by TCV and First Harmonic, bringing total funding to $68M; the company said proceeds will fund new GTM products, hiring, enterprise expansion, and a new San Francisco office.",
-        "source": "https://www.businesswire.com/news/home/20260428810008/en/Actively-Raises-%2445M-Series-B-to-Scale-Intelligence-Led-Revenue-Platform",
+        "signal": "Actively announced a $45M Series B, bringing total funding to $68M; proceeds are earmarked for new GTM products, hiring, enterprise expansion, and opening a San Francisco office—timely for vendors supporting scale-up revenue operations.",
+        "source": "https://natlawreview.com/press-releases/actively-raises-45m-series-b-scale-intelligence-led-revenue-platform",
         "date": "2026-04-28"
       },
       {
-        "signal": "Actively published a product/market thesis around dedicated “Per-Account Agents,” arguing that every account should have a continuously working AI agent to handle signal monitoring, context, and next-best actions—useful opener around their push from per-rep assistants to account-level agents.",
-        "source": "https://www.actively.ai/blog/the-future-of-gtm-every-sales-rep-needs-a-dedicated-ai-agent",
+        "signal": "Actively published a new GTM architecture/product narrative around moving from fragmented GTM tools to 'Intelligence-Led Revenue,' highlighting persistent 24/7 per-account agents plus Agent Inbox, Assistant, and Watchtower—useful opener around product/category momentum.",
+        "source": "https://www.actively.ai/blog/from-gtm-tool-fragmentation-to-intelligence-led-revenue",
         "date": "2026-06-26"
       },
       {
-        "signal": "Tyler John spoke at the Chief Revenue Officer Summit New York on “The AI-native GTM reckoning,” sharing customer proof points including Ramp reporting 23% higher win rates and Ironclad generating over $10M in qualified pipeline with a leaner team.",
-        "source": "https://events.revenueoperationsalliance.com/location/cronewyork/speaker/tylerjohn",
-        "date": "2026-03-11"
+        "signal": "Tyler John posted that Actively's GTM team was hiring across 'pretty much every GTM role' in SF and NY, including remote Strategic AE roles, after closing multiple enterprise deals with 1,000+ rep revenue orgs—strong signal of sales-team expansion and enterprise demand.",
+        "source": "https://www.linkedin.com/posts/tylerjohn_2025-was-a-defining-year-for-the-gtm-team-activity-7432463831303401472-eEaA",
+        "date": "2026-02-25"
       }
     ]
   },
   "cost": {
-    "total": 0.1599,
-    "agentCompute": 0.1109,
-    "search": 0.009,
+    "total": 0.2172,
+    "agentCompute": 0.1792,
+    "search": 0.018,
     "dataSources": {
-      "fiber_ai": 0.04
+      "fiber_ai": 0.02
     }
   },
   "source": "fixture",
   "raw": {
-    "id": "agent_run_b24f0f5f4eb44c268212c0832f791538",
+    "id": "agent_run_ca302f11649b49db8aebd15feb293ffa",
     "object": "agent_run",
     "status": "completed",
     "stopReason": "schema_satisfied",
-    "createdAt": "2026-07-02T00:44:58.966Z",
-    "completedAt": "2026-07-02T00:45:31.050Z",
+    "createdAt": "2026-07-02T05:24:11.131Z",
+    "completedAt": "2026-07-02T05:24:49.353Z",
     "request": {
-      "query": "Profile Tyler John, Chief Revenue Officer (CRO) at Actively AI. Return their verified work email, and 2-3 recent, specific \"why now\" signals a salesperson could open a cold email with — funding, launches, hiring, exec talks, migrations, or press from the last 6 months. Each signal must cite a source URL and date.",
+      "query": "Profile Tyler John, Chief Revenue Officer (CRO) at Actively AI. Return their work email (verified if available, otherwise the best-supported inference from reputable public sources), and 2-3 recent, specific \"why now\" signals a salesperson could open a cold email with — funding, launches, hiring, exec talks, migrations, or press from the last 6 months. Each signal must cite a source URL and date.",
       "outputSchema": {
         "type": "object",
         "properties": {
           "email": {
             "type": "string",
-            "description": "verified work email, from Fiber.ai"
+            "description": "work email — verified when a data source has it, otherwise inferred from reputable public listings"
           },
           "whyNow": {
             "type": "array",
             "items": {
               "type": "object",
+              "required": [
+                "signal",
+                "source",
+                "date"
+              ],
               "properties": {
                 "date": {
                   "type": "string"
@@ -67,70 +72,80 @@
                   "description": "citation URL"
                 }
               }
-            }
+            },
+            "maxItems": 3
           }
         }
       },
       "effort": "auto"
     },
     "output": {
-      "text": "Fiber.ai confirmed Tyler John as CRO at Actively AI but did not expose a verified work email in the returned record, so email is null per the instruction not to fabricate unsupported fields.",
+      "text": "Email is inferred rather than directly revealed: RocketReach confirms Tyler John has an @actively.ai work email, while LeadIQ and RocketReach both report Actively's dominant email pattern as first@actively.ai, supporting tyler@actively.ai.",
       "structured": {
+        "email": "tyler@actively.ai",
         "whyNow": [
           {
             "date": "2026-04-28",
-            "signal": "Actively announced a $45M Series B co-led by TCV and First Harmonic, bringing total funding to $68M; the company said proceeds will fund new GTM products, hiring, enterprise expansion, and a new San Francisco office.",
-            "source": "https://www.businesswire.com/news/home/20260428810008/en/Actively-Raises-%2445M-Series-B-to-Scale-Intelligence-Led-Revenue-Platform"
+            "signal": "Actively announced a $45M Series B, bringing total funding to $68M; proceeds are earmarked for new GTM products, hiring, enterprise expansion, and opening a San Francisco office—timely for vendors supporting scale-up revenue operations.",
+            "source": "https://natlawreview.com/press-releases/actively-raises-45m-series-b-scale-intelligence-led-revenue-platform"
           },
           {
             "date": "2026-06-26",
-            "signal": "Actively published a product/market thesis around dedicated “Per-Account Agents,” arguing that every account should have a continuously working AI agent to handle signal monitoring, context, and next-best actions—useful opener around their push from per-rep assistants to account-level agents.",
-            "source": "https://www.actively.ai/blog/the-future-of-gtm-every-sales-rep-needs-a-dedicated-ai-agent"
+            "signal": "Actively published a new GTM architecture/product narrative around moving from fragmented GTM tools to 'Intelligence-Led Revenue,' highlighting persistent 24/7 per-account agents plus Agent Inbox, Assistant, and Watchtower—useful opener around product/category momentum.",
+            "source": "https://www.actively.ai/blog/from-gtm-tool-fragmentation-to-intelligence-led-revenue"
           },
           {
-            "date": "2026-03-11",
-            "signal": "Tyler John spoke at the Chief Revenue Officer Summit New York on “The AI-native GTM reckoning,” sharing customer proof points including Ramp reporting 23% higher win rates and Ironclad generating over $10M in qualified pipeline with a leaner team.",
-            "source": "https://events.revenueoperationsalliance.com/location/cronewyork/speaker/tylerjohn"
+            "date": "2026-02-25",
+            "signal": "Tyler John posted that Actively's GTM team was hiring across 'pretty much every GTM role' in SF and NY, including remote Strategic AE roles, after closing multiple enterprise deals with 1,000+ rep revenue orgs—strong signal of sales-team expansion and enterprise demand.",
+            "source": "https://www.linkedin.com/posts/tylerjohn_2025-was-a-defining-year-for-the-gtm-team-activity-7432463831303401472-eEaA"
           }
         ]
       },
       "grounding": [
         {
-          "field": "structured.answer.email",
+          "field": "structured.email",
           "citations": [
             {
-              "url": "https://linkedin.com/in/tylerjohn",
-              "title": "Fiber.ai result: Tyler John LinkedIn profile (no email exposed in returned record)"
+              "url": "https://leadiq.com/c/actively-ai/6212a5230f6952540dc68fd9/email-format",
+              "title": "Actively AI Email Formats & Email Address Examples | LeadIQ"
+            },
+            {
+              "url": "https://rocketreach.co/actively-email-format_b54af476f6676229",
+              "title": "Actively Email Format | actively.ai Emails"
+            },
+            {
+              "url": "https://rocketreach.co/tyler-john-email_1411432",
+              "title": "Tyler John Email & Phone Number | Actively AI Chief Revenue Officer (CRO) Contact Information"
             }
           ],
           "confidence": "medium"
         },
         {
-          "field": "structured.answer.whyNow[0]",
+          "field": "structured.whyNow[0]",
           "citations": [
             {
-              "url": "https://www.businesswire.com/news/home/20260428810008/en/Actively-Raises-%2445M-Series-B-to-Scale-Intelligence-Led-Revenue-Platform",
+              "url": "https://natlawreview.com/press-releases/actively-raises-45m-series-b-scale-intelligence-led-revenue-platform",
               "title": "Actively Raises $45M Series B to Scale Intelligence-Led Revenue Platform"
             }
           ],
           "confidence": "medium"
         },
         {
-          "field": "structured.answer.whyNow[1]",
+          "field": "structured.whyNow[1]",
           "citations": [
             {
-              "url": "https://www.actively.ai/blog/the-future-of-gtm-every-sales-rep-needs-a-dedicated-ai-agent",
-              "title": "The Future of GTM: Why Every Sales Rep Needs a Dedicated AI Agent"
+              "url": "https://www.actively.ai/blog/from-gtm-tool-fragmentation-to-intelligence-led-revenue",
+              "title": "From GTM Tool Fragmentation to Intelligence-Led Revenue | Actively"
             }
           ],
           "confidence": "medium"
         },
         {
-          "field": "structured.answer.whyNow[2]",
+          "field": "structured.whyNow[2]",
           "citations": [
             {
-              "url": "https://events.revenueoperationsalliance.com/location/cronewyork/speaker/tylerjohn",
-              "title": "Tyler John | Chief Revenue Officer Summit | New York"
+              "url": "https://www.linkedin.com/posts/tylerjohn_2025-was-a-defining-year-for-the-gtm-team-activity-7432463831303401472-eEaA",
+              "title": "Actively AI GTM Team Expands, Hiring Across SF + NY | Tyler John posted on the topic | LinkedIn"
             }
           ],
           "confidence": "medium"
@@ -138,22 +153,22 @@
       ]
     },
     "usage": {
-      "agentComputeUnits": 1.109,
-      "searches": 2,
+      "agentComputeUnits": 1.792,
+      "searches": 4,
       "emails": 0,
       "phoneNumbers": 0,
       "dataSources": {
-        "fiber_ai": 2
+        "fiber_ai": 1
       }
     },
     "costDollars": {
-      "total": 0.1599,
-      "agentCompute": 0.1109,
-      "search": 0.009,
+      "total": 0.2172,
+      "agentCompute": 0.1792,
+      "search": 0.018,
       "emails": 0,
       "phoneNumbers": 0,
       "dataSources": {
-        "fiber_ai": 0.04
+        "fiber_ai": 0.02
       }
     }
   }

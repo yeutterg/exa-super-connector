@@ -11,7 +11,8 @@
 //             and the raw page text. Fetched automatically (cheap) and
 //             cached per person.
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useApp } from "@/lib/store";
 import {
@@ -26,6 +27,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ApiCallBlock } from "@/components/api-call-block";
 import { BriefCard } from "@/components/brief-card";
 import { CodeBlock } from "@/components/code-block";
+import { CopyInline } from "@/components/copy-inline";
 import { Pill } from "@/components/pill";
 import { buildBriefBody } from "@/lib/exa";
 import { apiJsonSnippet } from "@/lib/snippets";
@@ -49,12 +51,30 @@ export function ProfileDrawer() {
   } = useApp();
   const [showRaw, setShowRaw] = useState(false);
 
+  const person = openContentsPersonId
+    ? searches.flatMap((s) => s.people).find((p) => p.id === openContentsPersonId)
+    : undefined;
+  // Brief state for this person — cost attribution needs the search turn the
+  // person came from (searches is newest-first, so [find] is the latest).
+  const brief = openContentsPersonId ? briefs[openContentsPersonId] : undefined;
+  const briefLoading = briefLoadingId === openContentsPersonId;
+  const briefSearchId = searches.find((s) =>
+    s.people.some((p) => p.id === openContentsPersonId),
+  )?.id;
+
+  // The brief runs automatically when the drawer opens — no button. Cached
+  // briefs show instantly, so this fires the agent at most once per person;
+  // briefError gates retries so a failed run doesn't loop.
+  useEffect(() => {
+    if (person && briefSearchId && !brief && !briefLoading && !briefError) {
+      void runBrief(person, briefSearchId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openContentsPersonId, Boolean(brief), briefLoading, briefError]);
+
   if (!openContentsPersonId) return null;
   const record = contentsRecords[openContentsPersonId];
   const loading = contentsLoadingId === openContentsPersonId;
-  const person = searches
-    .flatMap((s) => s.people)
-    .find((p) => p.id === openContentsPersonId);
   // People-category results already carry structured entities[] — surface the
   // work history the search returned, no extra call needed.
   const workHistory = searches
@@ -64,14 +84,6 @@ export function ProfileDrawer() {
 
   const doc = record?.response.results?.[0];
   const status = record?.response.statuses?.[0];
-
-  // Brief state for this person — cost attribution needs the search turn the
-  // person came from (searches is newest-first, so [find] is the latest).
-  const brief = briefs[openContentsPersonId];
-  const briefLoading = briefLoadingId === openContentsPersonId;
-  const briefSearchId = searches.find((s) =>
-    s.people.some((p) => p.id === openContentsPersonId),
-  )?.id;
 
   return (
     <Sheet
@@ -103,25 +115,52 @@ export function ProfileDrawer() {
               )}
             </span>
           </SheetTitle>
+          {person && (
+            <div className="space-y-0.5 pt-1 text-xs font-normal">
+              <div className="group flex items-center gap-1.5">
+                <span className="w-14 text-muted-foreground">Email</span>
+                {brief?.output.email ? (
+                  <>
+                    <code className="rounded bg-muted px-1.5 py-0.5">
+                      {brief.output.email}
+                    </code>
+                    <CopyInline value={brief.output.email} />
+                  </>
+                ) : briefLoading ? (
+                  <span className="animate-pulse text-muted-foreground">
+                    fetching via agent…
+                  </span>
+                ) : (
+                  <span className="text-muted-foreground">
+                    {brief ? "not found" : "—"}
+                  </span>
+                )}
+              </div>
+              <div className="group flex items-center gap-1.5">
+                <span className="w-14 text-muted-foreground">LinkedIn</span>
+                <a
+                  href={person.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 underline decoration-dotted underline-offset-2"
+                >
+                  {person.url.replace(/^https?:\/\/(www\.)?/, "")}
+                  <ExternalLink className="size-3 text-muted-foreground" />
+                </a>
+                <CopyInline value={person.url} />
+              </div>
+            </div>
+          )}
         </SheetHeader>
 
         <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 pb-4">
           {/* ---------------- BRIEF (agent run, on demand) ---------------- */}
           {person && (
             <>
-              <div className="flex items-center justify-between border-b pb-1.5">
+              <div className="border-b pb-1.5">
                 <span className="text-xs font-semibold uppercase tracking-wider">
                   Brief
                 </span>
-                {!brief && !briefLoading && briefSearchId && (
-                  <Button
-                    size="xs"
-                    onClick={() => runBrief(person, briefSearchId)}
-                    title="Agent run with Connect providers attached — email + grounded why-now signals (~30-90s)"
-                  >
-                    Build Brief
-                  </Button>
-                )}
               </div>
 
               <ApiCallBlock
@@ -146,14 +185,7 @@ export function ProfileDrawer() {
                 <div className="rounded-md border border-destructive/40 p-3 text-xs text-muted-foreground">
                   Brief unavailable: {briefError}
                 </div>
-              ) : (
-                <p className="text-[11px] text-muted-foreground">
-                  Not run yet — this is the request that will fire. The Agent
-                  routes across the attached Connect providers plus web
-                  research and returns the email and grounded &ldquo;why
-                  now&rdquo; signals.
-                </p>
-              )}
+              ) : null}
             </>
           )}
 
@@ -219,10 +251,7 @@ export function ProfileDrawer() {
                   {doc?.summary && (
                     <div>
                       <div className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                        Summary{" "}
-                        <span className="font-normal normal-case tracking-normal">
-                          — steered by summary.query in the request
-                        </span>
+                        Summary
                       </div>
                       <div
                         className={`${PROSE_CLASSES} rounded-md border bg-muted/40 p-3`}
@@ -235,11 +264,7 @@ export function ProfileDrawer() {
                   {workHistory && workHistory.length > 0 && (
                     <div>
                       <div className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                        Work history{" "}
-                        <span className="font-normal normal-case tracking-normal">
-                          — structured entities[] already on the search result,
-                          no extra call
-                        </span>
+                        Work history
                       </div>
                       <ul className="divide-y rounded-md border">
                         {workHistory.slice(0, 8).map((w, i) => (

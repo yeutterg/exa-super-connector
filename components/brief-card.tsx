@@ -7,38 +7,14 @@
 // Copy Opener is a template string (no LLM).
 
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
 import type { BriefRecord, Person } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock } from "@/components/code-block";
+import { CopyInline } from "@/components/copy-inline";
 import { Pill } from "@/components/pill";
 import { PROVIDER_LABELS } from "@/lib/exa";
 import { fmtUSD } from "@/lib/format";
-
-/** Small hover-revealed copy button — for the name and email in the card header. */
-function CopyInline({ value }: { value: string }) {
-  const [copied, setCopied] = useState(false);
-  return (
-    <button
-      type="button"
-      onClick={async (e) => {
-        e.stopPropagation();
-        await navigator.clipboard.writeText(value);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1200);
-      }}
-      title="Copy"
-      className="ml-1 inline-flex opacity-0 transition-opacity group-hover:opacity-100"
-    >
-      {copied ? (
-        <Check className="size-3 text-emerald-600 dark:text-emerald-400" />
-      ) : (
-        <Copy className="size-3 text-muted-foreground hover:text-foreground" />
-      )}
-    </button>
-  );
-}
 
 /** The agent's own grounding citation for the email field — the only honest
  *  provenance. routedTo can't tell us: Fiber may be called for the profile

@@ -9,8 +9,9 @@
 // fragment, plus a profile link.
 
 import type { ComponentProps } from "react";
-import { Expand, ExternalLink } from "lucide-react";
+import { Expand } from "lucide-react";
 import ReactMarkdown, { type Components } from "react-markdown";
+import { useApp } from "@/lib/store";
 import type { Person } from "@/lib/types";
 import {
   Popover,
@@ -86,7 +87,14 @@ const inlineComponents: Components = {
   blockquote: ({ children }) => <span>{children}</span>,
 };
 
-export function HighlightsCell({ person }: { person: Person }) {
+export function HighlightsCell({
+  person,
+  recordId,
+}: {
+  person: Person;
+  recordId: string;
+}) {
+  const { runContents } = useApp();
   return (
     <div className="group flex items-start gap-1.5">
       <div className="line-clamp-3 flex-1">
@@ -103,6 +111,8 @@ export function HighlightsCell({ person }: { person: Person }) {
               <button
                 type="button"
                 title="Expand all highlights"
+                // The whole row opens the drawer — expanding highlights must not.
+                onClick={(e) => e.stopPropagation()}
                 className="mt-0.5 shrink-0 rounded p-0.5 opacity-0 transition-opacity hover:bg-accent group-hover:opacity-100"
               />
             }
@@ -117,14 +127,13 @@ export function HighlightsCell({ person }: { person: Person }) {
               <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
                 {person.name} · highlights
               </span>
-              <a
-                href={person.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-foreground"
+              <button
+                type="button"
+                onClick={() => runContents(person, recordId)}
+                className="text-[11px] text-muted-foreground hover:text-foreground hover:underline"
               >
-                View profile <ExternalLink className="size-3" />
-              </a>
+                View profile →
+              </button>
             </div>
             {person.highlights.map((h, i) => (
               <div

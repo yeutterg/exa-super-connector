@@ -87,8 +87,7 @@ the request JSON is always on screen (hover any key for its docs):
 for demo determinism, client-side caching so nothing bills twice, honest
 fallbacks, every request byte-visible. Success with Exa is knowing which
 primitive answers which question; when retrieval fails, reach for a bigger
-primitive, not a cleverer keyword. And when a customer wants this whole
-search → verify → enrich loop off the shelf: that's Websets.
+primitive, not a cleverer keyword.
 
 ## What maps to what
 

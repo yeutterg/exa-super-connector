@@ -6,7 +6,6 @@
 // company/news/web corpora) render a source list + extracted findings
 // instead of the people table.
 
-import { ExternalLink } from "lucide-react";
 import { useApp } from "@/lib/store";
 import type { Person, SearchRecord } from "@/lib/types";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -222,21 +221,16 @@ function PersonRow({
 }) {
   const { runContents } = useApp();
   return (
-    <TableRow className={active ? "bg-accent/60 hover:bg-accent/60" : undefined}>
+    // The whole ROW opens the person drawer — nested interactive elements
+    // (highlight expand, links) stop propagation. LinkedIn linking lives in
+    // the drawer header, not here.
+    <TableRow
+      onClick={() => runContents(person, recordId)}
+      title="Open profile"
+      className={`cursor-pointer ${active ? "bg-accent/60 hover:bg-accent/60" : ""}`}
+    >
       <TableCell>
-        {/* The whole person cell opens the profile drawer, not just the name
-            text — clicking the avatar or the empty space around it should
-            work too. The external link stays a separate nested target. */}
-        <div
-          role="button"
-          tabIndex={0}
-          onClick={() => runContents(person, recordId)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") runContents(person, recordId);
-          }}
-          title="Extract this profile via /contents"
-          className="group flex cursor-pointer items-center gap-2.5"
-        >
+        <div className="flex items-center gap-2.5">
           <Avatar className="size-8">
             {person.image && <AvatarImage src={person.image} alt="" />}
             <AvatarFallback className="text-[10px]">
@@ -244,19 +238,7 @@ function PersonRow({
             </AvatarFallback>
           </Avatar>
           <div>
-            <span className="text-xs font-medium group-hover:underline">
-              {person.name}
-            </span>
-            <a
-              href={person.url}
-              target="_blank"
-              rel="noreferrer"
-              title="Open source profile"
-              onClick={(e) => e.stopPropagation()}
-              className="ml-1 inline-flex align-middle opacity-0 transition-opacity group-hover:opacity-100"
-            >
-              <ExternalLink className="size-3 text-muted-foreground hover:text-foreground" />
-            </a>
+            <span className="text-xs font-medium">{person.name}</span>
             {person.location && (
               <div className="text-[10px] text-muted-foreground">
                 {person.location}
@@ -276,7 +258,7 @@ function PersonRow({
         </div>
       </TableCell>
       <TableCell className="text-xs leading-relaxed text-muted-foreground">
-        <HighlightsCell person={person} />
+        <HighlightsCell person={person} recordId={recordId} />
       </TableCell>
       <TableCell className="text-right">
         <Button
